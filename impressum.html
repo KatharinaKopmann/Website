@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum · Coaching mit K</title>
+<meta name="robots" content="noindex, follow">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream:       #F5F1E8;
+  --sage:        #7C9173;
+  --forest:      #44593F;
+  --anthracite:  #2C333A;
+  --white:       #ffffff;
+  --text-muted:  #4a5258;
+  --text-light:  #7a8490;
+  --border:      rgba(44,51,58,0.12);
+  --card-border: rgba(44,51,58,0.09);
+  --flag-bg:     #FBF3E2;
+  --flag-border: #E3C27A;
+  --flag-text:   #7A5C1E;
+  --max:         1160px;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: var(--anthracite); background: var(--white);
+  font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+h1 { font-size: clamp(28px, 4vw, 38px); font-weight: 500; line-height: 1.2; }
+h2 { font-size: 19px; font-weight: 600; line-height: 1.3; color: var(--anthracite); }
+p  { line-height: 1.75; }
+
+.eyebrow { font-size: 11px; font-weight: 600; color: var(--sage); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; display: block; }
+.sec { padding: 64px 48px; }
+.sec-cream { background: var(--cream); }
+.sec-white { background: var(--white); }
+.sec-inner { max-width: var(--max); margin: 0 auto; }
+@media (max-width: 768px) { .sec { padding: 44px 24px; } }
+
+/* NAV */
+nav { background: var(--anthracite); display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; position: sticky; top: 0; z-index: 100; }
+.nav-logo-chip { display: inline-flex; align-items: center; background: var(--cream); border-radius: 8px; padding: 6px 14px; text-decoration: none; line-height: 0; }
+.nav-logo-chip img { height: 30px; width: auto; display: block; }
+@media (max-width: 768px) { .nav-logo-chip { padding: 5px 12px; } .nav-logo-chip img { height: 25px; } }
+.nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+.nav-links a { font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--white); }
+.nav-cta { background: var(--sage) !important; color: var(--white) !important; font-weight: 500 !important; padding: 9px 18px; border-radius: 4px; }
+.nav-cta:hover { background: var(--forest) !important; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--white); font-size: 24px; padding: 4px; }
+@media (max-width: 768px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 58px; left: 0; right: 0; background: var(--anthracite); padding: 20px 24px; gap: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+}
+
+/* PAGE HEADER (kein Foto – schlanker Seitenkopf für Rechtsseiten) */
+.page-header { padding: 48px 48px 40px; background: var(--cream); }
+.page-header-inner { max-width: var(--max); margin: 0 auto; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+.breadcrumb a { font-size: 12px; color: var(--text-light); text-decoration: none; }
+.breadcrumb a:hover { color: var(--forest); }
+.breadcrumb span { font-size: 12px; color: var(--text-light); opacity: 0.5; }
+.breadcrumb .current { font-size: 12px; color: var(--forest); }
+@media (max-width: 768px) { .page-header { padding: 36px 24px 32px; } }
+
+/* LEGAL CONTENT */
+.legal-content { max-width: 720px; }
+.legal-content h2 { margin-top: 40px; margin-bottom: 12px; }
+.legal-content h2:first-child { margin-top: 0; }
+.legal-content p { font-size: 14.5px; color: var(--text-muted); margin-bottom: 6px; }
+.legal-content .block { margin-bottom: 28px; }
+.flag { display: inline-block; background: var(--flag-bg); border: 0.5px solid var(--flag-border); color: var(--flag-text); font-size: 12px; font-weight: 500; padding: 3px 9px; border-radius: 4px; margin: 6px 0 14px; }
+.flag-note { background: var(--flag-bg); border: 0.5px solid var(--flag-border); border-radius: 8px; padding: 18px 22px; margin-bottom: 40px; max-width: 720px; }
+.flag-note p { font-size: 13.5px; color: var(--flag-text); margin-bottom: 8px; }
+.flag-note p:last-child { margin-bottom: 0; }
+.flag-note strong { color: var(--flag-text); }
+
+/* FOOTER */
+footer { background: var(--anthracite); padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.4); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.75); }
+@media (max-width: 600px) { footer { padding: 24px; flex-direction: column; align-items: flex-start; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo-chip" href="index.html"><img src="img/logo-transparent.png" alt="Coaching mit K – Katharina Kopmann"></a>
+  <button class="nav-toggle" aria-label="Menü öffnen" onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html" class="active">Start</a></li>
+    <li><a href="fuer-unternehmen.html">Für Unternehmen</a></li>
+    <li><a href="fuer-berufstaetige.html">Für Berufstätige</a></li>
+    <li><a href="ueber-mich.html">Über mich</a></li>
+    <li><a href="termine.html">Termine</a></li>
+    <li><a href="kontakt.html#einzelpersonen" class="nav-cta">Erstgespräch →</a></li>
+  </ul>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Start</a>
+      <span>›</span>
+      <span class="current">Impressum</span>
+    </div>
+    <span class="eyebrow">Rechtliches</span>
+    <h1>Impressum</h1>
+  </div>
+</header>
+
+<main class="sec sec-white">
+  <div class="sec-inner">
+    <div class="legal-content">
+
+      <div class="flag-note">
+        <p><strong>Hinweis vor Veröffentlichung:</strong> Die mit <span class="flag">BITTE PRÜFEN</span> markierten Angaben stammen unverändert aus der eRecht24-Vorlage und wirken wie Platzhalter. Bitte vor dem Launch durch die echten Daten ersetzen.</p>
+      </div>
+
+      <div class="block">
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p>Katharina Kopmann</p>
+        <p>Coach und Trainerin</p>
+        <p>Max-Pechstein-Straße 37</p>
+        <p>Gebäude 44</p>
+        <p>50858 Köln</p>
+      </div>
+
+      <div class="block">
+        <h2>Kontakt</h2>
+        <p>Telefon: +49 (0) 123 44 55 66 <span class="flag">BITTE PRÜFEN</span></p>
+        <p>Telefax: +49 (0) 123 44 55 99 <span class="flag">BITTE PRÜFEN</span></p>
+        <p>E-Mail: info@coaching-mit-k.com</p>
+      </div>
+
+      <div class="block">
+        <h2>Umsatzsteuer-ID</h2>
+        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:</p>
+        <p>DE999999999 <span class="flag">BITTE PRÜFEN</span></p>
+      </div>
+
+      <div class="block">
+        <h2>Wirtschaftsidentifikationsnummer</h2>
+        <p>DE441921795</p>
+      </div>
+
+      <div class="block">
+        <h2>Angaben zur Berufshaftpflichtversicherung</h2>
+        <p><strong>Name und Sitz des Versicherers:</strong></p>
+        <p>Janitos Versicherung AG</p>
+        <p>Im Breitspiel 2-4</p>
+        <p>69126 Heidelberg</p>
+        <p style="margin-top:10px;"><strong>Geltungsraum der Versicherung:</strong></p>
+        <p>Deutschland</p>
+      </div>
+
+      <div class="block">
+        <h2>Redaktionell verantwortlich</h2>
+        <p>Katharina Kopmann</p>
+        <p>Max-Pechstein-Str. 37</p>
+        <p>50858 Köln</p>
+      </div>
+
+      <div class="block">
+        <h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
+        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div style="display:flex; align-items:center; gap:14px;">
+    <a href="index.html" style="line-height:0;"><img src="img/logo-light.png" alt="Coaching mit K – Katharina Kopmann" style="height:26px; width:auto; display:block;"></a>
+    <span class="footer-copy">© 2026 Katharina Kopmann</span>
+  </div>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+	    <a href="ressourcen.html" class="active">Ressourcen</a>
+    <a href="faq.html" class="active">FAQ - Coaching</a>
+  </div>
+</footer>
+
+</body>
+</html>

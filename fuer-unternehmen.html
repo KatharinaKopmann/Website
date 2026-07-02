@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stressresilienz für Unternehmen · Coaching mit K – Katharina Kopmann, Köln</title>
+<meta name="description" content="Stress- und Resilienztrainings für IT-nahe Unternehmen. Transferwirksam, evidenzbasiert, auf Individuum und System ausgerichtet. Katharina Kopmann, BGM-zertifiziert, Köln.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Coaching mit K",
+  "description": "Stress- und Resilienztrainings sowie Naturcoaching für Unternehmen und Berufstätige",
+  "url": "https://www.coaching-mit-k.de",
+  "address": { "@type": "PostalAddress", "addressLocality": "Köln", "addressCountry": "DE" },
+  "founder": {
+    "@type": "Person",
+    "name": "Katharina Kopmann",
+    "jobTitle": "Coach und Trainerin",
+    "hasCredential": ["Fachkraft Betriebliches Gesundheitsmanagement (BBGM e.V.)", "Natur-Resilienz-Coach IHK", "Systemische Coachin (IfAP Köln)"]
+  }
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream:       #F5F1E8;
+  --sage:        #7C9173;
+  --forest:      #44593F;
+  --anthracite:  #2C333A;
+  --white:       #ffffff;
+  --text-muted:  #4a5258;
+  --text-light:  #7a8490;
+  --border:      rgba(44,51,58,0.12);
+  --card-border: rgba(44,51,58,0.09);
+  --max:         1160px;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: var(--anthracite); background: var(--white);
+  font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+h1 { font-size: clamp(26px, 4vw, 38px); font-weight: 500; line-height: 1.2; }
+h2 { font-size: clamp(20px, 2.8vw, 28px); font-weight: 500; line-height: 1.28; }
+h3 { font-size: 16px; font-weight: 500; line-height: 1.4; }
+p { line-height: 1.75; }
+
+.eyebrow {
+  font-size: 11px; font-weight: 600; color: var(--sage);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 12px; display: block;
+}
+.sec { padding: 80px 48px; }
+.sec-cream  { background: var(--cream); }
+.sec-white  { background: var(--white); }
+.sec-forest { background: var(--forest); }
+.sec-inner  { max-width: var(--max); margin: 0 auto; }
+@media (max-width: 768px) { .sec { padding: 56px 24px; } }
+
+/* NAV */
+nav {
+  background: var(--anthracite);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 48px; position: sticky; top: 0; z-index: 100;
+}
+.nav-logo { color: var(--white); font-size: 14px; font-weight: 600; letter-spacing: 0.06em; text-decoration: none; }
+.nav-logo em { color: var(--sage); font-style: italic; font-weight: 400; font-size: 16px; }
+.nav-logo-chip { display: inline-flex; align-items: center; background: var(--anthracite); border-radius: 8px; padding: 6px 14px; text-decoration: none; line-height: 0; }
+.nav-logo-chip img { height: 30px; width: auto; display: block; }
+@media (max-width: 768px) { .nav-logo-chip { padding: 5px 12px; } .nav-logo-chip img { height: 25px; } }
+.nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+.nav-links a { font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--white); }
+.nav-cta { background: var(--sage) !important; color: var(--white) !important; font-weight: 500 !important; padding: 9px 18px; border-radius: 4px; }
+.nav-cta:hover { background: var(--forest) !important; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--white); font-size: 24px; padding: 4px; }
+@media (max-width: 768px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 58px; left: 0; right: 0; background: var(--anthracite); padding: 20px 24px; gap: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+}
+
+/* BUTTONS */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--sage); color: var(--white);
+  font-size: 14px; font-weight: 500; padding: 12px 22px;
+  border-radius: 4px; text-decoration: none; transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--forest); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,0.7); font-size: 14px;
+  padding: 12px 18px; border-radius: 4px;
+  border: 0.5px solid rgba(255,255,255,0.2);
+  text-decoration: none; transition: background 0.15s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.06); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 5px;
+  color: var(--anthracite); font-size: 13px; font-weight: 500;
+  border: 0.5px solid var(--border); border-radius: 4px;
+  padding: 9px 16px; text-decoration: none; transition: background 0.15s; white-space: nowrap;
+}
+.btn-outline:hover { background: var(--cream); }
+
+/* HERO */
+.hero {
+  position: relative; min-height: 520px;
+  display: flex; align-items: center; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1610070835951-156b6921281d?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(108deg, rgba(44,51,58,0.92) 0%, rgba(44,51,58,0.62) 55%, rgba(44,51,58,0.10) 100%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 80px 48px; max-width: 660px;
+}
+.hero-content .eyebrow { color: rgba(255,255,255,0.45); }
+.hero h1 { color: var(--white); margin-bottom: 18px; }
+.hero-lead {
+  font-size: 16px; color: rgba(255,255,255,0.72);
+  line-height: 1.78; margin-bottom: 30px; max-width: 480px;
+}
+.hero-quals {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  padding-top: 26px; border-top: 0.5px solid rgba(255,255,255,0.12);
+}
+.hero-qual { font-size: 11px; color: rgba(255,255,255,0.38); letter-spacing: 0.03em; }
+.hero-qual::after { content: '·'; margin-left: 8px; }
+.hero-qual:last-child::after { content: ''; }
+@media (max-width: 768px) { .hero-content { padding: 56px 24px; } }
+
+/* INTRO */
+.intro-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  align-items: start; margin-top: 40px;
+}
+.intro-lead { font-size: 17px; line-height: 1.78; color: var(--anthracite); }
+.intro-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 14px; color: var(--forest); font-weight: 500;
+  text-decoration: none; margin-top: 16px; transition: color 0.15s;
+}
+.intro-link:hover { color: var(--anthracite); }
+.intro-points { display: flex; flex-direction: column; gap: 20px; }
+.intro-point { display: flex; gap: 14px; align-items: flex-start; }
+.intro-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--sage); flex-shrink: 0; margin-top: 9px; }
+.intro-point-text { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+.intro-point-text strong { color: var(--anthracite); font-weight: 500; display: block; margin-bottom: 2px; }
+@media (max-width: 720px) { .intro-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+/* ANGEBOTE GRID — 2+3 */
+.angebot-top {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--border); border-radius: 10px 10px 0 0; overflow: hidden;
+  margin-top: 44px; border: 0.5px solid var(--border);
+  align-items: stretch;
+}
+.angebot-bottom {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px;
+  background: var(--border); border-radius: 0; overflow: hidden;
+  border: 0.5px solid var(--border); border-top: none;
+}
+.angebot-card {
+  background: var(--white); padding: 28px 28px 32px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: background 0.15s; min-height: 220px;
+}
+.angebot-card:hover { background: var(--cream); }
+.angebot-card.featured { background: var(--forest); }
+.angebot-card.featured:hover { background: #3a5037; }
+.angebot-stufe {
+  font-size: 10px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.12em; color: var(--sage);
+}
+.angebot-card.featured .angebot-stufe { color: rgba(255,255,255,0.42); }
+.angebot-name { font-size: 16px; font-weight: 500; color: var(--anthracite); line-height: 1.3; }
+.angebot-card.featured .angebot-name { color: var(--white); }
+.angebot-umfang {
+  font-size: 12px; color: var(--text-light);
+  padding-top: 10px; border-top: 0.5px solid var(--border);
+}
+.angebot-card.featured .angebot-umfang { color: rgba(255,255,255,0.38); border-top-color: rgba(255,255,255,0.12); }
+.angebot-desc { font-size: 13px; color: var(--text-muted); line-height: 1.7; flex: 1; min-height: 48px; }
+.angebot-card.featured .angebot-desc { color: rgba(255,255,255,0.62); }
+.angebot-themen { list-style: none; display: flex; flex-direction: column; gap: 5px; padding-top: 10px; border-top: 0.5px solid var(--border); }
+.angebot-card.featured .angebot-themen { border-top-color: rgba(255,255,255,0.12); }
+.angebot-themen li { font-size: 12px; color: var(--text-muted); padding-left: 12px; position: relative; line-height: 1.5; }
+.angebot-card.featured .angebot-themen li { color: rgba(255,255,255,0.52); }
+.angebot-themen li::before { content: ''; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: var(--sage); }
+.angebot-card.featured .angebot-themen li::before { background: rgba(255,255,255,0.28); }
+.angebot-reihe3 .angebot-card {
+  padding: 32px 32px 36px;
+  min-height: 260px;
+}
+.featured-label {
+  font-size: 10px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.08em; color: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.1); border-radius: 20px;
+  padding: 3px 9px; width: fit-content;
+}
+/* Impulsvortrag bekommt Anfrage-Button — als Overlay über normale Karte */
+.angebot-card.with-cta { position: relative; }
+.impulsvortrag-form {
+  display: none; position: absolute; inset: 0;
+  background: var(--white); padding: 22px 24px;
+  border-radius: inherit; flex-direction: column; gap: 10px;
+  overflow-y: auto;
+}
+.impulsvortrag-form.open { display: flex; }
+.form-back {
+  font-size: 12px; color: var(--sage); cursor: pointer; background: none;
+  border: none; text-align: left; padding: 0; margin-bottom: 4px;
+  display: flex; align-items: center; gap: 4px;
+}
+.form-back:hover { color: var(--forest); }
+.form-field { display: flex; flex-direction: column; gap: 4px; }
+.form-field label { font-size: 11px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.form-field input, .form-field textarea, .form-field select {
+  font-size: 13px; padding: 8px 10px; border: 0.5px solid var(--border);
+  border-radius: 4px; background: var(--cream); color: var(--anthracite);
+  font-family: inherit; resize: none;
+}
+.form-field input:focus, .form-field textarea:focus, .form-field select:focus {
+  outline: none; border-color: var(--sage);
+}
+.form-submit {
+  background: var(--sage); color: var(--white); font-size: 13px; font-weight: 500;
+  padding: 10px 16px; border: none; border-radius: 4px; cursor: pointer;
+  transition: background 0.2s; margin-top: 4px;
+}
+.form-submit:hover { background: var(--forest); }
+.form-success {
+  display: none; font-size: 13px; color: var(--forest); text-align: center;
+  padding: 16px; background: rgba(68,89,63,0.07); border-radius: 4px;
+}
+
+@media (max-width: 860px) {
+  .angebot-top { grid-template-columns: 1fr; border-radius: 10px 10px 0 0; }
+  .angebot-bottom { grid-template-columns: 1fr; border-radius: 0; }
+  .angebot-reihe3 { grid-template-columns: 1fr !important; border-radius: 0 0 10px 10px !important; }
+}
+
+/* ANGEBOTS-KARTEN — zurück zur ruhigen 1+2-Struktur, mit Themen-Tabellen */
+.offer-card { background: var(--cream); border: 0.5px solid var(--card-border); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; min-height: 100%; }
+.offer-card.pilot-card { background: var(--forest); }
+.offer-card-body { padding: 26px 26px 22px; display: flex; flex-direction: column; gap: 4px; }
+.offer-card-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--sage); margin-bottom: 6px; }
+.pilot-card .offer-card-label { color: rgba(255,255,255,0.5); }
+.offer-card-title { font-size: 17px; font-weight: 500; color: var(--anthracite); line-height: 1.3; margin-bottom: 6px; }
+.pilot-card .offer-card-title { color: var(--white); }
+.offer-card-meta { font-size: 12px; color: var(--text-light); padding-bottom: 12px; border-bottom: 0.5px solid var(--border); margin-bottom: 12px; }
+.pilot-card .offer-card-meta { color: rgba(255,255,255,0.42); border-bottom-color: rgba(255,255,255,0.14); }
+.offer-card-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; margin-bottom: 14px; }
+.pilot-card .offer-card-desc { color: rgba(255,255,255,0.68); }
+.offer-table { width: 100%; border-collapse: collapse; }
+.offer-table td { font-size: 12.5px; line-height: 1.55; padding: 9px 0; vertical-align: top; border-top: 0.5px solid var(--border); }
+.pilot-card .offer-table td { border-top-color: rgba(255,255,255,0.14); }
+.offer-table tr:first-child td { border-top: none; }
+.offer-table td:first-child { color: var(--anthracite); font-weight: 500; width: 40%; padding-right: 14px; }
+.pilot-card .offer-table td:first-child { color: var(--white); }
+.offer-table td:last-child { color: var(--text-muted); }
+.pilot-card .offer-table td:last-child { color: rgba(255,255,255,0.62); }
+.tag-note { font-weight: 400; color: var(--text-light); font-size: 11px; }
+.pilot-card .tag-note { color: rgba(255,255,255,0.42); }
+.offer-card-foot { padding: 15px 26px; background: var(--cream); border-top: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pilot-card .offer-card-foot { background: rgba(0,0,0,0.15); border-top-color: rgba(255,255,255,0.10); }
+.offer-card-price { font-size: 15px; font-weight: 500; color: var(--anthracite); }
+.pilot-card .offer-card-price { color: var(--white); }
+.btn-card { background: var(--sage); color: #fff; font-size: 13px; font-weight: 500; padding: 9px 18px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.btn-card:hover { background: var(--forest); }
+.btn-card-outline { display: inline-flex; align-items: center; gap: 5px; color: var(--forest); font-size: 13px; font-weight: 500; border: 0.5px solid var(--sage); border-radius: 4px; padding: 7px 14px; text-decoration: none; white-space: nowrap; }
+.paket-badge { font-size: 10px; font-weight: 500; background: var(--cream); color: var(--forest); padding: 2px 9px; border-radius: 20px; white-space: nowrap; border: 0.5px solid rgba(68,89,63,0.2); }
+.reihe-days-compact { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 4px; }
+.reihe-day-compact { background: var(--cream); border-radius: 6px; padding: 12px 14px; }
+.reihe-day-compact .num { font-size: 10px; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 6px; }
+.reihe-day-compact .ttl { font-size: 12px; font-weight: 500; color: var(--anthracite); margin-bottom: 4px; line-height: 1.4; }
+.reihe-day-compact .txt { font-size: 11.5px; color: var(--text-light); line-height: 1.5; }
+@media (max-width: 860px) {
+  .angebote-grid { grid-template-columns: 1fr !important; }
+  .reihe-days-compact { grid-template-columns: 1fr !important; }
+}
+.angebote-hint { margin-top: 26px; font-size: 15px; color: var(--text-muted); text-align: center; line-height: 1.65; }
+
+/* ERGÄNZENDE FORMATE */
+.format-box { margin-top: 10px; border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--white); }
+.format-box-head { padding: 14px 24px; border-bottom: 0.5px solid var(--border); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.10em; color: var(--text-light); }
+.format-row { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 0.5px solid var(--border); flex-wrap: wrap; gap: 12px; }
+.format-row:last-child { border-bottom: none; }
+.format-name { font-size: 14px; font-weight: 500; color: var(--anthracite); }
+.format-detail { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+
+/* ABLAUF */
+.ablauf-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 44px;
+  border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden;
+}
+.ablauf-step { padding: 26px 22px 30px; border-right: 0.5px solid var(--border); background: var(--white); }
+.ablauf-step:last-child { border-right: none; }
+.ablauf-num { font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--sage); margin-bottom: 14px; }
+.ablauf-title { font-size: 15px; font-weight: 500; color: var(--anthracite); margin-bottom: 10px; }
+.ablauf-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+@media (max-width: 860px) {
+  .ablauf-grid { grid-template-columns: 1fr 1fr !important; }
+  .ablauf-step { border-right: none; border-bottom: 0.5px solid var(--border); }
+  .ablauf-step:nth-child(odd) { border-right: 0.5px solid var(--border); }
+  .ablauf-step:last-child { border-bottom: none; }
+}
+@media (max-width: 420px) { .ablauf-grid { grid-template-columns: 1fr !important; } .ablauf-step { border-right: none; } }
+
+/* QUALIFIKATIONEN */
+.qual-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 40px;
+}
+.qual-card { padding: 22px; border: 0.5px solid var(--card-border); border-radius: 10px; background: var(--cream); }
+.qual-cert { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.10em; color: var(--sage); margin-bottom: 6px; }
+.qual-title { font-size: 15px; font-weight: 500; color: var(--anthracite); margin-bottom: 8px; line-height: 1.35; }
+.qual-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+.qual-relevance { margin-top: 12px; padding-top: 12px; border-top: 0.5px solid var(--border); font-size: 12px; color: var(--forest); }
+@media (max-width: 820px) { .qual-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .qual-grid { grid-template-columns: 1fr; } }
+
+/* ZERTIFIKATE */
+.zert-grid {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;
+}
+.zert-badge {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border: 0.5px solid var(--card-border);
+  border-radius: 8px; background: var(--white);
+}
+.zert-icon {
+  width: 32px; height: 32px; border-radius: 6px; background: var(--cream);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  font-size: 14px;
+}
+.zert-text { display: flex; flex-direction: column; gap: 1px; }
+.zert-name { font-size: 13px; font-weight: 500; color: var(--anthracite); }
+.zert-issuer { font-size: 11px; color: var(--text-light); }
+
+/* FRAGEN */
+.fragen-list { border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; margin-top: 40px; }
+.frage-item { border-bottom: 0.5px solid var(--border); }
+.frage-item:last-child { border-bottom: none; }
+.frage-head { padding: 20px 26px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: var(--cream); transition: background 0.15s; gap: 20px; }
+.frage-head:hover { background: var(--white); }
+.frage-q { font-size: 15px; font-weight: 500; color: var(--anthracite); }
+.frage-icon { font-size: 18px; color: var(--text-light); flex-shrink: 0; transition: transform 0.2s; }
+.frage-item.open .frage-icon { transform: rotate(45deg); }
+.frage-body { display: none; padding: 4px 26px 22px; font-size: 14px; color: var(--text-muted); line-height: 1.75; background: var(--cream); }
+.frage-body p + p { margin-top: 10px; }
+.frage-item.open .frage-body { display: block; }
+@media (max-width: 600px) { .frage-head { padding: 18px 20px; } .frage-body { padding: 4px 20px 20px; } }
+
+/* ── REVIEWS ── */
+.reviews-header { margin-bottom: 32px; }
+.reviews-header h2 { margin-bottom: 8px; }
+.reviews-header p { font-size: 14px; color: var(--text-muted); }
+
+.reviews-outer { overflow: hidden; }
+.reviews-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.38s cubic-bezier(0.4,0,0.2,1);
+}
+.review-card {
+  flex: 0 0 calc(33.333% - 11px);
+  background: var(--white);
+  border: 0.5px solid var(--card-border);
+  border-radius: 10px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.review-quote { font-size: 40px; color: var(--sage); line-height: 0.8; font-family: Georgia, serif; margin-bottom: 14px; display: block; }
+.review-text { font-size: 14px; color: var(--text-muted); line-height: 1.72; font-style: italic; flex: 1; margin-bottom: 18px; }
+.review-more { font-size: 13px; color: var(--sage); font-style: normal; font-weight: 500; text-decoration: none; display: inline-block; margin-top: 8px; }
+.review-author { display: flex; align-items: center; gap: 10px; padding-top: 16px; border-top: 0.5px solid var(--border); }
+.review-avatar { width: 36px; height: 36px; border-radius: 50%; background: #E8EDE6; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: var(--forest); flex-shrink: 0; }
+.review-name { font-size: 13px; font-weight: 500; }
+.review-role { font-size: 12px; color: #999; }
+.review-stars { color: var(--sage); font-size: 11px; margin-left: auto; letter-spacing: 2px; }
+
+.carousel-nav { display: flex; align-items: center; gap: 8px; margin-top: 20px; }
+.carousel-dots { display: flex; gap: 6px; margin-right: auto; }
+.carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(44,51,58,0.15); border: none; cursor: pointer; padding: 0; transition: background 0.2s; }
+.carousel-dot.active { background: var(--sage); }
+.carousel-btn { width: 36px; height: 36px; border-radius: 50%; border: 0.5px solid var(--border); background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--anthracite); transition: background 0.15s; }
+.carousel-btn:hover { background: var(--cream); }
+
+@media (max-width: 768px) { .review-card { flex: 0 0 88%; } }
+
+
+/* CTA */
+.cta-block { padding: 52px 48px; background: var(--forest); border-radius: 10px; }
+.cta-block h2 { color: var(--white); margin-bottom: 12px; }
+.cta-block p { color: rgba(255,255,255,0.62); font-size: 15px; max-width: 460px; margin-bottom: 26px; }
+.cta-detail { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,0.28); }
+@media (max-width: 600px) { .cta-block { padding: 36px 24px; } }
+
+/* FOOTER */
+footer { background: var(--anthracite); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-logo { color: var(--white); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-decoration: none; }
+.footer-logo em { color: var(--sage); font-style: italic; font-weight: 400; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.75); }
+@media (max-width: 600px) { footer { padding: 28px 24px; flex-direction: column; gap: 20px; } }
+.natur-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 36px; }
+.natur-item { border-radius: 10px; overflow: hidden; aspect-ratio: 3/2; }
+.natur-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.natur-item:hover img { transform: scale(1.04); }
+@media (max-width: 700px) { .natur-gallery { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo-chip" href="index.html"><img src="img/logo-light.png" alt="Coaching mit K – Katharina Kopmann"></a>
+  <button class="nav-toggle" aria-label="Menü öffnen" onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html" class="active">Start</a></li>
+    <li><a href="fuer-unternehmen.html">Für Unternehmen</a></li>
+    <li><a href="fuer-berufstaetige.html">Für Berufstätige</a></li>
+    <li><a href="ueber-mich.html">Über mich</a></li>
+    <li><a href="termine.html">Termine</a></li>
+    <li><a href="kontakt.html#unternehmen" class="nav-cta">Erstgespräch →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO — Iteration 1: neue Headline, neuer Lead -->
+<section class="hero">
+  <div class="hero-bg" role="img" aria-label="Kleine Gruppen sitzen bei goldenem Licht im Grünen zusammen"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Training · Workshops · Outdoor-Teamtag</span>
+    <h1>Ihr Unternehmen ist so resilient wie Ihre Mitarbeitenden - und Ihre Strukturen</h1>
+    <p class="hero-lead">Stress-Bewältigung und Resilienz lassen sich individuell trainieren. Aber auch Team-Strukturen müssen sich weiterentwickeln. Meine Stress- und Resilienz-Formate sind genau darauf ausgelegt: wirksam für das Individuum, verankert im System.</p>
+    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <a href="kontakt.html#unternehmen" class="btn-primary">Jetzt Erstgespräch vereinbaren →</a>
+      <a href="#angebote" class="btn-ghost">Angebote ansehen</a>
+    </div>
+    <div class="hero-quals">
+      <span class="hero-qual">BGM-zertifiziert (BBGM e.V.)</span>
+      <span class="hero-qual">Systemisches Coaching (IfaP)</span>
+      <span class="hero-qual">Resilienz-Coach (IHK)</span>
+      <span class="hero-qual">IT-Branchenerfahrung </span>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- INTRO — AUSGANGSLAGE -->
+<!-- INTRO — AUSGANGSLAGE -->
+<section class="sec sec-white">
+  <div class="sec-inner">
+    <div class="intro-grid">
+      <div>
+        <span class="eyebrow">Die Ausgangslage</span>
+        <p class="intro-lead">Psychische Belastung zählt zu den häufigsten Ursachen für Fehlzeiten in Unternehmen. Und ein Großteil dessen, was Menschen wirklich belastet, zeigt sich nicht in der Krankschreibung, sondern schon vorher, im Arbeitsalltag. Wo mentale Kapazitäten erschöpft sind, bleibt betriebliche Produktivität und Innovationsfähigkeit unter Ihrem Potenzial.</p>
+        <p style="margin-top:18px; font-size:14px; color:var(--text-muted); line-height:1.75;">Klassische Einzelmaßnahmen wie ein Yoga-Kurs oder ein Vortrag zum Thema Achtsamkeit setzen an der einzelnen Person an. Was oft auf der Strecke bleibt, ist sowohl die nachhaltige Transferunterstützung in neue Alltagsroutinen als auch die Umfeldanalyse: Stress entsteht im Zusammenspiel mit dem Arbeitsumfeld selbst. Wirksam wird eine Maßnahme erst, wenn beide Ebenen zusammen gedacht werden.</p>
+      </div>
+      <div class="intro-points">
+        <div style="background:var(--cream); border:0.5px solid var(--sage); border-radius:10px; padding:24px; margin-bottom:16px;">
+          <p style="font-size:13px; color:var(--forest); margin:0 0 8px;">Kosten psychischer Erkrankungen pro Jahr</p>
+          <p style="font-size:44px; font-weight:500; line-height:1; margin:0 0 6px; color:var(--anthracite);">123<span style="font-size:20px; font-weight:400; margin-left:6px; color:var(--forest);">Mrd. €</span></p>
+          <p style="font-size:12px; color:var(--forest); margin:0;">Deutschland, gesamt</p>
+          <p style="font-size:11px; color:var(--text-muted); margin:8px 0 0; line-height:1.6;">Quelle: Statistisches Bundesamt / Destatis / BAuA</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- INTRO — MEIN ANSATZ -->
+<section class="sec sec-cream">
+  <div class="sec-inner">
+    <div class="intro-grid">
+      <div>
+        <span class="eyebrow">Mein Ansatz</span>
+        <p class="intro-lead">Meine Formate setzen an beiden Ebenen gleichzeitig an: individuelle und systemische Reflexion sowie Transfersicherung, die über den Workshop hinausdenkt. Outdoor-Formate wirken dabei katalysierend in allen Phasen der Arbeitsprozesse.</p>
+        <p style="margin-top:18px; font-size:14px; color:var(--text-muted); line-height:1.75;">Als Trainerin und Coach kombiniere ich fundiertes Gesundheitswissen, Praxis in der betrieblichen Gesundheitsförderung und langjährige Berufserfahrung in modernen, IT-nahen Arbeitswelten. <a href="ueber-mich.html" style="color:var(--forest); font-weight:500; text-decoration:none;">Mehr dazu auf der Über-mich-Seite →</a></p>
+      </div>
+      <div class="intro-points">
+        <div class="intro-point">
+          <div class="intro-dot"></div>
+          <div class="intro-point-text">
+			 <strong>Transferwirksamkeit als Maßstab</strong>
+            Jede Maßnahme hat definierte Lernziele und ein Transfer-Coaching danach. Entscheidend ist, was nach dem Workshop bleibt.
+          </div>
+        </div>
+        <div class="intro-point">
+          <div class="intro-dot"></div>
+          <div class="intro-point-text">
+            		   <strong>Individuum und System</strong>
+            Stress entsteht im Zusammenspiel von Mensch und Arbeitsumfeld. Meine Arbeit bezieht beide Ebenen ein.
+          </div>
+        </div>
+        <div class="intro-point">
+          <div class="intro-dot"></div>
+          <div class="intro-point-text">
+            <strong>Outdoor als Format</strong>
+            Abstand vom Büro macht eigene Muster leichter sichtbar. Outdoor-Workshops reduzieren Stress und fördern die Kreativität - ideale Voraussetzungen für konstruktive Arbeit.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ANGEBOTE -->
+<section id="angebote" class="sec sec-white">
+  <div class="sec-inner">
+    <span class="eyebrow">Angebote</span>
+    <h2>Drei Formate: vom Türöffner bis zur Reihe.</h2>
+    <p style="margin-top:14px; max-width:600px; color:var(--text-muted); font-size:15px; line-height:1.7;">Lernen Sie meine Arbeitsweise unverbindlich kennen. Was daraus wird, entscheiden wir nach den ersten gemeinsamen Erfahrungen. Konzeptpapier und Qualifikationsnachweise auf Anfrage.</p>
+
+    <div class="angebote-grid" style="display:grid; grid-template-columns:1fr 2fr; gap:10px; margin-top:44px; align-items:start;">
+
+      <!-- TÜRÖFFNER: Impulsvortrag, 1 Format, 3 Themen -->
+      <div class="offer-card">
+        <div class="offer-card-body">
+          <div class="offer-card-label">Lernen Sie mich kennen</div>
+          <div class="offer-card-title">Interaktiver Impulsvortrag</div>
+          <div class="offer-card-meta">45 Min · online</div>
+          <p class="offer-card-desc">Ihre Mitarbeitenden nehmen eine Technik mit, die sie direkt anwenden können, und Sie sehen, wie ich arbeite. Ein Thema aus drei wählbar:</p>
+          <table class="offer-table">
+            <tr>
+              <td>SOS-Techniken bei Stress</td>
+              <td>Was hilft, wenn alles zu viel wird - sofort anwendbar</td>
+            </tr>
+            <tr>
+              <td>Resilienz ist kein Charakterzug</td>
+              <td>Wie Sie Ihre Resilienz im Alltag trainieren können</td>
+            </tr>
+            <tr>
+              <td>Draußen denkt es sich anders</td>
+              <td>Aufmerksamkeit und Fokus mit der Natur stärken - auch im Büro.</td>
+            </tr>
+          </table>
+        </div>
+        <div class="offer-card-foot">
+          <span class="offer-card-price">150 €</span>
+          <button class="btn-card" onclick="openForm()">Termin anfragen →</button>
+        </div>
+      </div>
+
+      <!-- RECHTE SPALTE: Halbtag + Reihe gestapelt -->
+      <div style="display:flex; flex-direction:column; gap:10px;">
+
+        <!-- HALBTAGESWORKSHOP: 1 Format, alle Themen Pilotformat -->
+        <div class="offer-card pilot-card">
+          <div class="offer-card-body">
+            <div class="offer-card-label">Einstieg</div>
+            <div class="offer-card-title">Halbtagesworkshop</div>
+            <div class="offer-card-meta">3–4h · Inhouse oder Off-Site</div>
+            <p class="offer-card-desc">Ein Nachmittag für Erkenntnisse und konkrete nächste Schritte. Ideal als Pilot, bevor Sie sich auf die Reihe festlegen.</p>
+            <table class="offer-table">
+              <tr>
+                <td>Warum tut mein Rücken weh?</td>
+                <td>Verhalten und Verhältnisse im Blick, mit Bewegungs- und Haltungsroutinen für den Büroalltag</td>
+              </tr>
+              <tr>
+                <td>Mein Stress-Radar</td>
+                <td>Persönliche Warnsignale erkennen und einfache SOS-Techniken etablieren</td>
+              </tr>
+              <tr>
+                <td>Resilienz-Check</td>
+                <td>Eigene Ressourcen und Belastungen sichtbar machen. Alltagsstrategien für mehr Widerstandskraft</td>
+              </tr>
+            </table>
+          </div>
+          <div class="offer-card-foot">
+            <span class="offer-card-price">750 €</span>
+            <a href="kontakt.html#unternehmen" class="btn-card">Anfragen →</a>
+          </div>
+        </div>
+
+        <!-- AUSBAUSTUFE: 3-teilige Reihe -->
+        <div class="offer-card">
+          <div class="offer-card-body">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+              <div class="offer-card-label" style="margin-bottom:0;">Ausbaustufe</div>
+              <span class="paket-badge">10% Paketvorteil</span>
+            </div>
+            <div class="offer-card-title">3-teilige Reihe „Stress bewältigen &amp; Resilienz stärken"</div>
+            <div class="offer-card-meta">3 × 1 Tag · Inhouse oder Off-Site</div>
+            <p class="offer-card-desc">Drei aufeinander aufbauende Tage mit Transferaufgaben zwischen den Modulen: vom Individuum über das Team bis zu den Strukturen, in denen Stress entsteht. Coaching-Kontingent optional zubuchbar</p>
+            <div class="reihe-days-compact">
+              <div class="reihe-day-compact">
+                <div class="num">Tag 1</div>
+                <div class="ttl">Stress verstehen, regulieren und vorbeugen</div>
+                <div class="txt">Individuum · eigener Stress-Fahrplan</div>
+              </div>
+              <div class="reihe-day-compact">
+                <div class="num">Tag 2</div>
+                <div class="ttl">Resilienz systemisch stärken</div>
+                <div class="txt">Individuum &amp; Team · Team als Schutzfaktor</div>
+              </div>
+              <div class="reihe-day-compact">
+                <div class="num">Tag 3</div>
+                <div class="ttl">Resilienz verankern</div>
+                <div class="txt">Team &amp; Organisation · priorisierte Vereinbarungen</div>
+              </div>
+            </div>
+          </div>
+          <div class="offer-card-foot">
+            <div>
+              <span class="offer-card-price">4.050 €</span>
+              <span style="font-size:12px; color:var(--text-light); margin-left:8px;">statt 4.500 € einzeln</span>
+            </div>
+            <a href="kontakt.html#unternehmen" class="btn-card-outline">Anfragen →</a>
+          </div>
+        </div>
+
+        <!-- OUTDOOR-TEAMTAG: moderierter Ganztag im Wald -->
+        <div class="offer-card">
+          <div class="offer-card-body">
+            <div class="offer-card-label">Outdoor-Teamtag</div>
+            <div class="offer-card-title">Draußen neue Wege finden </div>
+            <div class="offer-card-meta">Ganztag · Off-Site</div>
+            <p class="offer-card-desc">Ein Tag in der Natur, ein gemeinsames Erlebnis mit klarem roten Faden: vom gemeinsamen Ankommen über eine geführten Spaziergang mit Reflexionsstationen bis zur konkreten Team-Vereinbarung, wie Sie künftig mit Belastungen umgehen. Ein Ausflug mit Ergebnis am Ende des Tages.</p>
+          </div>
+          <div class="offer-card-foot">
+            <span class="offer-card-price">1.500 € zzgl. Anfahrt</span>
+            <a href="kontakt.html#unternehmen" class="btn-card-outline">Anfragen →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Inline-Formular für Impulsvortrag -->
+    <div id="iv-overlay" style="display:none; position:fixed; inset:0; background:rgba(44,51,58,0.55); z-index:200; align-items:center; justify-content:center; padding:24px;">
+      <div style="background:var(--white); border-radius:10px; padding:32px; width:100%; max-width:420px; position:relative;">
+        <button onclick="closeForm()" style="position:absolute; top:14px; right:16px; background:none; border:none; font-size:20px; color:var(--text-light); cursor:pointer;">×</button>
+        <div style="font-size:15px; font-weight:500; color:var(--anthracite); margin-bottom:4px;">Impulsvortrag anfragen</div>
+        <div style="font-size:12px; color:var(--text-muted); margin-bottom:20px;">Ich melde mich innerhalb von 48 Stunden.</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div><label style="font-size:11px; font-weight:500; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:4px;">Name</label><input type="text" placeholder="Ihr Name" style="width:100%; font-size:13px; padding:9px 12px; border:0.5px solid var(--border); border-radius:4px; background:var(--cream); color:var(--anthracite); font-family:inherit;"></div>
+          <div><label style="font-size:11px; font-weight:500; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:4px;">Unternehmen</label><input type="text" placeholder="Unternehmen" style="width:100%; font-size:13px; padding:9px 12px; border:0.5px solid var(--border); border-radius:4px; background:var(--cream); color:var(--anthracite); font-family:inherit;"></div>
+          <div><label style="font-size:11px; font-weight:500; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:4px;">Thema / Anlass</label>
+            <select id="iv-thema" style="width:100%; font-size:13px; padding:9px 12px; border:0.5px solid var(--border); border-radius:4px; background:var(--cream); color:var(--anthracite); font-family:inherit; appearance:none;">
+              <option value="">Bitte wählen …</option>
+              <option>SOS bei Stress: Die 3-Minuten-Notbremse</option>
+              <option>Resilienz ist kein Charakterzug</option>
+              <option>Draußen denkt es sich anders</option>
+              <option>Anderes Thema</option>
+            </select>
+          </div>
+          <div><label style="font-size:11px; font-weight:500; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:4px;">Nachricht (optional)</label><textarea rows="3" placeholder="Rahmen, Teilnehmerzahl, Wunschtermin …" style="width:100%; font-size:13px; padding:9px 12px; border:0.5px solid var(--border); border-radius:4px; background:var(--cream); color:var(--anthracite); font-family:inherit; resize:none;"></textarea></div>
+          <button onclick="submitForm()" style="background:var(--sage); color:#fff; font-size:13px; font-weight:500; padding:11px 16px; border:none; border-radius:4px; cursor:pointer; transition:background 0.2s;">Anfrage senden →</button>
+          <div id="iv-success" style="display:none; font-size:13px; color:var(--forest); background:rgba(68,89,63,0.08); border-radius:4px; padding:12px; text-align:center;">Vielen Dank, ich melde mich bald bei Ihnen.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="angebote-hint">Individuelle Angebote auf Anfrage.</p>
+  </div>
+</section>
+
+<!-- IMPRESSIONEN OUTDOOR-TEAMTAG -->
+<section class="sec sec-white">
+  <div class="sec-inner">
+    <span class="eyebrow">Impressionen</span>
+    <h2>Der Outdoor-Teamtag — so kann das aussehen</h2>
+    <div class="natur-gallery">
+      <div class="natur-item">
+        <img src="https://images.unsplash.com/uploads/141148589884100082977/a816dbd7?q=80&w=900&auto=format&fit=crop" alt="Gruppe geht gemeinsam einen Wanderweg entlang" loading="lazy">
+      </div>
+      <div class="natur-item">
+        <img src="https://images.unsplash.com/photo-1555069855-e580a9adbf43?q=80&w=900&auto=format&fit=crop" alt="Stuhlkreis im Freien für die gemeinsame Reflexion" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABLAUF -->
+<section class="sec sec-cream">
+  <div class="sec-inner">
+    <span class="eyebrow">Zusammenarbeit</span>
+    <h2>Alles beginnt mit echtem Verstehen.</h2>
+    <p style="margin-top:14px; max-width:560px; color:var(--text-muted); font-size:15px; line-height:1.7;">Ein klarer Auftrag ist die Grundlage für eine erfolgreiche Maßnahme. Qualität sichere ich durch einen strukturierten Prozess, bis zur Abschlussevaluation.</p>
+    <div class="ablauf-grid" style="grid-template-columns: repeat(5, 1fr);">
+      <div class="ablauf-step">
+        <div class="ablauf-num">01</div>
+        <div class="ablauf-title">Erstkontakt</div>
+        <p class="ablauf-desc">20 Minuten kostenloses Kennenlernen. Wie ordnen Ihr Anliegen ein und prüfen, ob eine Zusammenarbeit grundsätzlich sinnvoll ist.</p>
+      </div>
+      <div class="ablauf-step">
+        <div class="ablauf-num">02</div>
+        <div class="ablauf-title">Auftragsklärung</div>
+        <p class="ablauf-desc">60 Minuten. Wir erfassen Ausgangslage, Ziele, Zielgruppe und Rahmenbedingungen gründlich. Das Ergebnis ist die Grundlage für ein passgenaues Angebot.</p>
+      </div>
+      <div class="ablauf-step">
+        <div class="ablauf-num">03</div>
+        <div class="ablauf-title">Konzept und Angebot</div>
+        <p class="ablauf-desc">Sie erhalten ein schriftliches Konzeptpapier: Lernziele, Modulstruktur, Methoden, Transfersicherung. Geeignet für die interne Abstimmung und GF-Freigabe.</p>
+      </div>
+      <div class="ablauf-step">
+        <div class="ablauf-num">04</div>
+        <div class="ablauf-title">Durchführung</div>
+        <p class="ablauf-desc">Das vereinbarte Format wird umgesetzt. Inhalte und Methoden werden innerhalb des vereinbarten Rahmens auf Ihre Zielgruppe und den Unternehmenskontext angepasst.</p>
+      </div>
+      <div class="ablauf-step">
+        <div class="ablauf-num">05</div>
+        <div class="ablauf-title">Evaluation und Ausblick</div>
+        <p class="ablauf-desc">Wir besprechen dokumentiertes Feedback und gleichen gesetzte Lernziele ab. Am Ende steht die gemeinsame Einschätzung: Was hat gewirkt? Welche Folgemaßnahmen sind sinnvoll?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFIKATIONEN + ZERTIFIKATE — Iterationen 3 & 6 -->
+<section class="sec sec-white">
+  <div class="sec-inner">
+    <span class="eyebrow">Qualifikationen</span>
+    <h2>Was meine Angebote auszeichnet.</h2>
+    <p style="margin-top:14px; max-width:600px; color:var(--text-muted); font-size:15px; line-height:1.7;">Drei Dinge machen den Unterschied zwischen einem guten Workshop und einer Maßnahme, die langfristig trägt: fachliche Expertise im Thema, didaktische Kompetenz und echte Empathie für die Arbeitswelt, über die gesprochen wird.</p>
+
+    <div class="qual-grid">
+      <div class="qual-card">
+        <div class="qual-cert">BBGM e.V. / INeKO Köln</div>
+        <div class="qual-title">Fachkraft Betriebliches Gesundheitsmanagement</div>
+        <p class="qual-desc">Zertifizierung des Bundesverbands BGM. Kenntnisse in Bedarfsanalyse, Maßnahmenplanung, Wirksamkeitsmessung und rechtlichen Grundlagen.</p>
+        <div class="qual-relevance">Für Konzeptpapier und interne Freigabe</div>
+      </div>
+      <div class="qual-card">
+        <div class="qual-cert">Anna Langheiter</div>
+        <div class="qual-title">Trainingsdesign</div>
+        <p class="qual-desc">Ausbildung in evidenzbasierter Lernarchitektur: Lernziele, Methodenauswahl, Transfersicherung. Die Grundlage dafür, dass Maßnahmen nach drei Wochen noch wirken.</p>
+        <div class="qual-relevance">Für Wirksamkeitsnachweis</div>
+      </div>
+      <div class="qual-card">
+        <div class="qual-cert">IfAP Köln · DBVC / DCV-Kriterien</div>
+        <div class="qual-title">Systemische Coachin</div>
+        <p class="qual-desc">Jahresausbildung nach anerkannten Verbandskriterien. Systemische Reflexion, Musterarbeit und personenzentrierte Ansätze — für Wirkung auf Ebene des Individuums und des Systems.</p>
+        <div class="qual-relevance">Für Coaching-Kontingente und Einzelbegleitung</div>
+      </div>
+      <div class="qual-card">
+        <div class="qual-cert">IHK · MILD München</div>
+        <div class="qual-title">Natur-Resilienz-Coach</div>
+        <p class="qual-desc">IHK-zertifizierte Ausbildung in naturbasierter Resilienzarbeit. Verbindet Forschungsbefunde zur Wirkung von Natur auf das Nervensystem mit systemischen Methoden.</p>
+        <div class="qual-relevance">Für naturbasierte Formate und den Outdoor-Teamtag</div>
+      </div>
+      <div class="qual-card">
+        <div class="qual-cert">oose Innovative Informatik · Hamburg</div>
+        <div class="qual-title">Trainerin in der Erwachsenenbildung</div>
+        <p class="qual-desc">mehrere Jahre als Trainerin und Beraterin bei einem der führenden IT-Weiterbildungsanbieter im deutschsprachigen Raum. Schwerpunkte: Agilität, Scrum, Projektmanagement.</p>
+        <div class="qual-relevance">Für Glaubwürdigkeit und Anschlussfähigkeit bei IT-Zielgruppen</div>
+      </div>
+      <div class="qual-card">
+        <div class="qual-cert">Scrum Alliance · agil.bz · IREB</div>
+        <div class="qual-title">IT-Arbeitswelten und agile Frameworks</div>
+        <p class="qual-desc">Zertifizierungen in agilen Rollen und Methoden: CSPO, PSM, PAL, RE@agile Practitioner, CPRE FL, DDP. Ergänzt durch Ausbildungen in Kommunikation, Moderation, Konfliktmanagement und Selbstmanagement.</p>
+        <div class="qual-relevance">Für Anschlussfähigkeit und Glaubwürdigkeit bei IT-Zielgruppen</div>
+      </div>
+    </div>
+
+    <!-- Zertifikate-Block ->
+    <div style="margin-top:32px;">
+      <div style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.10em; color:var(--text-light); margin-bottom:14px;">Zertifizierungen auf einen Blick</div>
+      <div class="zert-grid">
+        <div class="zert-badge">
+          <div class="zert-icon" style="font-size:11px; font-weight:700; color:var(--sage); background:var(--cream);">BGM</div>
+          <div class="zert-text">
+            <span class="zert-name">BGM-Fachkraft</span>
+            <span class="zert-issuer">BBGM e.V. / INeKO Köln</span>
+          </div>
+        </div>
+        <div class="zert-badge">
+          <div class="zert-icon" style="font-size:11px; font-weight:700; color:var(--sage); background:var(--cream);">IHK</div>
+          <div class="zert-text">
+            <span class="zert-name">Natur-Resilienz-Coach</span>
+            <span class="zert-issuer">IHK · MILD München</span>
+          </div>
+        </div>
+        <div class="zert-badge">
+          <div class="zert-icon" style="font-size:11px; font-weight:700; color:var(--sage); background:var(--cream);">sys</div>
+          <div class="zert-text">
+            <span class="zert-name">Systemische Coachin</span>
+            <span class="zert-issuer">IfAP Köln · DBVC/DCV</span>
+          </div>
+        </div>
+        <div class="zert-badge">
+          <div class="zert-icon" style="font-size:10px; font-weight:700; color:var(--sage); background:var(--cream);">oose</div>
+          <div class="zert-text">
+            <span class="zert-name">Trainerin Erwachsenenbildung</span>
+            <span class="zert-issuer">oose Innovative Informatik</span>
+          </div>
+        </div>
+        <div class="zert-badge">
+          <div class="zert-icon" style="font-size:11px; font-weight:700; color:var(--sage); background:var(--cream);">TD</div>
+          <div class="zert-text">
+            <span class="zert-name">Trainingsdesign</span>
+            <span class="zert-issuer">Anna Langheiter</span>
+          </div>
+        </div>
+        <div class="zert-badge">
+          <div class="zert-icon" style="font-size:10px; font-weight:700; color:var(--sage); background:var(--cream);">PSM</div>
+          <div class="zert-text">
+            <span class="zert-name">PSM I · CSPO I · PAL I</span>
+            <span class="zert-issuer">scrum.org</span>
+          </div>
+        </div>
+        <div class="zert-badge">
+          <div class="zert-icon" style="font-size:10px; font-weight:700; color:var(--sage); background:var(--cream);">RE</div>
+          <div class="zert-text">
+            <span class="zert-name">RE@agile · CPRE FL · DDP</span>
+            <span class="zert-issuer">IREB · agil.bz</span>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:16px; font-size:13px; color:var(--text-light);">Zertifikate und Ausbildungsnachweise auf Anfrage. Konzeptpapier mit Lernzielen für jede Maßnahme erhältlich. Badges folgen.</p>
+    -->
+	</div> 
+  </div>
+</section>
+
+<!-- REFERENZEN/REVIEWS -->
+  <section class="sec sec-cream">
+    <div class="sec-inner">
+      <div class="reviews-header">
+        <span class="eyebrow">Referenzen</span>
+        <h2>Das sagen meine zufriedenen Kunden</h2>
+      </div>
+      <div class="reviews-outer">
+        <div class="reviews-track" id="reviews-track">
+
+          <div class="review-card" style="background:var(--white);">
+            <span class="review-quote">"</span>
+            <p class="review-text">Ganz toll, wirklich klasse.</p>
+<!--            <a href="#" class="review-more">Ganzen Bericht lesen →</a> -->
+            <div class="review-author">
+              <div class="review-avatar">AB</div>
+              <div>
+                <p class="review-name">Antonietta B.</p>
+                <p class="review-role">Erzieherin · 27 Jahre</p>
+              </div>
+<!--         <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div> -->
+            </div>
+          </div>
+
+          <div class="review-card" style="background:var(--white);">
+            <span class="review-quote">"</span>
+            <p class="review-text">So was habe ich noch nicht erlebt.</p>
+<!--            <a href="#" class="review-more">Ganzen Bericht lesen →</a> -->
+            <div class="review-author">
+              <div class="review-avatar">CD</div>
+              <div>
+                <p class="review-name">Carmen D.</p>
+                <p class="review-role">Gruppenleitung · Mitte 40</p>
+              </div>
+<!--         <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div> -->
+            </div>
+          </div>
+
+          <div class="review-card" style="background:var(--white);">
+            <span class="review-quote">"</span>
+            <p class="review-text">Ich war skeptisch, ob ein Workshop in der Natur wirklich etwas verändert. Aber schon nach den ersten Minuten war ich begeistert.</p>
+            <div class="review-author">
+              <div class="review-avatar">EF</div>
+              <div>
+                <p class="review-name">Elisabeth F.</p>
+                <p class="review-role">Geschäftsführerin · 45 Jahre</p>
+              </div>
+<!--         <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div> -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <div class="carousel-dots" id="carousel-dots"></div>
+        <button class="carousel-btn" onclick="prevReview()" aria-label="Vorheriges">&#8249;</button>
+        <button class="carousel-btn" onclick="nextReview()" aria-label="Nächstes">&#8250;</button>
+      </div>
+    </div>
+  </section>
+		
+		
+		
+<!-- FRAGEN -->
+<section class="sec sec-white">
+  <div class="sec-inner">
+    <span class="eyebrow">Häufige Fragen</span>
+    <h2>Was Sie vor der internen Weiterleitung wahrscheinlich wissen möchten</h2>
+    <div class="fragen-list">
+
+      <div class="frage-item open">
+        <div class="frage-head" onclick="this.parentElement.classList.toggle('open')">
+          <div class="frage-q">Wie weise ich nach, dass die Maßnahme etwas gebracht hat?</div>
+          <span class="frage-icon">+</span>
+        </div>
+        <div class="frage-body">
+          <p>Jede Maßnahme hat schriftlich festgehaltene Lernziele, die wir vorab gemeinsam abstimmen. Nach jedem Modul gibt es einen kurzen Transfercheck, am Ende eine Feedbackerhebung. Das ergibt ein dokumentiertes Bild dessen, was die Teilnehmenden mitgenommen haben.</p>
+          <p>Für die 3-teilige Reihe ist ein Follow-up nach 4–6 Wochen fester Bestandteil des Konzepts — um zu prüfen, was im Alltag tatsächlich ankommt.</p>
+        </div>
+      </div>
+
+      <div class="frage-item">
+        <div class="frage-head" onclick="this.parentElement.classList.toggle('open')">
+          <div class="frage-q">Was brauche ich für die Freigabe durch die Geschäftsführung?</div>
+          <span class="frage-icon">+</span>
+        </div>
+        <div class="frage-body">
+          <p>Ich liefere ein Konzeptpapier mit Lernzielen, Modulbeschreibung, Methoden und Transfersicherungskonzept. Dazu eine Übersicht der relevanten Qualifikationen — BGM-Zertifizierung, Trainingsdesign, IHK-Natur-Resilienz-Coach.</p>
+          <p>Wenn Ihr Unternehmen darüber hinaus Unterlagen benötigt — für eine Betriebsratsabstimmung oder eine interne Ausschreibung — sprechen wir das im Erstgespräch konkret durch.</p>
+        </div>
+      </div>
+
+      <div class="frage-item">
+        <div class="frage-head" onclick="this.parentElement.classList.toggle('open')">
+          <div class="frage-q">Passen die Inhalte zu einer IT-Unternehmenskultur?</div>
+          <span class="frage-icon">+</span>
+        </div>
+        <div class="frage-body">
+          <p>Ich habe selbst in Scrum-Teams gearbeitet, Agilität trainiert und kenne Sprint-Druck, Stakeholder-Management und Remote-Arbeit aus eigener Erfahrung. Das verändert, wie ich Themen einführe und welche Beispiele ich wähle.</p>
+          <p>Ich erkläre nicht, warum Always-on belastet. Ich setze direkt dort an, wo es im Alltag konkret wird.</p>
+        </div>
+      </div>
+
+      <div class="frage-item">
+        <div class="frage-head" onclick="this.parentElement.classList.toggle('open')">
+          <div class="frage-q">Kommen Mitarbeitende überhaupt zu solchen Angeboten?</div>
+          <span class="frage-icon">+</span>
+        </div>
+        <div class="frage-body">
+          <p>Niedrige Teilnahmequoten entstehen meistens dann, wenn das Angebot nicht zur Lebenswelt der Zielgruppe passt. Themen und Sprache müssen stimmen — bevor jemand freiwillig teilnimmt.</p>
+          <p>Deshalb arbeite ich in der Auftragsklärung heraus, was Ihre Mitarbeitenden tatsächlich beschäftigt, und richte Titel, Ankündigungstext und Einstieg darauf aus.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec sec-cream">
+  <div class="sec-inner">
+    <div class="cta-block">
+      <span class="eyebrow" style="color:rgba(255,255,255,0.38)">Nächster Schritt</span>
+      <h2>Jetzt Erstgespräch vereinbaren.</h2>
+      <p>20 Minuten, kostenlos. Wir ordnen Ihr Anliegen ein und ich zeige Ihnen, welche Maßnahme für Ihre Situation sinnvoll wäre.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="kontakt.html#unternehmen" class="btn-primary">Erstgespräch vereinbaren →</a>
+        <a href="mailto:info@coaching-mit-k.de" class="btn-ghost">info@coaching-mit-k.de</a>
+      </div>
+<!--      <p class="cta-detail">Konzeptpapier und Qualifikationsnachweise auf Anfrage.</p> -->
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" style="line-height:0;"><img src="img/logo-light.png" alt="Coaching mit K – Katharina Kopmann" style="height:26px; width:auto; display:block;"></a>
+  <div class="footer-links">
+     <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+	 <a href="ressourcen.html" class="active">Ressourcen</a>
+    <a href="faq.html" class="active">FAQ - Coaching</a>	
+  </div>
+</footer>
+
+<script>
+function openForm(topic) {
+  const overlay = document.getElementById('iv-overlay');
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  const select = document.getElementById('iv-thema');
+  if (select && topic) { select.value = topic; }
+}
+function closeForm() {
+  const overlay = document.getElementById('iv-overlay');
+  overlay.style.display = 'none';
+  document.body.style.overflow = '';
+  document.getElementById('iv-success').style.display = 'none';
+}
+function submitForm() {
+  document.getElementById('iv-success').style.display = 'block';
+  setTimeout(() => { closeForm(); }, 2800);
+}
+// Overlay schließen bei Klick außerhalb des Modals
+document.addEventListener('click', function(e) {
+  const overlay = document.getElementById('iv-overlay');
+  if (e.target === overlay) closeForm();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Über mich · Coaching mit K</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #F5F1E8;
+  --sage: #7C9173;
+  --forest: #44593F;
+  --anthracite: #2C333A;
+  --white: #ffffff;
+  --text-muted: #4a5258;
+  --text-light: #7a8490;
+  --border: rgba(44,51,58,0.12);
+  --card-border: rgba(44,51,58,0.09);
+  --max: 1160px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: var(--anthracite);
+  background: var(--white);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 500; line-height: 1.15; }
+h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 500; line-height: 1.25; }
+h3 { font-size: 15px; font-weight: 500; line-height: 1.4; }
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sage);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.sec { padding: 80px 48px; }
+.sec-cream { background: var(--cream); }
+.sec-white { background: var(--white); }
+.sec-forest { background: var(--forest); }
+.sec-inner { max-width: var(--max); margin: 0 auto; }
+
+@media (max-width: 768px) { .sec { padding: 56px 24px; } }
+
+/* ── NAV ── */
+nav {
+  background: var(--anthracite);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo { color: var(--white); font-size: 14px; font-weight: 600; letter-spacing: 0.06em; text-decoration: none; }
+.nav-logo em { color: var(--sage); font-style: italic; font-weight: 400; font-size: 16px; }
+.nav-logo-chip { display: inline-flex; align-items: center; background: var(--anthracite); border-radius: 8px; padding: 6px 14px; text-decoration: none; line-height: 0; }
+.nav-logo-chip img { height: 30px; width: auto; display: block; }
+@media (max-width: 768px) { .nav-logo-chip { padding: 5px 12px; } .nav-logo-chip img { height: 25px; } }
+.nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+.nav-links a { font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-links a.active { color: var(--white); }
+.nav-cta { background: var(--sage) !important; color: var(--white) !important; font-weight: 500 !important; padding: 9px 18px; border-radius: 4px; transition: background 0.2s !important; }
+.nav-cta:hover { background: var(--forest) !important; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--white); font-size: 24px; line-height: 1; padding: 4px; }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 58px; left: 0; right: 0; background: var(--anthracite); padding: 20px 24px; gap: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+}
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--sage);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 13px 24px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--forest); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255,255,255,0.75);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 13px 18px;
+  border-radius: 4px;
+  border: 0.5px solid rgba(255,255,255,0.25);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.06); }
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--white);
+  color: var(--forest);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-white:hover { background: var(--cream); }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1426170042593-200f250dfdaf?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(44,51,58,0.92) 0%, rgba(44,51,58,0.60) 50%, rgba(44,51,58,0.10) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 48px;
+  max-width: 640px;
+}
+.hero-content .eyebrow { color: var(--sage); }
+.hero h1 { color: var(--white); margin-bottom: 20px; }
+.hero-lead { font-size: 17px; color: rgba(255,255,255,0.82); line-height: 1.75; margin-bottom: 34px; max-width: 540px; }
+.hero-claim {
+  font-size: 17px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 10px;
+}
+.hero-subclaim {
+  font-size: 14px;
+  color: rgba(255,255,255,0.50);
+  line-height: 1.6;
+  font-style: italic;
+}
+.hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.hero-breadcrumb a { font-size: 12px; color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s; }
+.hero-breadcrumb a:hover { color: rgba(255,255,255,0.7); }
+.hero-breadcrumb span { font-size: 12px; color: rgba(255,255,255,0.22); }
+.hero-breadcrumb .current { font-size: 12px; color: rgba(255,255,255,0.55); }
+
+@media (max-width: 768px) { .hero-content { padding: 60px 24px; } }
+
+/* ── INTRO LAYOUT ── */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 72px;
+  align-items: start;
+}
+.photo-placeholder {
+  background: #E8EDE6;
+  border-radius: 10px;
+  aspect-ratio: 4/5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0.5px dashed var(--sage);
+  color: var(--sage);
+  font-size: 13px;
+  position: sticky;
+  top: 100px;
+}
+.photo-icon { font-size: 32px; opacity: 0.4; }
+
+/* ── FLIESSTEXT ── */
+.intro-body { }
+
+.intro-lead {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--anthracite);
+  line-height: 1.55;
+  margin-bottom: 28px;
+}
+
+.intro-text {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.82;
+  margin-bottom: 20px;
+}
+
+.intro-subhead {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+.signature {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 26px;
+  font-style: italic;
+  color: var(--forest);
+  margin-top: 32px;
+  margin-bottom: 24px;
+  opacity: 0.75;
+}
+
+/* ── AKKORDEONS ── */
+.credentials-section {
+  border-top: 0.5px solid var(--border);
+  margin-top: 56px;
+}
+
+.accordion-item { border-bottom: 0.5px solid var(--border); }
+
+.accordion-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  text-align: left;
+  gap: 16px;
+}
+.accordion-trigger-left { display: flex; align-items: center; gap: 14px; }
+.accordion-num {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sage);
+  letter-spacing: 0.1em;
+  min-width: 24px;
+}
+.accordion-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--anthracite);
+}
+.accordion-icon {
+  font-size: 18px;
+  color: var(--sage);
+  transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+  flex-shrink: 0;
+  line-height: 1;
+}
+.accordion-item.open .accordion-icon { transform: rotate(45deg); }
+
+.accordion-body {
+  display: none;
+  padding-bottom: 28px;
+}
+.accordion-item.open .accordion-body { display: block; }
+
+/* ── QUALIFIKATIONEN ── */
+.quali-list { display: flex; flex-direction: column; }
+.quali-item {
+  display: grid;
+  grid-template-columns: 5px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 13px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.quali-item:last-child { border-bottom: none; }
+.quali-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sage);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.quali-title { font-size: 14px; font-weight: 500; color: var(--anthracite); margin-bottom: 2px; }
+.quali-org { font-size: 12px; color: var(--text-light); }
+
+/* ── WERDEGANG TIMELINE (reduziert) ── */
+.timeline { display: flex; flex-direction: column; }
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 100px 1px 1fr;
+  gap: 0 24px;
+  position: relative;
+}
+
+.timeline-year {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: right;
+  padding-top: 2px;
+  padding-bottom: 28px;
+}
+
+.timeline-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.timeline-node {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sage);
+  flex-shrink: 0;
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
+.timeline-connector {
+  width: 1px;
+  flex: 1;
+  background: var(--border);
+  min-height: 16px;
+}
+.timeline-item:last-child .timeline-connector { display: none; }
+
+.timeline-content {
+  padding-bottom: 28px;
+}
+.timeline-content h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--anthracite);
+  line-height: 1.45;
+  margin-bottom: 3px;
+}
+.timeline-content p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ── CTA ── */
+.cta-wrap {
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.cta-wrap h2 { color: var(--white); margin-bottom: 12px; }
+.cta-wrap p { font-size: 16px; color: rgba(255,255,255,0.70); line-height: 1.7; margin-bottom: 32px; }
+.cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--anthracite);
+  padding: 28px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.38); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 12px; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+@media (max-width: 900px) {
+  .intro-grid { grid-template-columns: 1fr; gap: 36px; }
+  .photo-placeholder { aspect-ratio: 3/2; max-height: 280px; position: static; }
+}
+@media (max-width: 480px) {
+  footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+  .timeline-item { grid-template-columns: 72px 1px 1fr; gap: 0 16px; }
+}
+@media (prefers-reduced-motion: reduce) { *, .accordion-icon { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo-chip" href="index.html"><img src="img/logo-light.png" alt="Coaching mit K – Katharina Kopmann"></a>
+  <button class="nav-toggle" aria-label="Menü öffnen" onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html" class="active">Start</a></li>
+    <li><a href="fuer-unternehmen.html">Für Unternehmen</a	></li>
+	    <li><a href="fuer-berufstaetige.html">Für Berufstätige</a></li>
+    <li><a href="ueber-mich.html">Über mich</a></li>
+    <li><a href="termine.html">Termine</a></li>
+    <li><a href="kontakt.html#einzelpersonen" class="nav-cta">Erstgespräch →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" role="img" aria-label="Lichtdurchfluteter Wald mit Blumenwiese am Boden"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Über mich</span>
+    <h1>Katharina Kopmann</h1>
+    <p class="hero-claim">Coachin und Trainerin für Resilienz, die im Alltag trägt.</p>
+
+  </div>
+</section>
+
+<main>
+
+  <!-- HAUPTINHALT -->
+  <section class="sec sec-white">
+    <div class="sec-inner">
+      <div class="intro-grid">
+
+        <!-- Foto -->
+        <div>
+          <div class="photo-placeholder">
+            <span class="photo-icon">☺</span>
+            <span>Foto folgt</span>
+          </div>
+        </div>
+
+        <!-- Fließtext -->
+        <div class="intro-body">
+
+          <p class="intro-lead">Viele Wege können ins Coaching führen. Ich bin einige davon gegangen.</p>
+
+          <p class="intro-text">Nach einem Bachelor in Sozialwissenschaften und Master in Kommunikationsforschung habe ich in sehr unterschiedlichen Berufsfeldern gearbeitet: Marktforschung, Datenbankmarketing, Produktentwicklung, Erwachsenenbildung. Erst operativ, dann im Consulting und schließlich als Dozentin. Immer in IT-nahen, modernen Arbeitswelten, immer mit Dauerdruck und permanentem Wandel. Ja, ich kenne recht viele Gesichter von "New Work".</p>
+
+          <p class="intro-text">Schon während des Studiums begann ich, nebenher als Fitness- und Gesundheitstrainerin zu freelancen. Im Studio, auf der Laufbahn, auf dem Bike. Ich merkte früh, dass das hier für mich wirklich zählte. Ich liebte es, Menschen zu befähigen, über sich selbst hinaus zu wachsen. Aus gelegentlichen Nebentätigkeiten wurde eine immer fokussiertere Selbstständigkeit.</p>
+
+          <h3 class="intro-subhead">Was ich mitbringe, ist mehr als Theorie</h3>
+
+          <p class="intro-text">Dass ich mal als Coachin arbeiten würde, hatte ich mir selbst lange nicht zugetraut. Die Bewältigung einer eigenen Stress-Krise eröffnete mir neue Erfahrungen und Perspektiven. Die ehrliche Auseinandersetzung mit mir selbst brachte viel Klarheit. Ich weiß heute, was mich wirklich antreibt, was ich bewegen will – und handele auch danach.</p>
+
+          <h3 class="intro-subhead">Abseits der Arbeit</h3>
+
+          <p class="intro-text">Privat bin ich gern unterwegs und in Bewegung. Beim Wandern, auf dem Gravelbike oder in fremden Kulturen finde ich Abstand zum Alltag und neue Inspiration. Den ruhigeren Gegenpol suche ich ebenso gern. Yoga und Meditation sind seit vielen Jahren fester Bestandteil meines Lebens.</p>
+
+          <h3 class="intro-subhead">Was ich daraus gemacht habe</h3>
+
+          <p class="intro-text">Heute begleite ich Berufstätige und Unternehmen dabei, Gesundheitsprävention im Arbeitsalltag aktiv zu gestalten. So, dass Stress und Erschöpfung sinken und Energie wieder dorthin fließt, wo sie gebraucht wird: in Produktivität, Klarheit und echte Problemlösung.</p>
+
+ <!--         <p class="intro-text">Was ich erlebt habe, trägt auch meine Arbeit: Mit tiefem Vertrauen in den Prozess und Geduld schauen wir auf die Dinge, wie sie sind. Dabei schwingen Zuversicht und Flexibilität immer mit. Ich bin aus Erfahrung fest davon überzeugt, dass es irgendwie immer weiter geht. Die Welt ist voller Möglichkeiten!</p> -->
+
+          <p class="intro-text">Mit 8+ Jahren Erfahrung in modernen Arbeitswelten, diversen Ausbildungen in Gesundheitsmanagement, Resilienz und Coaching und praktischer Erfahrung als Gesundheitscoach kombiniere ich, was selten zusammen auftritt: fachliche Tiefe, systemisches Denken und echtes Verständnis für die Anforderungen moderner Arbeitswelten.</p>
+
+          <div class="signature">Katharina Kopmann</div>
+
+          <a href="kontakt.html#einzelpersonen" class="btn-primary">Erstgespräch vereinbaren →</a>
+
+          <!-- AKKORDEONS -->
+          <div class="credentials-section">
+
+            <!-- Aus- & Weiterbildung -->
+            <div class="accordion-item">
+              <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                <div class="accordion-trigger-left">
+                  <span class="accordion-num">01</span>
+                  <span class="accordion-title">Meine Aus- & Weiterbildungen</span>
+                </div>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-body">
+                <div class="quali-list">
+                  <div class="quali-item">
+                    <div class="quali-dot"></div>
+                    <div>
+                      <div class="quali-title">Systemischer Coach</div>
+                      <div class="quali-org">IfaP — Institut für angewandte Psychologie Köln, Ausbildung gemäß DCV- und DBCV-Kriterien</div>
+                    </div>
+                  </div>
+                  <div class="quali-item">
+                    <div class="quali-dot"></div>
+                    <div>
+                      <div class="quali-title">Natur- und Resilienzcoach (IHK)</div>
+                      <div class="quali-org"> IHK Siegburg-Bonn / MILD — Münchner Institut für lösungsorientiertes Denken,</div>
+                    </div>
+                  </div>
+                  <div class="quali-item">
+                    <div class="quali-dot"></div>
+                    <div>
+                      <div class="quali-title">Fachkraft für Betriebliches Gesundheitsmanagement</div>
+                      <div class="quali-org">BBGM e.V./ INeKO Köln</div>
+                    </div>
+                  </div>
+                  <div class="quali-item">
+                    <div class="quali-dot"></div>
+                    <div>
+                      <div class="quali-title">IT-Projektleiterin mit Schwerpunkt Agilität</div>
+                      <div class="quali-org">Scrum Alliance, scrum.org / agil.bz</div>
+                    </div>
+                  </div>
+                  <div class="quali-item">
+                    <div class="quali-dot"></div>
+                    <div>
+                      <div class="quali-title">Trainingsdesign</div>
+                      <div class="quali-org">Anna Langheiter</div>
+                    </div>
+                  </div>
+                  <div class="quali-item">
+                    <div class="quali-dot"></div>
+                    <div>
+                      <div class="quali-title">Atemcoach</div>
+                      <div class="quali-org">Skuban Akademie</div>
+                    </div>
+                  </div>
+                  <div class="quali-item">
+                    <div class="quali-dot"></div>
+                    <div>
+                      <div class="quali-title">Fitness-Trainer B-Lizenz</div>
+                      <div class="quali-org">Deutsche Sporthochschule Köln</div>
+                    </div>
+                  </div>
+                  <div class="quali-item">
+                    <div class="quali-dot"></div>
+                    <div>
+                      <div class="quali-title">M.A. Sport, Medien- & Kommunikationsforschung</div>
+                      <div class="quali-org">Deutsche Sporthochschule Köln</div>
+                    </div>
+                  </div>
+                  <div class="quali-item">
+                    <div class="quali-dot"></div>
+                    <div>
+                      <div class="quali-title">B.Sc. Sozialwissenschaften</div>
+                      <div class="quali-org">Universität zu Köln</div>
+                    </div>
+                  </div>
+                  <div class="quali-item">
+                    <div class="quali-dot"></div>
+                    <div>
+                      <div class="quali-title">IHK-Ausbildung zur Fachangestellten für Markt- und Sozialforschung</div>
+                      <div class="quali-org">In einer der führenden Unternehmensberatungen Deutschlands</div>
+                    </div>
+                  </div>
+                </div>
+                <p style="font-size:12px;color:var(--text-light);line-height:1.65;margin-top:16px;padding-top:14px;border-top:0.5px solid var(--border);">Seminare zu MBSR, Meditation, Selbstmanagement & Kommunikation ergänzen mein Profil.</p>
+              </div>
+            </div>
+
+            <!-- Werdegang -->
+            <div class="accordion-item">
+              <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                <div class="accordion-trigger-left">
+                  <span class="accordion-num">02</span>
+                  <span class="accordion-title">Mein Werdegang</span>
+                </div>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-body">
+                <div class="timeline">
+
+                  <div class="timeline-item">
+                    <div class="timeline-year">Heute</div>
+                    <div class="timeline-spine"><div class="timeline-node"></div><div class="timeline-connector"></div></div>
+                    <div class="timeline-content">
+                      <h4>Coaching mit K</h4>
+                      <p>Coaching und Training für Gesundheitsprävention im Arbeitskontext</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-year">Karriere</div>
+                    <div class="timeline-spine"><div class="timeline-node"></div><div class="timeline-connector"></div></div>
+                    <div class="timeline-content">
+                      <h4>Trainerin & Beraterin in der Erwachsenenbildung</h4>
+                      <p>IT-Schulungen / Schwerpunkt: Agilität und Projektmanagement</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-year"></div>
+                    <div class="timeline-spine"><div class="timeline-node"></div><div class="timeline-connector"></div></div>
+                    <div class="timeline-content">
+                      <h4>Agile Solution Consultant</h4>
+                      <p>Tiefenpsychologische Marktforschungsagentur / Facilitation von Design-Thinking-Workshops</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-year"></div>
+                    <div class="timeline-spine"><div class="timeline-node"></div><div class="timeline-connector"></div></div>
+                    <div class="timeline-content">
+                      <h4>Database Marketing-Manager</h4>
+                      <p>Telekommunikations-Unternehmen</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-year">Parallel</div>
+                    <div class="timeline-spine"><div class="timeline-node"></div><div class="timeline-connector"></div></div>
+                    <div class="timeline-content">
+                      <h4>Freiberufliches Gesundheitscoaching</h4>
+                      <p>Schwerpunkt: Stressprävention im Arbeitskontext</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-year"></div>
+                    <div class="timeline-spine"><div class="timeline-node"></div><div class="timeline-connector"></div></div>
+                    <div class="timeline-content">
+                      <h4>Freiberufliches Fitness- & Gesundheitstraining</h4>
+                      <p>Laufsport, Gesundheitstrampolin, Bootcamp, Rückentraining</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- /akkordeons -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sec sec-forest" id="kontakt">
+    <div class="sec-inner">
+      <div class="cta-wrap">
+        <span class="eyebrow" style="color:rgba(255,255,255,0.45);">Bereit?</span>
+        <h2>Lernen wir uns kennen.</h2>
+        <p>Das Erstgespräch ist kostenlos und unverbindlich. Wir schauen gemeinsam, ob mein Angebot zu dem passt, was Sie gerade brauchen.</p>
+        <div class="cta-row">
+          <a href="kontakt.html#einzelpersonen" class="btn-white">Erstgespräch vereinbaren →</a>
+          <a href="index.html" class="btn-ghost">Zurück zur Startseite</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div style="display:flex; align-items:center; gap:14px;">
+    <a href="index.html" style="line-height:0;"><img src="img/logo-light.png" alt="Coaching mit K – Katharina Kopmann" style="height:26px; width:auto; display:block;"></a>
+    <span class="footer-copy">© 2026 Katharina Kopmann</span>
+  </div>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="ressourcen.html" class="active">Ressourcen</a>
+    <a href="faq.html" class="active">FAQ - Coaching</a>
+  </div>
+</footer>
+
+<script>
+function toggleAccordion(trigger) {
+  const item = trigger.closest('.accordion-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.accordion-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>

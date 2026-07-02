@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coaching mit K · Katharina Kopmann</title>
+<meta name="description" content="Stresscoaching und Resilienztraining für Berufstätige unter Druck. Systemisch, körperbasiert, alltagstauglich. Katharina Kopmann, Köln.">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #F5F1E8;
+  --sage: #7C9173;
+  --forest: #44593F;
+  --anthracite: #2C333A;
+  --white: #ffffff;
+  --text-muted: #4a5258;
+  --text-light: #7a8490;
+  --border: rgba(44,51,58,0.12);
+  --card-border: rgba(44,51,58,0.09);
+  --max: 1160px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: var(--anthracite);
+  background: var(--white);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 500; line-height: 1.15; }
+h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 500; line-height: 1.25; }
+h3 { font-size: 15px; font-weight: 500; line-height: 1.4; }
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sage);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.sec { padding: 80px 48px; }
+.sec-cream { background: var(--cream); }
+.sec-white { background: var(--white); }
+.sec-inner { max-width: var(--max); margin: 0 auto; }
+
+@media (max-width: 768px) { .sec { padding: 56px 24px; } }
+
+/* ── NAV ── */
+nav {
+  background: var(--anthracite);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo { color: var(--white); font-size: 14px; font-weight: 600; letter-spacing: 0.06em; text-decoration: none; }
+.nav-logo em { color: var(--sage); font-style: italic; font-weight: 400; font-size: 16px; }
+.nav-logo-chip { display: inline-flex; align-items: center; background: var(--anthracite); border-radius: 8px; padding: 6px 14px; text-decoration: none; line-height: 0; }
+.nav-logo-chip img { height: 30px; width: auto; display: block; }
+@media (max-width: 768px) { .nav-logo-chip { padding: 5px 12px; } .nav-logo-chip img { height: 25px; } }
+.nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+.nav-links a { font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: var(--sage) !important; color: var(--white) !important; font-weight: 500 !important; padding: 9px 18px; border-radius: 4px; transition: background 0.2s !important; }
+.nav-cta:hover { background: var(--forest) !important; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--white); font-size: 24px; line-height: 1; padding: 4px; }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 58px; left: 0; right: 0; background: var(--anthracite); padding: 20px 24px; gap: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1484627147104-f5197bcd6651?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+  
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(44,51,58,0.90) 0%, rgba(44,51,58,0.55) 50%, rgba(44,51,58,0.08) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 48px;
+  max-width: 640px;
+}
+.hero-content .eyebrow { color: var(--sage); }
+.hero h1 { color: var(--white); margin-bottom: 20px; }
+.hero-lead { font-size: 17px; color: rgba(255,255,255,0.82); line-height: 1.75; margin-bottom: 34px; max-width: 540px; }
+.hero-claim {
+  font-size: 17px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.7;
+  margin-bottom: 34px;
+  max-width: 440px;
+}
+.hero-badge {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
+.hero-badge span { font-size: 11px; color: rgba(255,255,255,0.42); }
+
+@media (max-width: 768px) { .hero-content { padding: 60px 24px; } }
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--sage);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 13px 24px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--forest); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--forest);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.btn-secondary:hover { color: var(--anthracite); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--forest);
+  font-size: 13px;
+  font-weight: 500;
+  border: 0.5px solid var(--sage);
+  border-radius: 4px;
+  padding: 8px 14px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.btn-outline:hover { background: rgba(124,145,115,0.08); }
+
+/* ── PROBLEM ── */
+.prob-intro { margin-bottom: 36px; max-width: 640px; }
+.prob-intro h2 { margin-bottom: 12px; }
+.prob-intro p { font-size: 16px; color: var(--text-muted); line-height: 1.72; }
+
+.prob-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.prob-card {
+  background: var(--white);
+  border: 0.5px solid var(--card-border);
+  border-radius: 10px;
+  padding: 26px 22px;
+}
+.prob-card-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--sage); margin-bottom: 16px; }
+.prob-card h3 { margin-bottom: 8px; }
+.prob-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+@media (max-width: 768px) { .prob-grid { grid-template-columns: 1fr; } }
+
+/* ── ABOUT ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.photo-placeholder {
+  background: #E8EDE6;
+  border-radius: 10px;
+  aspect-ratio: 4/5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0.5px dashed var(--sage);
+  color: var(--sage);
+}
+.photo-placeholder span { font-size: 13px; }
+.natur-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 36px; }
+.natur-item { border-radius: 10px; overflow: hidden; aspect-ratio: 3/4; }
+.natur-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.natur-item:hover img { transform: scale(1.04); }
+@media (max-width: 820px) { .natur-gallery { grid-template-columns: repeat(2, 1fr); } }
+.about-body { font-size: 15px; color: var(--text-muted); line-height: 1.78; margin-bottom: 18px; }
+.creds { display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; }
+.cred { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--anthracite); line-height: 1.5; }
+.cred-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--sage); flex-shrink: 0; margin-top: 7px; }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .photo-placeholder { aspect-ratio: 3/2; max-height: 260px; }
+}
+
+/* ── REVIEWS ── */
+.reviews-header { margin-bottom: 32px; }
+.reviews-header h2 { margin-bottom: 8px; }
+.reviews-header p { font-size: 14px; color: var(--text-muted); }
+
+.reviews-outer { overflow: hidden; }
+.reviews-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.38s cubic-bezier(0.4,0,0.2,1);
+}
+.review-card {
+  flex: 0 0 calc(33.333% - 11px);
+  background: var(--white);
+  border: 0.5px solid var(--card-border);
+  border-radius: 10px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.review-quote { font-size: 40px; color: var(--sage); line-height: 0.8; font-family: Georgia, serif; margin-bottom: 14px; display: block; }
+.review-text { font-size: 14px; color: var(--text-muted); line-height: 1.72; font-style: italic; flex: 1; margin-bottom: 18px; }
+.review-more { font-size: 13px; color: var(--sage); font-style: normal; font-weight: 500; text-decoration: none; display: inline-block; margin-top: 8px; }
+.review-author { display: flex; align-items: center; gap: 10px; padding-top: 16px; border-top: 0.5px solid var(--border); }
+.review-avatar { width: 36px; height: 36px; border-radius: 50%; background: #E8EDE6; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: var(--forest); flex-shrink: 0; }
+.review-name { font-size: 13px; font-weight: 500; }
+.review-role { font-size: 12px; color: #999; }
+.review-stars { color: var(--sage); font-size: 11px; margin-left: auto; letter-spacing: 2px; }
+
+.carousel-nav { display: flex; align-items: center; gap: 8px; margin-top: 20px; }
+.carousel-dots { display: flex; gap: 6px; margin-right: auto; }
+.carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(44,51,58,0.15); border: none; cursor: pointer; padding: 0; transition: background 0.2s; }
+.carousel-dot.active { background: var(--sage); }
+.carousel-btn { width: 36px; height: 36px; border-radius: 50%; border: 0.5px solid var(--border); background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--anthracite); transition: background 0.15s; }
+.carousel-btn:hover { background: var(--cream); }
+
+@media (max-width: 768px) { .review-card { flex: 0 0 88%; } }
+
+/* ── ANGEBOTE ── */
+.ang-header { margin-bottom: 36px; }
+.ang-header h2 { margin-bottom: 8px; }
+.ang-header p { font-size: 15px; color: var(--text-muted); max-width: 520px; line-height: 1.7; }
+
+.ang-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.ang-card {
+  background: var(--cream);
+  border: 0.5px solid var(--card-border);
+  border-radius: 10px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.ang-card.featured {
+  background: var(--white);
+  border: 2px solid var(--sage);
+  box-shadow: 0 4px 24px rgba(68,89,63,0.08);
+}
+.ang-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--sage);
+  border-radius: 4px;
+  padding: 3px 9px;
+  display: inline-block;
+  margin-bottom: 14px;
+  width: fit-content;
+}
+.ang-card h3 { font-size: 16px; margin-bottom: 10px; }
+.ang-card p { font-size: 13px; color: var(--text-muted); line-height: 1.68; flex: 1; margin-bottom: 16px; }
+.ang-meta { font-size: 12px; color: var(--sage); display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+.ang-price { font-size: 22px; font-weight: 500; padding-top: 16px; margin-top: auto; border-top: 0.5px solid var(--border); }
+.ang-price small { font-size: 12px; font-weight: 400; color: #999; }
+
+.ang-footer { margin-top: 28px; display: flex; flex-direction: column; gap: 8px; }
+.ang-note { font-size: 12px; color: #999; }
+.ang-cta-hint { font-size: 15px; color: var(--text-muted); }
+.ang-cta-hint a { color: var(--forest); font-weight: 500; text-decoration: none; border-bottom: 1px solid rgba(68,89,63,0.3); transition: border-color 0.15s; }
+.ang-cta-hint a:hover { border-color: var(--forest); }
+
+@media (max-width: 900px) { .ang-grid { grid-template-columns: 1fr; } }
+
+/* ── CASES ── */
+.cases-header { margin-bottom: 36px; }
+.cases-header h2 { margin-bottom: 8px; }
+.cases-header p { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 520px; }
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.case-card {
+  background: var(--white);
+  border: 0.5px solid var(--card-border);
+  border-radius: 10px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.case-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--forest);
+  background: #d4e0cc;
+  border-radius: 4px;
+  padding: 2px 9px;
+  display: inline-block;
+  width: fit-content;
+}
+.case-card h3 { font-size: 15px; font-weight: 500; line-height: 1.45; color: var(--anthracite); }
+.case-situation { font-size: 13px; color: var(--text-muted); line-height: 1.68; }
+.case-quote {
+  font-size: 13px;
+  color: var(--forest);
+  font-style: italic;
+  line-height: 1.68;
+  padding-top: 12px;
+  border-top: 0.5px solid var(--border);
+  margin-top: auto;
+}
+
+/* Ausklapp-Langversion */
+.case-expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sage);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 4px;
+  transition: color 0.15s;
+}
+.case-expand-btn:hover { color: var(--forest); }
+.case-expand-icon { font-size: 16px; line-height: 1; transition: transform 0.25s; display: inline-block; }
+.case-card.open .case-expand-icon { transform: rotate(45deg); }
+
+.case-long {
+  display: none;
+  margin-top: 4px;
+  padding-top: 18px;
+  border-top: 0.5px solid var(--border);
+}
+.case-card.open .case-long { display: block; }
+.case-long-block { margin-bottom: 18px; }
+.case-long-block:last-child { margin-bottom: 0; }
+.case-long-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sage);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+.case-long p { font-size: 13px; color: var(--text-muted); line-height: 1.72; margin-bottom: 10px; }
+.case-long p:last-child { margin-bottom: 0; }
+.case-scale {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 8px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.case-long-insight {
+  background: var(--cream);
+  border-left: 2px solid var(--sage);
+  border-radius: 0 6px 6px 0;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--forest);
+  line-height: 1.68;
+  margin-top: 14px;
+}
+
+@media (max-width: 768px) { .cases-grid { grid-template-columns: 1fr; } }
+
+/* ── TERMINE ── */
+.termine-header { margin-bottom: 36px; }
+.termine-header h2 { margin-bottom: 8px; }
+.termine-header p { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 520px; }
+
+.events { display: flex; flex-direction: column; gap: 10px; }
+.event {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  background: var(--cream);
+  border: 0.5px solid var(--card-border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  transition: border-color 0.15s;
+}
+.event:hover { border-color: rgba(124,145,115,0.4); }
+.event-date { text-align: center; flex-shrink: 0; }
+.event-day { font-size: 26px; font-weight: 500; line-height: 1; color: var(--anthracite); }
+.event-month { font-size: 11px; color: var(--sage); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 3px; }
+.event-type {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--forest);
+  background: #d4e0cc;
+  border-radius: 4px;
+  padding: 2px 8px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.event-title { font-size: 14px; font-weight: 500; color: var(--anthracite); margin-bottom: 5px; }
+.event-meta { font-size: 12px; color: var(--text-light); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.event-sep { color: var(--border); }
+
+@media (max-width: 640px) {
+  .event { grid-template-columns: 52px 1fr; grid-template-rows: auto auto; }
+  .event .btn-outline { grid-column: 2; margin-top: 8px; }
+}
+
+/* ── KONTAKT ── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.contact-header { margin-bottom: 32px; }
+.contact-header h2 { margin-bottom: 8px; }
+.contact-header p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-field label { font-size: 13px; font-weight: 500; color: var(--anthracite); }
+.form-field input,
+.form-field textarea,
+.form-field select {
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--anthracite);
+  background: var(--white);
+  border: 0.5px solid rgba(44,51,58,0.22);
+  border-radius: 6px;
+  padding: 11px 14px;
+  width: 100%;
+  resize: none;
+  outline: none;
+  appearance: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(124,145,115,0.12);
+}
+.form-field textarea { height: 110px; }
+.form-submit {
+  background: var(--forest);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 13px 26px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  margin-top: 4px;
+  transition: background 0.2s;
+}
+.form-submit:hover { background: var(--anthracite); }
+.form-note { font-size: 12px; color: #aaa; margin-top: 6px; line-height: 1.6; }
+.form-success {
+  display: none;
+  background: #E8EDE6;
+  border: 0.5px solid var(--sage);
+  border-radius: 8px;
+  padding: 22px 24px;
+  font-size: 14px;
+  color: var(--forest);
+  line-height: 1.65;
+}
+
+.contact-aside { display: flex; flex-direction: column; gap: 28px; padding-top: 8px; }
+.aside-block-title { font-size: 13px; font-weight: 500; color: var(--anthracite); margin-bottom: 6px; }
+.aside-block-text { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+.aside-divider { height: 0.5px; background: var(--border); }
+
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+/* ── WEITEREMPFEHLUNG ── */
+.referral-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.referral-text h2 { margin-bottom: 12px; }
+.referral-text p { font-size: 15px; color: var(--text-muted); line-height: 1.75; max-width: 440px; }
+.referral-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.referral-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  border: 0.5px solid transparent;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.referral-copy {
+  background: var(--sage);
+  color: var(--white);
+  border-color: var(--sage);
+}
+.referral-copy:hover { background: var(--forest); border-color: var(--forest); }
+.referral-copy.copied { background: var(--forest); border-color: var(--forest); }
+.referral-linkedin {
+  background: var(--white);
+  color: var(--anthracite);
+  border-color: var(--card-border);
+}
+.referral-linkedin:hover { border-color: var(--sage); color: var(--forest); }
+.referral-mail {
+  background: var(--white);
+  color: var(--anthracite);
+  border-color: var(--card-border);
+}
+.referral-mail:hover { border-color: var(--sage); color: var(--forest); }
+
+@media (max-width: 768px) {
+  .referral-inner { grid-template-columns: 1fr; gap: 32px; }
+  .referral-text p { max-width: 100%; }
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--anthracite);
+  padding: 28px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.38); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 12px; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+@media (max-width: 480px) { footer { padding: 24px; flex-direction: column; align-items: flex-start; } }
+@media (prefers-reduced-motion: reduce) { *, .reviews-track { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo-chip" href="index.html"><img src="img/logo-light.png" alt="Coaching mit K – Katharina Kopmann"></a>
+  <button class="nav-toggle" aria-label="Menü öffnen" onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html" class="active">Start</a></li>
+    <li><a href="fuer-unternehmen.html">Für Unternehmen</a></li>
+    <li><a href="fuer-berufstaetige.html">Für Berufstätige</a></li>
+    <li><a href="ueber-mich.html">Über mich</a></li>
+    <li><a href="termine.html">Termine</a></li>
+    <li><a href="kontakt.html#einzelpersonen" class="nav-cta">Erstgespräch →</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" role="img" aria-label="Person sitzt allein auf einem Felsen und blickt über ein Bergpanorama"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="eyebrow">Resilienz · Outdoor-Coaching · Köln</span>
+      <h1>Wenn alles<br>zu viel wird.</h1>
+      <p class="hero-claim">Ich helfe Berufstätigen, Stress effektiv zu regulieren und Resilienz aufzubauen, die im Alltag trägt.</p>
+      <a href="#kontakt" class="btn-primary">Jetzt Kontakt aufnehmen →</a>
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>Systemische Coachin · IHK-zertifiziert · BGM-Fachkraft</span>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  
+  <!-- PROBLEM -->
+  <section class="sec sec-cream">
+    <div class="sec-inner">
+      <span class="eyebrow">Kennen Sie das?</span>
+      <div class="prob-intro">
+        <h2>Sie funktionieren nach außen.<br>Alles geht, bis nichts mehr geht.</h2>
+        <p>Ihr Kopf läuft auf Hochtouren und lässt Sie nicht zur Ruhe kommen. Der Körper signalisiert Anspannung aber erholt sich immer schlechter. Und trotzdem machen Sie weiter, weil Sie es müssen. Vielleicht fragen Sie sich, wie lang das noch gut geht?</p>
+      </div>
+      <div class="prob-grid">
+        <div class="prob-card">
+          <div class="prob-card-dot"></div>
+          <h3>Der Kopf schaltet nicht ab</h3>
+          <p>Gedankenschleifen, Overthinking, permanente Erreichbarkeit — auch nach Feierabend.</p>
+        </div>
+        <div class="prob-card">
+          <div class="prob-card-dot"></div>
+          <h3>Der Körper unter Strom</h3>
+          <p>Verspannungen, Schlafprobleme, Stimmungsschwankungen. Erschöpfung trotz Urlaub.</p>
+        </div>
+        <div class="prob-card">
+          <div class="prob-card-dot"></div>
+          <h3>Selbstfürsorge bleibt Theorie</h3>
+          <p>Sie wissen, was gut täte — finden aber keine Zeit. Sie kümmern sich um andere, kommen dabei aber selbst zu kurz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ÜBER MICH -->
+  <!-- ÜBER MICH -->
+  <section class="sec sec-white" id="ueber-mich">
+    <div class="sec-inner">
+      <div class="about-grid">
+        <div class="photo-placeholder" role="img" aria-label="Foto von Katharina Kopmann folgt">
+          <svg width="40" height="40" fill="none" stroke="#7C9173" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <span>Foto Katharina</span>
+        </div>
+        <div>
+          <span class="eyebrow">Über mich</span>
+          <h2>Ich kenne diese Situation. Und ich weiß, was hilft.</h2><br>
+          <p class="about-body">Ich bin Katharina Kopmann, systemische Natur-Coachin und Präventionstrainerin mit Schwerpunkt Stress. Ich begleite dauerbelastete Berufstätige mit einem integrativen Coaching-Ansatz zurück in Ruhe und Erholung, damit Resilienz entsteht, die im Alltag trägt. Die Arbeit in der Natur ist dabei eine zentrale Säule.</p>
+          <p class="about-body">Bevor ich Coaching zu meinem Beruf gemacht habe, habe ich in unterschiedlichen Rollen im IT- und Beratungs-Kontext gearbeitet, inklusive ständiger Veränderungen und Dauerdruck. Und ich kenne aus eigener Erfahrung den Punkt, an dem Energie, die lange selbstverständlich war, einfach nicht mehr zurückkommt.</p>
+          <p class="about-body">Die Bewältigung einer eigenen Stress-Krise eröffnete mir neue Erfahrungen und Perspektiven. Auf mein Umfeld, auf mein Selbstverständnis und das Zusammenspiel von beidem. Ich habe dabei herausgefunden, was tatsächlich trägt: SOS-Techniken, systemische Reflexion, Identitätsarbeit und Ressourcenstärkung. Was ich gelernt habe, gebe ich heute weiter.</p>
+		  <p class="about-body">Mit mehr als acht Jahren Erfahrung in unterschiedlichen Arbeitskontexten, Ausbildungen in Gesundheitsmanagement, Resilienz und Coaching sowie praktischer Erfahrung als Gesundheitscoach kombiniere ich, was selten zusammen auftritt: fachliche Tiefe, systemisches Denken und echtes Verständnis für die Anforderungen moderner Unternehmen.  Ich arbeite individuell, systemisch und vor Allem: alltagstauglich.</p>
+ <!--
+ <p class="about-body">Mein Profil</p>          <div class="creds">
+            <div class="cred"><div class="cred-dot"></div><span>Systemischer Coach (Institut für angewandte Psychologie Köln)</span></div>
+            <div class="cred"><div class="cred-dot"></div><span>Natur- &amp; Resilienz-Coach (IHK)</span></div>
+            <div class="cred"><div class="cred-dot"></div><span>Fachkraft für Betriebliches Gesundheitsmanagement (BBGM e.V.)</span></div>
+            <div class="cred"><div class="cred-dot"></div><span>Langjährige Erfahrung in modernen IT- und Beratungskontexten</span></div>
+          </div> -->
+          <a href="ueber-mich.html" class="btn-secondary">Mehr über mich erfahren →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAS COACHING IST -->
+  <section class="sec sec-cream" id="coaching-verstaendnis">
+    <div class="sec-inner">
+      <div style="display:grid; grid-template-columns: 1fr 420px; gap:56px; align-items:start;">
+        <div>
+          <span class="eyebrow">Mein Coaching-Ansatz</span>
+          <h2>Wie ich arbeite und was Sie erwarten können</h2>
+
+
+
+        <p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Mein Ansatz kombiniert fundierte Coaching-Methodik mit Arbeit draußen in der Natur - damit Sie Ihre Zukunft ressourcenstark gestalten können.</p>
+		<p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Das bedeutet, ich schaue auf Sie als Person, Ihre Geschichte und Ihr Umfeld: Ihre Rollen, Beziehungen, Erfahrungen und Stärken. Was funktioniert bei Ihnen bereits? Was hat früher geholfen? Wo liegen Ihre echten Stärken? </p>
+		<p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Eine natürliche Umgebung wirkt dabei wie ein Katalysator in sämtlichen Phasen des Coaching-Prozesses. Der Kern zeigt sich schneller, die Dinge kommen leichter in Bewegung, Perspektiven und Lösungen öffnen sich, die im Coaching-Raum manchmal lange verschlossen bleiben.</p>
+        <p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Die Natur ist dabei sowohl Raum als auch aktiver Bestandteil des Coaching-Prozesses: Ihre Reize, ihr Rhythmus und ihre Symbolik werden bewusst in Übungen, Reflexionen und Gespräche einbezogen.</p>
+
+<!--		<p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Meine Methoden sind wissenschaftlich fundiert und nachweislich wirksam. Bei der Auswahl achte ich stets auf Ihre individuellen Voraussetzungen und Ziele.</p>
+
+          <p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Coaching ist immer dann die richtige Wahl, wenn Sie ein Thema haben, bei dem Sie keine Standardlösung von der Stange mehr brauchen, sondern individuelle Antworten finden müssen. Als Coach unterstütze ich Sie methodisch, sich mit Ihrem Thema gründlich und auf ungewohnte Art und Weise auseinanderzusetzen. Dadurch entstehen weitere Perspektiven auf Ihr Anliegen, Sie generieren neue Erkenntnisse und erarbeiten sich konkrete Lösungen. So können Sie sicher gehen, dass die nächsten Schritte wirklich zu Ihnen und Ihrem Leben passen.</p>
+          <p style="margin-top:16px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Metaphorisch gesprochen: Im Coaching sind Sie Forscherin oder Entdecker auf Ihrer eigenen, inneren Landkarte. Ich begleite Sie in der Rolle einer expeditionserfahrenen Weggefährtin, aber ohne den Weg vorzugeben. Sie verschaffen sich einen Überblick, erkunden Stück für Stück bisher Unentdecktes und füllen weiße Flecken, legen Verschüttetes frei und gestalten es gegebenenfalls um. Ich biete je nach Situation hilfreiche Tools an: mal das Fernglas, mal die Lupe, mal den Spaten. Ich halte die Taschenlampe, Sie sehen genau hin. Ich begleite Sie durch Analyse, Reflexion und Planung der nächsten Etappe. Sie möchten wissen, was die beste Route über Ihre Karte ist? Das finden wir beim Gehen heraus, Etappe für Etappe.</p>
+-->    
+    </div>
+        <div style="border-radius:10px; overflow:hidden; border-left:3px solid var(--sage);">
+          <img src="https://images.unsplash.com/photo-1759593047536-5258c3c6a527?q=80&w=900&auto=format&fit=crop" alt="Zwei Frauen im Gespräch im Freien" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; aspect-ratio:4/5;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- NATURCOACHING IN ACTION -->
+  <section class="sec sec-white">
+    <div class="sec-inner">
+      <span class="eyebrow">Impressionen</span>
+      <h2>Einblicke ins Outdoor-Coaching </h2>
+      <div class="natur-gallery">
+        <div class="natur-item">
+          <img src="https://images.unsplash.com/photo-1586806974856-c55e8b9364e4?q=80&w=800&auto=format&fit=crop" alt="Zwei Personen im Gespräch an einem See bei Sonnenuntergang" loading="lazy">
+        </div>
+        <div class="natur-item">
+          <img src="https://images.unsplash.com/photo-1633917866137-349c9faead2c?q=80&w=800&auto=format&fit=crop" alt="Zwei Personen gehen gemeinsam einen Waldweg entlang" loading="lazy">
+        </div>
+        <div class="natur-item">
+          <img src="https://images.unsplash.com/photo-1723764881665-5b40cea01c9b?q=80&w=800&auto=format&fit=crop" alt="Frau wandert allein auf einem Bergpfad" loading="lazy">
+        </div>
+        <div class="natur-item">
+          <img src="https://images.unsplash.com/photo-1426170042593-200f250dfdaf?q=80&w=800&auto=format&fit=crop" alt="Lichtdurchfluteter Wald" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="sec sec-cream">
+    <div class="sec-inner">
+      <div class="reviews-header">
+        <span class="eyebrow">Erfahrungsberichte</span>
+        <h2>Das sagen meine Klientinnen und Klienten</h2>
+        <p>Echte Rückmeldungen nach dem Coaching mit mir</p>
+      </div>
+      <div class="reviews-outer">
+        <div class="reviews-track" id="reviews-track">
+
+          <div class="review-card" style="background:var(--white);">
+            <span class="review-quote">"</span>
+            <p class="review-text">Zu Beginn war ich skeptisch, ob Denkanstöße und gezielte Fragen wirklich ausreichen können, um innere Veränderungen anzustoßen. Doch bereits nach den ersten beiden Terminen war diese Skepsis wie weggewaschen. Ich war beeindruckt, welchen Einfluss wenige, aber präzise Impulse auf mein Mindset hatten.</p>
+            <a href="#" class="review-more">Ganzen Bericht lesen →</a>
+            <div class="review-author">
+              <div class="review-avatar">RN</div>
+              <div>
+                <p class="review-name">Ramon N.</p>
+                <p class="review-role">Nachwuchsführungskraft · 27 Jahre</p>
+              </div>
+<!--         <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div> -->
+            </div>
+          </div>
+
+          <div class="review-card" style="background:var(--white);">
+            <span class="review-quote">"</span>
+            <p class="review-text">Statt einer schnellen Patentlösung habe ich etwas Besseres bekommen — ein echtes Verständnis dafür, warum Entscheidungen mich so viel Energie kosten, und praktische Werkzeuge, die ich seitdem selbstständig nutze. Besonders überrascht hat mich die Erkenntnis, dass an mir gar nichts „repariert" werden musste.</p>
+            <a href="#" class="review-more">Ganzen Bericht lesen →</a>
+            <div class="review-author">
+              <div class="review-avatar">MC</div>
+              <div>
+                <p class="review-name">Klient</p>
+                <p class="review-role">IT-Unternehmer · Mitte 30</p>
+              </div>
+<!--         <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div> -->
+            </div>
+          </div>
+
+          <div class="review-card" style="background:var(--white);">
+            <span class="review-quote">"</span>
+            <p class="review-text">Ich war skeptisch, ob ein Coaching in der Natur wirklich etwas verändert. Aber schon nach den ersten Minuten draußen hat mein Kopf aufgehört zu kreisen — das war neu für mich. Katharina hat mein Thema aus verschiedenen Winkeln beleuchtet und mir konkrete Tools mitgegeben, die ich seitdem wirklich nutze. Besonders ein Werkzeug hat mir geholfen zu verstehen, wie ich das, was ich bisher als Problem gesehen habe, als Stärke einsetzen kann. Am Ende der Session hatte ich ein klares Gefühl: Ich weiß jetzt, was ich damit mache.</p>
+            <div class="review-author">
+              <div class="review-avatar">MZ</div>
+              <div>
+                <p class="review-name">Maria Z.</p>
+                <p class="review-role">Teamleiterin · 35 Jahre</p>
+              </div>
+<!--         <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div> -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <div class="carousel-dots" id="carousel-dots"></div>
+        <button class="carousel-btn" onclick="prevReview()" aria-label="Vorheriges">&#8249;</button>
+        <button class="carousel-btn" onclick="nextReview()" aria-label="Nächstes">&#8250;</button>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  <!-- ANGEBOTE -->
+  <section class="sec sec-white" id="angebote">
+    <div class="sec-inner">
+      <div class="ang-header">
+        <span class="eyebrow">Meine Formate</span>
+        <h2>Was ich Ihnen anbieten kann</h2>
+        <p>Alle Formate sind einzeln und auf Anfrage als Paket buchbar. Wir klären im Erstgespräch, was für Sie gerade am meisten Sinn ergibt.</p>
+      </div>
+      <div class="ang-grid">
+
+        <div class="ang-card" style="background:var(--cream);">
+          <span class="ang-tag">Klassisch</span>
+          <h3>Einzelsession</h3>
+          <p>Online oder in meinem Coaching-Raum in Köln. Wir arbeiten mit bewährten Methoden an dem, was Sie gerade beschäftigt.</p>
+          <div class="ang-meta">&#9679; 90 Min</div>
+          <div class="ang-meta">&#9679; Online / Coaching-Raum in Köln</div>
+          <div class="ang-price">149 € <small>inkl. MwSt.</small></div>
+        </div>
+
+        <div class="ang-card featured" style="background:var(--cream); border-color:var(--sage);">
+          <span class="ang-tag" style="background:var(--cream);color:var(--forest);border:0.5px solid rgba(68,89,63,0.2);">Intensiv</span>
+          <h3>Einzelsession outdoor</h3>
+          <p>Der spürbare Abstand zum Alltag und die natürliche Umgebung fördern tiefgreifende Impulse bei hartnäckigen Themen.</p>
+          <div class="ang-meta">&#9679; 180 Min</div>
+          <div class="ang-meta">&#9679; Outdoor · Köln &amp; Umgebung</div>
+          <div class="ang-price">299 € <small>inkl. MwSt. · zzgl. Anfahrt</small></div>
+        </div>
+
+        <div class="ang-card" style="opacity: 0.72; border-style: dashed; background:var(--cream);">
+          <span class="ang-tag" style="background:#e8e4da;color:#888;border:none;">in Arbeit ...</span>
+          <h3>Kurs: Stress, Erholung, Resilienz</h3>
+          <p>Strukturiertes Kurs-Programm mit interaktiven Selbstlernmodulen und live-Coaching-Sessions. Für alle, die Stress-Kompetenz und Resilienz systematisch stärken wollen.</p>
+          <div class="ang-meta" style="color:#aaa;">&#9679; 12-Wochen-Programm</div>
+          <div class="ang-meta" style="color:#aaa;">&#9679; 5 × 90 Min Coaching-Session</div>
+          <div class="ang-price" style="color:#aaa; font-size:15px; padding-top:16px;">999 €</div>
+        </div>
+
+      </div>
+
+      <div class="ang-footer">
+        <p class="ang-note">Berufsbezogenes Coaching kann als Werbungskosten oder Weiterbildung steuerlich geltend gemacht werden.</p>
+        <p class="ang-cta-hint">Nicht sicher, was für Sie am besten passt? <a href="#kontakt">Lassen Sie uns das im kostenlosen Erstgespräch herausfinden.</a></p>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  <!-- EINWAND-BLOCK -->
+  <section class="sec sec-cream">
+    <div class="sec-inner">
+      <div style="max-width:680px; margin:0 auto; text-align:center;">
+        <span class="eyebrow">Ein Gedanke, der oft im Weg steht</span>
+        <h2 style="font-size:clamp(20px,2.6vw,26px);">„Coaching ist für Leute, die nicht funktionieren."</h2>
+        <p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.78;">Das ist meistens der erste Gedanke. Meistens stimmt er nicht. Coaching braucht kein akutes Problem als Eintrittskarte. Sie müssen auch nicht erst zusammenbrechen, um sich Unterstützung zu holen. <br> Das Einzige, was Sie müssen, ist sich selbst die Erlaubnis dazu geben.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  <!-- CASES -->
+  <section class="sec sec-white">
+    <div class="sec-inner">
+      <div class="cases-header">
+        <span class="eyebrow">Echte Coaching-Fälle</span>
+        <h2>Das kann Coaching mit mir bewirken</h2>
+        <p>Diese Coaching-Fälle wurden anonymisiert und mit Einverständnis veröffentlicht</p>
+      </div>
+      <div class="cases-grid">
+
+        <!-- CASE 1: RN -->
+        <div class="case-card" id="case-rn" style="background:var(--cream);">
+          <span class="case-tag">Einzelcoaching</span>
+          <h3>Vom Mitläufer zur Führungspersönlichkeit</h3>
+          <p class="case-situation">Ramon N., Nachwuchsführungskraft, Mitte 20: Er wollte nicht mehr ins Operative zurückrutschen und auf Impulse von außen angewiesen sein — sondern wirklich führen. In drei Sitzungen arbeiteten wir an Zielbild, Selbstwahrnehmung und konkreten Strategien.</p>
+          <p class="case-quote">„Die Gespräche haben mir Mut gemacht, mir Klarheit gegeben und mir gezeigt, dass ich auf dem richtigen Weg bin."</p>
+          <button class="case-expand-btn" onclick="toggleCase('case-rn', this)" aria-expanded="false">
+            <span class="case-expand-icon">+</span> Den vollständigen Fall lesen
+          </button>
+          <div class="case-long" aria-hidden="true">
+            <div class="case-long-block">
+              <span class="case-long-label">Ausgangssituation</span>
+              <p>Ramon N. hatte sich in vier Jahren vom Backoffice-Mitarbeiter zum stellvertretenden Teamleiter vorangearbeitet. Die nächste Stufe — eigenständige Teamleitung — war das Ziel. Die Herausforderung: Wenn es darauf ankam, rutschte er zurück ins vertraute Operative. Eigene Standpunkte wurden schnell aufgegeben, sobald dienstältere Kollegen das Wort ergriffen. Sein Anliegen im ersten Gespräch: „Wie kann ich als Führungskraft selbstbewusst und effektiv kommunizieren?" Dahinter die stillere Frage: „Schaffe ich das überhaupt?"</p>
+            </div>
+            <div class="case-long-block">
+              <span class="case-long-label">Prozess</span>
+              <p>Wir begannen damit, ein konkretes Bild zu entwickeln: Welcher Führungsstil liegt ihm? Was tut er, wie wirkt er, was ist von außen sichtbar? Dann eine Feedbackdusche — zehn Personen aus seinem Umfeld gaben ihm ehrliches Feedback. Das Ergebnis: ein deutlich klareres und stärkeres Selbstbild, als er erwartet hatte.</p>
+              <p>In weiteren Sitzungen arbeiteten wir an einer neuen Meetingkultur und am Umgang mit Widerstand: Was sind die realen Hindernisse? Was lässt sich eliminieren, was zumindest begrenzen? Wer bewusst mit Widerstand rechnet, wird nicht von ihm überrascht. Die letzte Sitzung: Rückblick auf Erfolge, Stärkenarbeit, Ressourcenreaktivierung.</p>
+            </div>
+            <div class="case-long-block">
+              <span class="case-long-label">Ergebnis</span>
+              <p>Ramon N. verließ den Prozess mit einer stärkenbewussten und zuversichtlichen Haltung, die auf echten, selbst gemachten Erfahrungen basiert.</p>
+              <div class="case-scale">
+                <span>Skalierung zu Beginn: <strong>4–5 / 10</strong></span>
+                <span>Am Ende: <strong>10 / 10</strong></span>
+              </div>
+            </div>
+            <div class="case-long-insight">Manchmal fehlt es nicht an Kompetenz, sondern an einem klaren, ressourcenorientierten Bild von sich selbst. Wer nicht weiß, welche Stärken er hat, wartet darauf, dass andere es ihm sagen. Wer es weiß, muss nicht mehr warten.</div>
+          </div>
+        </div>
+
+        <!-- CASE 2: MC -->
+        <div class="case-card" id="case-mc" style="background:var(--cream);">
+          <span class="case-tag">Einzelcoaching</span>
+          <h3>Vom Overthinking zum wertschätzenden Dialog</h3>
+          <p class="case-situation">Klient, IT-Unternehmer, Mitte 30: Jede Entscheidung kostete ihn übermäßig viel Zeit, Energie und Nerven — im Prozess und danach. In vier Sitzungen arbeiteten wir mit Mentaltechniken, dem Modell des Inneren Teams und dem Werte- und Entwicklungsquadrat.</p>
+          <p class="case-quote">„Mein inneres Team ist genau so gut, wie es ist."</p>
+          <button class="case-expand-btn" onclick="toggleCase('case-mc', this)" aria-expanded="false">
+            <span class="case-expand-icon">+</span> Den vollständigen Fall lesen
+          </button>
+          <div class="case-long" aria-hidden="true">
+            <div class="case-long-block">
+              <span class="case-long-label">Ausgangssituation</span>
+              <p>Als IT-Unternehmer hatte mein Klient gelernt, dass intensive Analyse sich auszahlt. Das Problem: Der Aufwand überstieg regelmäßig den tatsächlichen Vorteil — und nach schnellen Entscheidungen folgten starke Reuegefühle. Sein Anliegen: „Wie kann ich entspannter Entscheidungen treffen, ohne es anschließend zu bereuen?"</p>
+            </div>
+            <div class="case-long-block">
+              <span class="case-long-label">Prozess</span>
+              <p>Wir klärten zunächst, was konkret anders werden sollte. Mit Wunderfrage und Ressourcenaktivierung entstand ein Zielbild. Dann zwei praktische Tools: das „Seile durchtrennen" — um die gedankliche Fixierung auf bereits getroffene Entscheidungen zu lösen — und die Timebox-Methode, um Entscheidungsprozessen einen klaren zeitlichen Rahmen zu geben.</p>
+              <p>Im zweiten Teil arbeiteten wir mit dem Modell des Inneren Teams (nach Schulz von Thun): Welche inneren Anteile melden sich bei Entscheidungen? Wer dominiert? Eine Figur stach heraus — ein innerer Antreiber, der zu Höchstleistungen anspornt, aber auch zum Störenfried werden kann. Mit dem Entwicklungsquadrat und Glaubenssatzarbeit schauten wir: Was ist das Gute an dieser Stimme? Was braucht sie, um konstruktiv zu bleiben?</p>
+            </div>
+            <div class="case-long-block">
+              <span class="case-long-label">Ergebnis</span>
+              <p>Er verließ den Prozess mit echten, selbstwertschätzenden Einsichten und praktischen Tools, die er eigenständig einsetzt. Das Ergebnis überraschte ihn selbst: nicht weniger Nachdenken — sondern ein neues, wertschätzendes Verhältnis zu sich selbst.</p>
+            </div>
+            <div class="case-long-insight">Manchmal ist die vermeintliche Schwäche eine echte Stärke. Manchmal braucht es keinen Umbau — sondern tieferes Verständnis, wohlwollende Integration und ein paar gute Werkzeuge.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  
+  <!-- ABLAUF -->
+  <section class="sec sec-cream">
+    <div class="sec-inner">
+      <span class="eyebrow">Der Coaching-Prozess</span>
+      <h2>Die Phasen der Zusammenarbeit</h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:36px;">
+        <div style="background:var(--white); border:0.5px solid var(--card-border); border-radius:10px; padding:26px 24px;">
+          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage); margin-bottom:12px;">Schritt 1</div>
+          <h3 style="margin-bottom:8px;">Erstgespräch</h3>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.65;">Wir lernen uns kennen, ordnen Ihr Thema ein. 20–30 Minuten, kostenlos und unverbindlich. Sie entscheiden danach frei, ob und wie Sie weitermachen möchten.</p>
+        </div>
+        <div style="background:var(--white); border:0.5px solid var(--card-border); border-radius:10px; padding:26px 24px;">
+          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage); margin-bottom:12px;">Schritt 2</div>
+          <h3 style="margin-bottom:8px;">Coaching-Sitzungen</h3>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.65;">Outdoor, im Coaching-Raum oder online. Sie bestimmen das Thema, ich bringe Struktur, Methoden und Fragen mit. Jeder Sitzung generiert konkrete, nächste Schritte.</p>
+        </div>
+        <div style="background:var(--white); border:0.5px solid var(--card-border); border-radius:10px; padding:26px 24px;">
+          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage); margin-bottom:12px;">Schritt 3</div>
+          <h3 style="margin-bottom:8px;">Transfer in den Alltag</h3>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.65;">Am Ende schauen wir gemeinsam zurück: Was hat sich verändert? Was nehmen Sie mit? Der Transfer in den Alltag ist ein wesentlicher Teil des Prozesses.</p>
+        </div>
+      </div>
+      <p style="margin-top:24px; font-size:13px; color:var(--text-light);">Ausführliche Antworten auf häufige Fragen zum Coaching finden Sie in den <a href="faq.html" style="color:var(--forest); font-weight:500; text-decoration:none; border-bottom:1px solid rgba(68,89,63,0.3);">FAQ →</a></p>
+    </div>
+  </section>
+
+
+  <!-- TERMINE -->
+  <!-- KONTAKT -->
+  <section class="sec sec-white" id="kontakt">
+    <div class="sec-inner">
+      <div class="contact-grid">
+        <div>
+          <div class="contact-header">
+            <span class="eyebrow">Kontakt</span>
+            <h2>Melden Sie sich.<br>Ich antworte persönlich.</h2>
+            <p>Schreiben Sie mir, was Sie beschäftigt und ich melde mich innerhalb von 48 Stunden zurück. Das Erstgespräch ist kostenlos.</p>
+          </div>
+          <form class="contact-form" id="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Ihr Name" required />
+            </div>
+            <div class="form-field">
+              <label for="email">E-Mail</label>
+              <input type="email" id="email" name="email" placeholder="ihre@mail.de" required />
+            </div>
+            <div class="form-field">
+              <label for="interesse">Ich interessiere mich für …</label>
+              <select id="interesse" name="interesse">
+                <option>Erstgespräch — ich weiß noch nicht genau</option>
+                <option>Einzelsession (online oder Coaching-Raum Köln)</option>
+                <option>Outdoor-Session</option>
+                <option>Veranstaltung / Reset-Spaziergang</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="nachricht">Nachricht <span style="font-weight:400;color:#bbb;">(optional)</span></label>
+              <textarea id="nachricht" name="nachricht" placeholder="Was beschäftigt Sie gerade?"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Nachricht senden →</button>
+            <p class="form-note">Ihre Daten werden ausschließlich zur Kontaktaufnahme genutzt und nicht weitergegeben.</p>
+          </form>
+          <div class="form-success" id="form-success">
+            <strong>Danke für Ihre Nachricht.</strong><br>Ich melde mich innerhalb von 48 Stunden bei Ihnen.
+          </div>
+        </div>
+
+        <div class="contact-aside">
+          <div>
+            <p class="aside-block-title">Sie möchten direkt einen Termin buchen?</p>
+            <p class="aside-block-text">Über meetergo können Sie direkt einen Termin für ein kostenloses Erstgespräch wählen.</p>
+            <a href="#" class="btn-secondary" style="margin-top:10px;display:inline-flex;">Termin buchen ↗</a>
+          </div>
+          <div class="aside-divider"></div>
+          <div>
+            <p class="aside-block-title">E-Mail</p>
+            <p class="aside-block-text">info@coaching-mit-k.com</p>
+          </div>
+          <div>
+            <p class="aside-block-title">Standort</p>
+            <p class="aside-block-text">Köln — Sessions online, im Coaching-Raum Köln und in der Natur.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- WEITEREMPFEHLUNG -->
+  <section class="sec sec-cream" id="weiterempfehlen">
+    <div class="sec-inner referral-inner">
+      <div class="referral-text">
+        <span class="eyebrow">Weiterempfehlen</span>
+        <h2>Kennen Sie jemanden, dem das helfen könnte?</h2>
+        <p>Viele meiner Klientinnen und Klienten kommen über persönliche Empfehlungen. Wenn Sie jemanden kennen, der gerade unter Druck steht und nicht mehr so recht weiß, wie er wieder zu sich findet, leiten Sie diese Seite einfach weiter. Das kostet nichts und kann viel bewirken.</p>
+      </div>
+      <div class="referral-actions">
+        <button class="referral-btn referral-copy" onclick="copyReferralLink(this)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span>Link kopieren</span>
+        </button>
+        <a class="referral-btn referral-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcoaching-mit-k.de" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>Auf LinkedIn teilen</span>
+        </a>
+        <a class="referral-btn referral-mail" href="mailto:?subject=Coaching%20f%C3%BCr%20Stress%20und%20Resilienz&body=Ich%20dachte%2C%20das%20k%C3%B6nnte%20interessant%20f%C3%BCr%20dich%20sein%3A%20Katharina%20Kopmann%20begleitet%20Berufst%C3%A4tige%20unter%20Druck%20dabei%2C%20wieder%20Kraft%20zu%20sch%C3%B6pfen.%20%0A%0Ahttps%3A%2F%2Fcoaching-mit-k.de">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>Per E-Mail teilen</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div style="display:flex; align-items:center; gap:14px;">
+    <a href="index.html" style="line-height:0;"><img src="img/logo-light.png" alt="Coaching mit K – Katharina Kopmann" style="height:26px; width:auto; display:block;"></a>
+    <span class="footer-copy">© 2026 Katharina Kopmann</span>
+  </div>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="ressourcen.html" class="active">Ressourcen</a>
+    <a href="faq.html" class="active">FAQ - Coaching</a>
+  </div>
+</footer>
+
+<script>
+function copyReferralLink(btn) {
+  navigator.clipboard.writeText('https://coaching-mit-k.de').then(function() {
+    var span = btn.querySelector('span');
+    var original = span.textContent;
+    span.textContent = 'Link kopiert ✓';
+    btn.classList.add('copied');
+    setTimeout(function() {
+      span.textContent = original;
+      btn.classList.remove('copied');
+    }, 2200);
+  });
+}
+
+function toggleCase(id, btn) {
+  var card = document.getElementById(id);
+  var long = card.querySelector('.case-long');
+  var isOpen = card.classList.contains('open');
+  card.classList.toggle('open');
+  long.style.display = isOpen ? 'none' : 'block';
+  long.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+  btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  btn.querySelector('.case-expand-btn span:last-child') && (btn.lastChild.textContent = isOpen ? ' Den vollständigen Fall lesen' : ' Fall schließen');
+}
+var rc = 0, rt = 3;
+function buildDots() {
+  var c = document.getElementById('carousel-dots');
+  c.innerHTML = '';
+  for (var i = 0; i < rt; i++) {
+    var b = document.createElement('button');
+    b.className = 'carousel-dot' + (i===0?' active':'');
+    b.setAttribute('data-i', i);
+    b.setAttribute('aria-label', 'Testimonial ' + (i+1));
+    b.onclick = function(){ rc = parseInt(this.getAttribute('data-i')); updR(); };
+    c.appendChild(b);
+  }
+}
+function updR() {
+  var t = document.getElementById('reviews-track');
+  if (!t || !t.children[0]) return;
+  var w = t.children[0].offsetWidth + 16;
+  t.style.transform = 'translateX(-' + (rc * w) + 'px)';
+  document.querySelectorAll('.carousel-dot').forEach(function(d,i){ d.classList.toggle('active', i===rc); });
+}
+function nextReview(){ rc=(rc+1)%rt; updR(); }
+function prevReview(){ rc=(rc-1+rt)%rt; updR(); }
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('contact-form').style.display='none';
+  document.getElementById('form-success').style.display='block';
+}
+window.addEventListener('load', function(){ buildDots(); updR(); });
+window.addEventListener('resize', updR);
+
+function toggleFaqHome(btn) {
+  var item = btn.parentElement;
+  var answer = btn.nextElementSibling;
+  var icon = btn.querySelector('.faq-icon');
+  var isOpen = answer.style.display === 'block';
+  answer.style.display = isOpen ? 'none' : 'block';
+  icon.textContent = isOpen ? '+' : '×';
+}
+</script>
+
+</body>
+</html>
