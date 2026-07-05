@@ -419,45 +419,20 @@ nav {
 
 @media (max-width: 768px) { .cases-grid { grid-template-columns: 1fr; } }
 
-/* ── TERMINE ── */
-.termine-header { margin-bottom: 36px; }
-.termine-header h2 { margin-bottom: 8px; }
-.termine-header p { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 520px; }
+/* FRAGEN */
+.fragen-list { border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; margin-top: 40px; }
+.frage-item { border-bottom: 0.5px solid var(--border); }
+.frage-item:last-child { border-bottom: none; }
+.frage-head { padding: 20px 26px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: var(--cream); transition: background 0.15s; gap: 20px; }
+.frage-head:hover { background: var(--white); }
+.frage-q { font-size: 15px; font-weight: 500; color: var(--anthracite); }
+.frage-icon { font-size: 18px; color: var(--text-light); flex-shrink: 0; transition: transform 0.2s; }
+.frage-item.open .frage-icon { transform: rotate(45deg); }
+.frage-body { display: none; padding: 4px 26px 22px; font-size: 14px; color: var(--text-muted); line-height: 1.75; background: var(--cream); }
+.frage-body p + p { margin-top: 10px; }
+.frage-item.open .frage-body { display: block; }
+@media (max-width: 600px) { .frage-head { padding: 18px 20px; } .frage-body { padding: 4px 20px 20px; } }
 
-.events { display: flex; flex-direction: column; gap: 10px; }
-.event {
-  display: grid;
-  grid-template-columns: 64px 1fr auto;
-  gap: 20px;
-  align-items: center;
-  background: var(--cream);
-  border: 0.5px solid var(--card-border);
-  border-radius: 10px;
-  padding: 20px 24px;
-  transition: border-color 0.15s;
-}
-.event:hover { border-color: rgba(124,145,115,0.4); }
-.event-date { text-align: center; flex-shrink: 0; }
-.event-day { font-size: 26px; font-weight: 500; line-height: 1; color: var(--anthracite); }
-.event-month { font-size: 11px; color: var(--sage); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 3px; }
-.event-type {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--forest);
-  background: #d4e0cc;
-  border-radius: 4px;
-  padding: 2px 8px;
-  display: inline-block;
-  margin-bottom: 6px;
-}
-.event-title { font-size: 14px; font-weight: 500; color: var(--anthracite); margin-bottom: 5px; }
-.event-meta { font-size: 12px; color: var(--text-light); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-.event-sep { color: var(--border); }
-
-@media (max-width: 640px) {
-  .event { grid-template-columns: 52px 1fr; grid-template-rows: auto auto; }
-  .event .btn-outline { grid-column: 2; margin-top: 8px; }
-}
 
 /* ── KONTAKT ── */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
@@ -638,7 +613,7 @@ footer {
   
   
   <!-- PROBLEM -->
-  <section class="sec sec-cream">
+  <section class="sec sec-white">
     <div class="sec-inner">
       <span class="eyebrow">Kennen Sie das?</span>
       <div class="prob-intro">
@@ -664,8 +639,9 @@ footer {
       </div>
     </div>
   </section>
-  <!-- ÜBER MICH -->
-  <!-- ÜBER MICH -->
+
+
+  <!-- ÜBER MICH ->
   <section class="sec sec-white" id="ueber-mich">
     <div class="sec-inner">
       <div class="about-grid">
@@ -686,44 +662,119 @@ footer {
             <div class="cred"><div class="cred-dot"></div><span>Natur- &amp; Resilienz-Coach (IHK)</span></div>
             <div class="cred"><div class="cred-dot"></div><span>Fachkraft für Betriebliches Gesundheitsmanagement (BBGM e.V.)</span></div>
             <div class="cred"><div class="cred-dot"></div><span>Langjährige Erfahrung in modernen IT- und Beratungskontexten</span></div>
-          </div> -->
+          </div> ->
           <a href="ueber-mich.html" class="btn-secondary">Mehr über mich erfahren →</a>
         </div>
       </div>
     </div>
   </section>
+  
+  -->
 
-  <!-- WAS COACHING IST -->
-  <section class="sec sec-cream" id="coaching-verstaendnis">
-    <div class="sec-inner">
-      <div style="display:grid; grid-template-columns: 1fr 420px; gap:56px; align-items:start;">
-        <div>
-          <span class="eyebrow">Mein Coaching-Ansatz</span>
-          <h2>Wie ich arbeite und was Sie erwarten können</h2>
+  <!-- COACHING ANSATZ -->
+ <!-- COACHING ANSATZ -->
+<section class="sec sec-cream" id="coaching-verstaendnis">
+  <style>
+    .coaching-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:32px;
+      align-items:start;
+    }
+    .coaching-grid .coaching-img{
+      border-radius:10px;
+      overflow:hidden;
+      border-left:3px solid var(--sage);
+    }
+    .coaching-grid .coaching-img img{
+      width:100%;
+      height:auto;
+      object-fit:cover;
+      display:block;
+      aspect-ratio:4/5;
+    }
+    @media (min-width:900px){
+      .coaching-grid{
+        grid-template-columns: 1fr 420px;
+        gap:56px;
+      }
+      .coaching-grid .coaching-img img{
+        height:100%;
+      }
+    }
+  </style>
 
-
-
-        <p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Mein Ansatz kombiniert fundierte Coaching-Methodik mit Arbeit draußen in der Natur - damit Sie Ihre Zukunft ressourcenstark gestalten können.</p>
-		<p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Das bedeutet, ich schaue auf Sie als Person, Ihre Geschichte und Ihr Umfeld: Ihre Rollen, Beziehungen, Erfahrungen und Stärken. Was funktioniert bei Ihnen bereits? Was hat früher geholfen? Wo liegen Ihre echten Stärken? </p>
-		<p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Eine natürliche Umgebung wirkt dabei wie ein Katalysator in sämtlichen Phasen des Coaching-Prozesses. Der Kern zeigt sich schneller, die Dinge kommen leichter in Bewegung, Perspektiven und Lösungen öffnen sich, die im Coaching-Raum manchmal lange verschlossen bleiben.</p>
-        <p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Die Natur ist dabei sowohl Raum als auch aktiver Bestandteil des Coaching-Prozesses: Ihre Reize, ihr Rhythmus und ihre Symbolik werden bewusst in Übungen, Reflexionen und Gespräche einbezogen.</p>
-
-<!--		<p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Meine Methoden sind wissenschaftlich fundiert und nachweislich wirksam. Bei der Auswahl achte ich stets auf Ihre individuellen Voraussetzungen und Ziele.</p>
-
-          <p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Coaching ist immer dann die richtige Wahl, wenn Sie ein Thema haben, bei dem Sie keine Standardlösung von der Stange mehr brauchen, sondern individuelle Antworten finden müssen. Als Coach unterstütze ich Sie methodisch, sich mit Ihrem Thema gründlich und auf ungewohnte Art und Weise auseinanderzusetzen. Dadurch entstehen weitere Perspektiven auf Ihr Anliegen, Sie generieren neue Erkenntnisse und erarbeiten sich konkrete Lösungen. So können Sie sicher gehen, dass die nächsten Schritte wirklich zu Ihnen und Ihrem Leben passen.</p>
-          <p style="margin-top:16px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Metaphorisch gesprochen: Im Coaching sind Sie Forscherin oder Entdecker auf Ihrer eigenen, inneren Landkarte. Ich begleite Sie in der Rolle einer expeditionserfahrenen Weggefährtin, aber ohne den Weg vorzugeben. Sie verschaffen sich einen Überblick, erkunden Stück für Stück bisher Unentdecktes und füllen weiße Flecken, legen Verschüttetes frei und gestalten es gegebenenfalls um. Ich biete je nach Situation hilfreiche Tools an: mal das Fernglas, mal die Lupe, mal den Spaten. Ich halte die Taschenlampe, Sie sehen genau hin. Ich begleite Sie durch Analyse, Reflexion und Planung der nächsten Etappe. Sie möchten wissen, was die beste Route über Ihre Karte ist? Das finden wir beim Gehen heraus, Etappe für Etappe.</p>
--->    
+  <div class="sec-inner">
+    <div class="coaching-grid">
+      <div>
+        <span class="eyebrow">Mein Coaching-Ansatz</span>
+        <h2>Wie ich arbeite und was Sie erwarten können</h2>
+        <p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Ich begleite dauerbelastete Berufstätige mit einem integrativen Coaching-Ansatz zurück in Ruhe und Erholung, damit Resilienz entsteht, die im Alltag trägt. Die Arbeit in der Natur ist dabei eine zentrale Säule.</p>
+        <p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Dabei schaue ich auf Sie als Person, Ihre Geschichte und Ihr Umfeld: Ihre Rollen, Beziehungen, Erfahrungen und Stärken. Was funktioniert bei Ihnen bereits? Was hat früher geholfen? Wo liegen Ihre echten Stärken? </p>
+        <p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Eine natürliche Umgebung wirkt dabei wie ein Katalysator in sämtlichen Phasen des Coaching-Prozesses. Der Kern zeigt sich schneller, die Dinge kommen leichter in Bewegung, Perspektiven und Lösungen öffnen sich, die im Coaching-Raum manchmal lange verschlossen bleiben. </p>
+        <p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.75; max-width:560px;">Neugierig, wie ich dazu gekommen bin? </p>
+        <a href="ueber-mich.html" class="btn-secondary">Mehr über mich erfahren →</a>
+      </div>
+      <div class="coaching-img">
+        <img src="https://images.unsplash.com/photo-1759593047536-5258c3c6a527?q=80&w=900&auto=format&fit=crop" alt="Zwei Frauen im Gespräch im Freien" loading="lazy">
+      </div>
     </div>
-        <div style="border-radius:10px; overflow:hidden; border-left:3px solid var(--sage);">
-          <img src="https://images.unsplash.com/photo-1759593047536-5258c3c6a527?q=80&w=900&auto=format&fit=crop" alt="Zwei Frauen im Gespräch im Freien" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; aspect-ratio:4/5;">
+  </div>
+</section>
+  
+  
+  
+  
+  <!-- ANGEBOTE -->
+  <section class="sec sec-white" id="angebote">
+    <div class="sec-inner">
+      <div class="ang-header">
+        <span class="eyebrow">Meine Formate</span>
+        <h2>Was ich Ihnen anbieten kann</h2>
+        <p>Alle Formate sind einzeln und auf Anfrage als Paket buchbar. Wir klären im Erstgespräch, was für Sie gerade am meisten Sinn ergibt.</p>
+      </div>
+      <div class="ang-grid">
+
+        <div class="ang-card" style="background:var(--cream);">
+          <span class="ang-tag" style="background:var(--cream);color:var(--forest);border:0.5px solid rgba(68,89,63,0.2);">Klassisch</span>
+		            <h3>Einzelsession</h3>
+          <p>Online oder in meinem Coaching-Raum in Köln. Wir arbeiten mit bewährten Methoden an dem, was Sie gerade beschäftigt.</p>
+          <div class="ang-meta">&#9679; 90 Min</div>
+          <div class="ang-meta">&#9679; Online / Coaching-Raum in Köln</div>
+          <div class="ang-price">149 € <small>inkl. MwSt.</small></div>
         </div>
+
+        <div class="ang-card featured" style="background:var(--cream); border-color:var(--sage);">
+          <span class="ang-tag">Intensiv</span>
+          <h3>Einzelsession outdoor</h3>
+          <p>Der spürbare Abstand zum Alltag und die natürliche Umgebung fördern tiefgreifende Impulse bei hartnäckigen Themen.</p>
+          <div class="ang-meta">&#9679; 180 Min</div>
+          <div class="ang-meta">&#9679; Outdoor · Köln &amp; Umgebung</div>
+          <div class="ang-price">299 € <small>inkl. MwSt. · zzgl. Anfahrt</small></div>
+        </div>
+
+        <div class="ang-card" style="opacity: 0.72; border-style: dashed; background:var(--cream);">
+          <span class="ang-tag" style="background:#e8e4da;color:#888;border:none;">in Arbeit ...</span>
+          <h3>Kurs: Stress, Erholung, Resilienz</h3>
+          <p>Strukturiertes Kurs-Programm mit interaktiven Selbstlernmodulen und live-Coaching-Sessions. Für alle, die Stress-Kompetenz und Resilienz systematisch stärken wollen.</p>
+          <div class="ang-meta" style="color:#aaa;">&#9679; 12-Wochen-Programm</div>
+          <div class="ang-meta" style="color:#aaa;">&#9679; 5 × 90 Min Coaching-Session</div>
+          <div class="ang-price" style="color:#aaa; font-size:15px; padding-top:16px;">999 €</div>
+        </div>
+
+      </div>
+
+      <div class="ang-footer">
+        <p class="ang-note">Berufsbezogenes Coaching kann als Werbungskosten oder Weiterbildung steuerlich geltend gemacht werden.</p>
+        <p class="ang-cta-hint">Nicht sicher, was für Sie am besten passt? <a href="#kontakt">Lassen Sie uns das im kostenlosen Erstgespräch herausfinden.</a></p>
       </div>
     </div>
   </section>
 
+
   
   <!-- NATURCOACHING IN ACTION -->
-  <section class="sec sec-white">
+  <section class="sec sec-cream">
     <div class="sec-inner">
       <span class="eyebrow">Impressionen</span>
       <h2>Einblicke ins Outdoor-Coaching </h2>
@@ -743,6 +794,19 @@ footer {
       </div>
     </div>
   </section>
+  
+  
+    <!-- EINWAND-BLOCK -->
+  <section class="sec sec-white">
+    <div class="sec-inner">
+      <div style="max-width:680px; margin:0 auto; text-align:center;">
+        <span class="eyebrow">Ein Gedanke, der oft im Weg steht</span>
+        <h2 style="font-size:clamp(20px,2.6vw,26px);">„Coaching ist für Leute, die nicht funktionieren."</h2>
+        <p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.78;">Das ist meistens der erste Gedanke. Meistens stimmt er nicht. Coaching braucht kein akutes Problem als Eintrittskarte. Sie müssen auch nicht erst zusammenbrechen, um sich Unterstützung zu holen. <br> Das Einzige, was Sie müssen, ist sich selbst die Erlaubnis dazu geben.</p>
+      </div>
+    </div>
+  </section>
+
 
   <!-- REVIEWS -->
   <section class="sec sec-cream">
@@ -807,67 +871,7 @@ footer {
   </section>
 
   
-  
-  <!-- ANGEBOTE -->
-  <section class="sec sec-white" id="angebote">
-    <div class="sec-inner">
-      <div class="ang-header">
-        <span class="eyebrow">Meine Formate</span>
-        <h2>Was ich Ihnen anbieten kann</h2>
-        <p>Alle Formate sind einzeln und auf Anfrage als Paket buchbar. Wir klären im Erstgespräch, was für Sie gerade am meisten Sinn ergibt.</p>
-      </div>
-      <div class="ang-grid">
-
-        <div class="ang-card" style="background:var(--cream);">
-          <span class="ang-tag">Klassisch</span>
-          <h3>Einzelsession</h3>
-          <p>Online oder in meinem Coaching-Raum in Köln. Wir arbeiten mit bewährten Methoden an dem, was Sie gerade beschäftigt.</p>
-          <div class="ang-meta">&#9679; 90 Min</div>
-          <div class="ang-meta">&#9679; Online / Coaching-Raum in Köln</div>
-          <div class="ang-price">179 € <small>inkl. MwSt.</small></div>
-        </div>
-
-        <div class="ang-card featured" style="background:var(--cream); border-color:var(--sage);">
-          <span class="ang-tag" style="background:var(--cream);color:var(--forest);border:0.5px solid rgba(68,89,63,0.2);">Intensiv</span>
-          <h3>Einzelsession outdoor</h3>
-          <p>Der spürbare Abstand zum Alltag und die natürliche Umgebung fördern tiefgreifende Impulse bei hartnäckigen Themen.</p>
-          <div class="ang-meta">&#9679; 2,5 h</div>
-          <div class="ang-meta">&#9679; Outdoor · Köln &amp; Umgebung</div>
-          <div class="ang-price">299 € <small>inkl. MwSt. · zzgl. Anfahrt</small></div>
-        </div>
-
-        <div class="ang-card" style="opacity: 0.72; border-style: dashed; background:var(--cream);">
-          <span class="ang-tag" style="background:#e8e4da;color:#888;border:none;">in Arbeit ...</span>
-          <h3>Kurs: Stress, Erholung, Resilienz</h3>
-          <p>Strukturiertes Kurs-Programm mit interaktiven Selbstlernmodulen und live-Coaching-Sessions. Für alle, die Stress-Kompetenz und Resilienz systematisch stärken wollen.</p>
-          <div class="ang-meta" style="color:#aaa;">&#9679; 12-Wochen-Programm</div>
-          <div class="ang-meta" style="color:#aaa;">&#9679; 5 × 90 Min Coaching-Session</div>
-          <div class="ang-price" style="color:#aaa; font-size:15px; padding-top:16px;">999 €</div>
-        </div>
-
-      </div>
-
-      <div class="ang-footer">
-        <p class="ang-note">Berufsbezogenes Coaching kann als Werbungskosten oder Weiterbildung steuerlich geltend gemacht werden.</p>
-        <p class="ang-cta-hint">Nicht sicher, was für Sie am besten passt? <a href="#kontakt">Lassen Sie uns das im kostenlosen Erstgespräch herausfinden.</a></p>
-      </div>
-    </div>
-  </section>
-
-  
-  
-  <!-- EINWAND-BLOCK -->
-  <section class="sec sec-cream">
-    <div class="sec-inner">
-      <div style="max-width:680px; margin:0 auto; text-align:center;">
-        <span class="eyebrow">Ein Gedanke, der oft im Weg steht</span>
-        <h2 style="font-size:clamp(20px,2.6vw,26px);">„Coaching ist für Leute, die nicht funktionieren."</h2>
-        <p style="margin-top:18px; font-size:15px; color:var(--text-muted); line-height:1.78;">Das ist meistens der erste Gedanke. Meistens stimmt er nicht. Coaching braucht kein akutes Problem als Eintrittskarte. Sie müssen auch nicht erst zusammenbrechen, um sich Unterstützung zu holen. <br> Das Einzige, was Sie müssen, ist sich selbst die Erlaubnis dazu geben.</p>
-      </div>
-    </div>
-  </section>
-
-  
+    
   
   <!-- CASES -->
   <section class="sec sec-white">
@@ -881,7 +885,7 @@ footer {
 
         <!-- CASE 1: RN -->
         <div class="case-card" id="case-rn" style="background:var(--cream);">
-          <span class="case-tag">Einzelcoaching</span>
+          
           <h3>Vom Mitläufer zur Führungspersönlichkeit</h3>
           <p class="case-situation">Ramon N., Nachwuchsführungskraft, Mitte 20: Er wollte nicht mehr ins Operative zurückrutschen und auf Impulse von außen angewiesen sein — sondern wirklich führen. In drei Sitzungen arbeiteten wir an Zielbild, Selbstwahrnehmung und konkreten Strategien.</p>
           <p class="case-quote">„Die Gespräche haben mir Mut gemacht, mir Klarheit gegeben und mir gezeigt, dass ich auf dem richtigen Weg bin."</p>
@@ -912,7 +916,7 @@ footer {
 
         <!-- CASE 2: MC -->
         <div class="case-card" id="case-mc" style="background:var(--cream);">
-          <span class="case-tag">Einzelcoaching</span>
+        
           <h3>Vom Overthinking zum wertschätzenden Dialog</h3>
           <p class="case-situation">Klient, IT-Unternehmer, Mitte 30: Jede Entscheidung kostete ihn übermäßig viel Zeit, Energie und Nerven — im Prozess und danach. In vier Sitzungen arbeiteten wir mit Mentaltechniken, dem Modell des Inneren Teams und dem Werte- und Entwicklungsquadrat.</p>
           <p class="case-quote">„Mein inneres Team ist genau so gut, wie es ist."</p>
@@ -947,7 +951,7 @@ footer {
   <section class="sec sec-cream">
     <div class="sec-inner">
       <span class="eyebrow">Der Coaching-Prozess</span>
-      <h2>Die Phasen der Zusammenarbeit</h2>
+      <h2>So arbeite wir zusammen</h2>
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:36px;">
         <div style="background:var(--white); border:0.5px solid var(--card-border); border-radius:10px; padding:26px 24px;">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage); margin-bottom:12px;">Schritt 1</div>
@@ -957,7 +961,7 @@ footer {
         <div style="background:var(--white); border:0.5px solid var(--card-border); border-radius:10px; padding:26px 24px;">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage); margin-bottom:12px;">Schritt 2</div>
           <h3 style="margin-bottom:8px;">Coaching-Sitzungen</h3>
-          <p style="font-size:13px; color:var(--text-muted); line-height:1.65;">Outdoor, im Coaching-Raum oder online. Sie bestimmen das Thema, ich bringe Struktur, Methoden und Fragen mit. Jeder Sitzung generiert konkrete, nächste Schritte.</p>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.65;">Outdoor, im Coaching-Raum oder online. Sie bestimmen das Thema, ich bringe Struktur, Methoden und Fragen mit. Jeder Sitzung generiert konkrete Impulse.</p>
         </div>
         <div style="background:var(--white); border:0.5px solid var(--card-border); border-radius:10px; padding:26px 24px;">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage); margin-bottom:12px;">Schritt 3</div>
@@ -965,14 +969,72 @@ footer {
           <p style="font-size:13px; color:var(--text-muted); line-height:1.65;">Am Ende schauen wir gemeinsam zurück: Was hat sich verändert? Was nehmen Sie mit? Der Transfer in den Alltag ist ein wesentlicher Teil des Prozesses.</p>
         </div>
       </div>
-      <p style="margin-top:24px; font-size:13px; color:var(--text-light);">Ausführliche Antworten auf häufige Fragen zum Coaching finden Sie in den <a href="faq.html" style="color:var(--forest); font-weight:500; text-decoration:none; border-bottom:1px solid rgba(68,89,63,0.3);">FAQ →</a></p>
+     
     </div>
   </section>
 
 
-  <!-- TERMINE -->
+		
+<!-- FRAGEN -->
+<section class="sec sec-white">
+  <div class="sec-inner">
+    <span class="eyebrow">Häufige Fragen</span>
+    <h2>Was Sie vor dem nächsten Schritt wahrscheinlich wissen möchten</h2>
+    <div class="fragen-list">
+
+      <div class="frage-item open">
+        <div class="frage-head" onclick="this.parentElement.classList.toggle('open')">
+          <div class="frage-q">Was bringt mir Coaching und was kann ich konkret erwarten?</div>
+          <span class="frage-icon">+</span>
+        </div>
+        <div class="frage-body">
+			<p>Coaching ist immer dann sinnvoll, wenn Standardlösungen nicht funktionieren. Wenn Sie individuelle Antworten brauchen, die Ihnen als Person und Ihrer konkreten Lebenssituation Rechnung tragen.</p>
+                <p>Was das konkret bedeutet, hängt vom Thema ab: mehr Klarheit über das, was Sie antreibt oder aufhält. Neue Perspektiven auf festgefahrene Situationen. Konkrete Strategien für den Alltag. Oder einfach Raum, um laut zu denken — ohne Konsequenzen.</p>
+                <p>Coaching setzt voraus, dass Sie aktiv an der Veränderung Ihrer Situation mitwirken können. Es ist keine passive Behandlung, sondern ein gemeinsamer Arbeitsprozess.</p>
+        </div>
+      </div>
+	  
+	  <div class="frage-item open">
+        <div class="frage-head" onclick="this.parentElement.classList.toggle('open')">
+          <div class="frage-q">Woran erkenne ich, ob mein Thema für Coaching geeignet ist?</div>
+          <span class="frage-icon">+</span>
+        </div>
+        <div class="frage-body">
+          <p>Als erste Einschätzung hilft folgende Frage: Geht es Ihnen darum, eine Veränderung aktiv zu gestalten – beruflich oder privat – und haben Sie das Gefühl, die nötigen Ressourcen dafür grundsätzlich in sich zu tragen, brauchen aber einen strukturierten Rahmen und einen neutralen Sparringspartner, um klarer zu sehen und ins Handeln zu kommen? Dann ist Coaching in der Regel ein passendes Format.</p>
+          <p>Eine gute Orientierung, aber keine Diagnose – das kann Ihnen auch das ein Erstgespräch geben.</p>
+        </div>
+      </div>
+	  
+	  <div class="frage-item open">
+        <div class="frage-head" onclick="this.parentElement.classList.toggle('open')">
+          <div class="frage-q">Was ist Outdoor-Coaching und wie funktioniert es?</div>
+          <span class="frage-icon">+</span>
+        </div>
+        <div class="frage-body">
+    <p>Outdoor-Coaching ist kein Spaziergang, bei dem Sie sich nett mit einem Coach unterhalten. Es ist methodisch genauso professionell aufgebaut wie Coaching in Praxisräumen — findet aber bewusst im Freien statt, weil die natürliche Umgebung den Prozess auf eine Weise unterstützt, die ein Coaching-Raum nicht kann. Im Outdoor-Coaching ist die Natur sowohl Raum als auch aktiver Bestandteil des Coaching-Prozesses und wird bewusst in Übungen, Reflexionen und Gespräche einbezogen.</p>
+                <p>Die Forschung zeigt: Aufenthalte in der Natur senken nachweislich den Cortisolspiegel, verbessern Konzentration und Aufmerksamkeit und fördern die emotionale Selbstregulation. Bewegung löst körperliche Anspannung. Der Ortswechsel durchbricht eingefahrene Denkmuster. Und die Natur liefert Metaphern, die im Gespräch oft präziser treffen als es Worte können.</p>
+        </div>
+      </div>
+	  
+	  <div class="frage-item open">
+        <div class="frage-head" onclick="this.parentElement.classList.toggle('open')">
+          <div class="frage-q">Muss ich sportlich sein oder gut zu Fuß, um Outdoor-Coaching zu machen?</div>
+          <span class="frage-icon">+</span>
+        </div>
+        <div class="frage-body">
+          <p>Nein. Outdoor-Coaching bei mir bedeutet keine Wanderung mit Strecken- und Höhenprofil. Wir bewegen uns in einem Tempo, das zu Ihnen passt. Im Vordergrund steht die Bearbeitung Ihres Themas, nicht das Ablaufen einer Wegstrecke. Wir gehen meistens gemächlich und machen Pausen.</p>
+          <p>Geeignete Orte in und um Köln lassen sich gut per ÖPNV erreichen. Falls Sie körperlich eingeschränkt sind, finden wir gemeinsam eine passende Lösung.</p>
+        </div>
+      </div>
+<p style="margin-top:24px; font-size:13px; color:var(--text-light); text-align:center;">Weitere Fragen und Antworten zum Coaching finden Sie in den <a href="faq.html" style="color:var(--forest); font-weight:500; text-decoration:none; border-bottom:1px solid rgba(68,89,63,0.3);">FAQ →</a></p>
+
+    </div>
+  </div>
+</section>
+
+
   <!-- KONTAKT -->
-  <section class="sec sec-white" id="kontakt">
+  <section class="sec sec-cream" id="kontakt">
     <div class="sec-inner">
       <div class="contact-grid">
         <div>
@@ -1032,7 +1094,7 @@ footer {
   </section>
 
 <!-- WEITEREMPFEHLUNG -->
-  <section class="sec sec-cream" id="weiterempfehlen">
+  <section class="sec sec-white" id="weiterempfehlen">
     <div class="sec-inner referral-inner">
       <div class="referral-text">
         <span class="eyebrow">Weiterempfehlen</span>

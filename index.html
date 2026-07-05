@@ -97,7 +97,7 @@ nav { background: var(--anthracite); display: flex; align-items: center; justify
 /* DUAL PFAD */
 .pfad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 44px; border-radius: 10px; overflow: hidden; }
 .pfad-card { padding: 36px 32px; text-decoration: none; transition: background 0.2s; display: flex; flex-direction: column; gap: 14px; }
-.pfad-card.pfad-b2c { background: var(--cream); }
+.pfad-card.pfad-b2c { background: var(--white); }
 .pfad-card.pfad-b2c:hover { background: #ECE7DA; }
 .pfad-card.pfad-b2b { background: var(--anthracite); }
 .pfad-card.pfad-b2b:hover { background: #353d45; }
@@ -198,7 +198,7 @@ footer { background: var(--anthracite); padding: 28px 48px; display: flex; justi
     <div class="hero-content">
       <span class="eyebrow">Coaching mit K</span>
       <h1>Resilienz, die im Alltag trägt</h1>
-      <p class="hero-lead">Ich begleite Unternehmen und Berufstätige beim Aufbau von nachhaltiger Stress-Kompetenz und Resilienz — mit effektiven Methoden, transferwirksamem Trainingsdesign und eigener Erfahrung in modernen Arbeitswelten.</p>
+      <p class="hero-lead">Ich begleite Unternehmen und Berufstätige beim Aufbau von nachhaltiger Stress-Kompetenz und Resilienz — mit efffektiven Methoden, transferwirksamem Trainingsdesign und eigener Erfahrung in modernen Arbeitswelten.</p>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
         <a href="kontakt.html#einzelpersonen" class="btn-primary">Erstgespräch vereinbaren →</a>
         <a href="#wege" class="btn-ghost">Wege ansehen</a>
@@ -206,32 +206,9 @@ footer { background: var(--anthracite); padding: 28px 48px; display: flex; justi
     </div>
   </section>
 
-  <!-- DUAL PFAD -->
-  <section id="wege" class="sec sec-white">
-    <div class="sec-inner">
-      <span class="eyebrow">Meine Angebote</span>
-      <h2>Stress entsteht im Zusammenspiel von Mensch und Umwelt - Resilienz auch. <br> In meiner Arbeit berücksichtige ich daher stets beide Ebenen.</h2>
-      <p style="margin-top:14px; max-width:560px; color:var(--text-muted); font-size:15px; line-height:1.7;">Ob als Einzelperson unter Dauerbelastung oder als Unternehmen mit Verantwortung für eine ganze Belegschaft: Wählen Sie den Weg, der zu Ihnen passt.</p>
-
-      <div class="pfad-grid">
-        <a href="fuer-berufstaetige.html" class="pfad-card pfad-b2c">
-          <div class="pfad-label">Für Berufstätige</div>
-          <div class="pfad-title">Wenn alles zu viel wird.</div>
-          <div class="pfad-desc">Einzelcoaching für Menschen, die nach außen funktionieren und merken, dass Erholung immer schwieriger wird. Stress regulieren, Erholung finden, Resilienz aufbauen — fundiert, konkret, alltagstauglich.</div>
-          <div class="pfad-arrow">Mehr erfahren →</div>
-        </a>
-        <a href="fuer-unternehmen.html" class="pfad-card pfad-b2b">
-          <div class="pfad-label">Für Unternehmen</div>
-          <div class="pfad-title">Ihre Organisation ist so resilient wie Ihre Mitarbeitenden - und Ihre Strukturen.</div>
-          <div class="pfad-desc">Stress- und Resilienzformate für moderne Unternehmen, die den Transfer in den Alltag mitdenken: wirksam für das Individuum, verankert im System.</div>
-          <div class="pfad-arrow">Mehr erfahren →</div>
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- AUSGANGSLAGE -->
-  <section class="sec sec-cream">
+  <section class="sec sec-white">
     <div class="sec-inner">
       <span class="eyebrow">Ausgangslage</span>
       <h2>Stresskompetenz muss im echten Arbeitsalltag ankommen</h2>
@@ -258,8 +235,33 @@ footer { background: var(--anthracite); padding: 28px 48px; display: flex; justi
       </div>
     </div>
   </section>
+  <!-- DUAL PFAD -->
+  <section id="wege" class="sec sec-cream">
+    <div class="sec-inner">
+      <span class="eyebrow">Meine Angebote</span>
+      <h2>Stress entsteht im Zusammenspiel von Mensch und Umwelt - Resilienz auch. <br> In meiner Arbeit berücksichtige ich daher stets beide Ebenen.</h2>
+      <p style="margin-top:14px; max-width:560px; color:var(--text-muted); font-size:15px; line-height:1.7;">Ob als Unternehmen mit Verantwortung für eine ganze Belegschaft oder als Einzelperson unter Dauerbelastung : Wählen Sie den Weg, der zu Ihnen passt.</p>
 
-  <!-- WARUM KATHARINA -->
+      <div class="pfad-grid">
+        <a href="fuer-unternehmen.html" class="pfad-card pfad-b2c">
+          <div class="pfad-label">Für Unternehmen</div>
+          <div class="pfad-title">Ihre Organisation ist so resilient wie Ihre Mitarbeitenden - und Ihre Strukturen.</div>
+          <div class="pfad-desc">Stress- und Resilienzformate für moderne Unternehmen, die den Transfer in den Alltag mitdenken: wirksam für das Individuum, verankert im System.</div>
+          <div class="pfad-arrow">Mehr erfahren →</div>
+        </a>
+        <a href="fuer-berufstaetige.html" class="pfad-card pfad-b2b">
+          <div class="pfad-label">Für Berufstätige</div>
+          <div class="pfad-title">Wenn alles zu viel wird.</div>
+          <div class="pfad-desc">Einzelcoaching für Menschen, die nach außen funktionieren und merken, dass Erholung immer schwieriger wird. Stress regulieren, Erholung finden, Resilienz aufbauen — fundiert, konkret, alltagstauglich.</div>
+          <div class="pfad-arrow">Mehr erfahren →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- WARUM Coaching mit K -->
   <section class="sec sec-white">
     <div class="sec-inner">
       <span class="eyebrow">Warum Coaching mit K?</span>
@@ -270,8 +272,9 @@ footer { background: var(--anthracite); padding: 28px 48px; display: flex; justi
           <span>Foto Katharina</span>
         </div>
         <div class="warum-text">
-          <p>Meine Angebote bringen zusammen, was für wirksame Maßnahmen zusammengehört: fachliche Kompetenz im Bereich Stress und Resilienz, methodische Kompetenz in Training und Coaching sowie eigene Erfahrung in den relevanten Arbeitssystemen.</p>
-          <p>Ich verstehe die Arbeitswelt, über die ich spreche und kenne deren äußere Anforderungen ebenso wie die inneren Herausforderungen im Umgang damit. Das integriere ich in meinen Angeboten, damit nachhaltige Veränderung möglich werden kann.</p>
+          <p>Effektive Stressbewältigung und stärkende Resilienzroutinen können dann entstehen, wenn eigene Lernerfahrungen das relevante Fachwissen erlebbar machen und neue Handlungen systemisch verankert werden. </p>
+		  <p>Dabei geht es nicht nur um die äußeren Job-Anforderungen in modernen Arbeitswelten sonder auch um die inneren Herausforderungen im Umgang damit.
+		  <p>Als Trainerin und systemischer Coach im Präventionsbereich Stress bringe ich das in meinen Angeboten zusammen: fundiertes Fachwissen zu Stress und Resilienz, transferwirksames Trainingsdesign und eigene Berufserfahrung in modernen Arbeitswelten.  </p>
           <div class="warum-creds">
             <div class="warum-cred"><div class="warum-cred-dot"></div><span>Systemische Coachin (IfAP Köln, orientiert an DBVC/DCV-Kriterien)</span></div>
             <div class="warum-cred"><div class="warum-cred-dot"></div><span>Natur- &amp; Resilienz-Coachin (IHK)</span></div>
@@ -284,33 +287,9 @@ footer { background: var(--anthracite); padding: 28px 48px; display: flex; justi
     </div>
   </section>
 
-  <!-- DREI SAEULEN -->
-  <section class="sec sec-cream">
-    <div class="sec-inner">
-      <span class="eyebrow">Mein Versprechen</span>
-      <h2>Das können Sie erwarten </h2>
-      <div class="saeulen-grid">
-        <div class="saeule-card">
-          <div class="saeule-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-          <div class="saeule-title">Wissenschaft & Alltagstauglichkeit</div>
-          <div class="saeule-desc">Ich arbeite mit evidenzbasierten Methoden und mache Theorie für den echten Arbeitsalltag nützlich.</div>
-        </div>
-        <div class="saeule-card">
-          <div class="saeule-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <div class="saeule-title">Mensch & System</div>
-          <div class="saeule-desc">Stress entsteht im Zusammenspiel von Individuum und Arbeitsumfeld. Meine Arbeit berücksichtig beide Ebenen.</div>
-        </div>
-        <div class="saeule-card">
-          <div class="saeule-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="saeule-title">Methode & Individualität</div>
-          <div class="saeule-desc">Methoden werden individuell ausgewählt, Konzepte bedarfsgerecht angepasst. So, dass immer ein Mehrwert entsteht.</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- STIMMEN -->
-  <section class="sec sec-white">
+  <section class="sec sec-cream">
     <div class="sec-inner">
       <span class="eyebrow">Erfahrungsberichte</span>
       <h2>Das sagen meine Klientinnen und Klienten.</h2>
@@ -343,6 +322,30 @@ footer { background: var(--anthracite); padding: 28px 48px; display: flex; justi
     </div>
   </section>
 
+  <!-- WERTE -->
+  <section class="sec sec-white">
+    <div class="sec-inner">
+      <span class="eyebrow">Mein Versprechen</span>
+      <h2>Das können Sie erwarten </h2>
+      <div class="saeulen-grid">
+        <div class="saeule-card">
+          <div class="saeule-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <div class="saeule-title">Wissenschaft & Alltagstauglichkeit</div>
+          <div class="saeule-desc">Ich arbeite mit evidenzbasierten Methoden und mache Theorie für den echten Arbeitsalltag nützlich.</div>
+        </div>
+        <div class="saeule-card">
+          <div class="saeule-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="saeule-title">Mensch & System</div>
+          <div class="saeule-desc">Stress entsteht im Zusammenspiel von Individuum und Arbeitsumfeld. Meine Arbeit berücksichtig beide Ebenen.</div>
+        </div>
+        <div class="saeule-card">
+          <div class="saeule-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="saeule-title">Methode & Individualität</div>
+          <div class="saeule-desc">Methoden werden individuell ausgewählt, Konzepte bedarfsgerecht angepasst. So, dass immer ein Mehrwert entsteht.</div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- CTA -->
   <section class="sec sec-cream">
     <div class="sec-inner">

@@ -250,7 +250,7 @@ nav {
 }
 
 /* ANGEBOTS-KARTEN — zurück zur ruhigen 1+2-Struktur, mit Themen-Tabellen */
-.offer-card { background: var(--cream); border: 0.5px solid var(--card-border); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; min-height: 100%; }
+.offer-card { background: var(--white); border: 0.5px solid var(--card-border); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; min-height: 100%; }
 .offer-card.pilot-card { background: var(--forest); }
 .offer-card-body { padding: 26px 26px 22px; display: flex; flex-direction: column; gap: 4px; }
 .offer-card-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--sage); margin-bottom: 6px; }
@@ -271,7 +271,7 @@ nav {
 .pilot-card .offer-table td:last-child { color: rgba(255,255,255,0.62); }
 .tag-note { font-weight: 400; color: var(--text-light); font-size: 11px; }
 .pilot-card .tag-note { color: rgba(255,255,255,0.42); }
-.offer-card-foot { padding: 15px 26px; background: var(--cream); border-top: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.offer-card-foot { padding: 15px 26px; background: var(--white); border-top: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
 .pilot-card .offer-card-foot { background: rgba(0,0,0,0.15); border-top-color: rgba(255,255,255,0.10); }
 .offer-card-price { font-size: 15px; font-weight: 500; color: var(--anthracite); }
 .pilot-card .offer-card-price { color: var(--white); }
@@ -444,7 +444,7 @@ footer { background: var(--anthracite); padding: 32px 48px; display: flex; align
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <span class="eyebrow">Training · Workshops · Outdoor-Teamtag</span>
-    <h1>Ihr Unternehmen ist so resilient wie Ihre Mitarbeitenden - und Ihre Strukturen</h1>
+    <h1>Ihr Unternehmen ist so resilient wie Ihre Mitarbeitenden - und die Strukturen, in denen Sie arbeiten</h1>
     <p class="hero-lead">Stress-Bewältigung und Resilienz lassen sich individuell trainieren. Aber auch Team-Strukturen müssen sich weiterentwickeln. Meine Stress- und Resilienz-Formate sind genau darauf ausgelegt: wirksam für das Individuum, verankert im System.</p>
     <div style="display:flex; gap:12px; flex-wrap:wrap;">
       <a href="kontakt.html#unternehmen" class="btn-primary">Jetzt Erstgespräch vereinbaren →</a>
@@ -454,7 +454,7 @@ footer { background: var(--anthracite); padding: 32px 48px; display: flex; align
       <span class="hero-qual">BGM-zertifiziert (BBGM e.V.)</span>
       <span class="hero-qual">Systemisches Coaching (IfaP)</span>
       <span class="hero-qual">Resilienz-Coach (IHK)</span>
-      <span class="hero-qual">IT-Branchenerfahrung </span>
+<!--      <span class="hero-qual">IT-Branchenerfahrung </span> -->
     </div>
   </div>
 </section>
@@ -462,7 +462,6 @@ footer { background: var(--anthracite); padding: 32px 48px; display: flex; align
 
 
 
-<!-- INTRO — AUSGANGSLAGE -->
 <!-- INTRO — AUSGANGSLAGE -->
 <section class="sec sec-white">
   <div class="sec-inner">
@@ -472,13 +471,104 @@ footer { background: var(--anthracite); padding: 32px 48px; display: flex; align
         <p class="intro-lead">Psychische Belastung zählt zu den häufigsten Ursachen für Fehlzeiten in Unternehmen. Und ein Großteil dessen, was Menschen wirklich belastet, zeigt sich nicht in der Krankschreibung, sondern schon vorher, im Arbeitsalltag. Wo mentale Kapazitäten erschöpft sind, bleibt betriebliche Produktivität und Innovationsfähigkeit unter Ihrem Potenzial.</p>
         <p style="margin-top:18px; font-size:14px; color:var(--text-muted); line-height:1.75;">Klassische Einzelmaßnahmen wie ein Yoga-Kurs oder ein Vortrag zum Thema Achtsamkeit setzen an der einzelnen Person an. Was oft auf der Strecke bleibt, ist sowohl die nachhaltige Transferunterstützung in neue Alltagsroutinen als auch die Umfeldanalyse: Stress entsteht im Zusammenspiel mit dem Arbeitsumfeld selbst. Wirksam wird eine Maßnahme erst, wenn beide Ebenen zusammen gedacht werden.</p>
       </div>
+
       <div class="intro-points">
-        <div style="background:var(--cream); border:0.5px solid var(--sage); border-radius:10px; padding:24px; margin-bottom:16px;">
-          <p style="font-size:13px; color:var(--forest); margin:0 0 8px;">Kosten psychischer Erkrankungen pro Jahr</p>
-          <p style="font-size:44px; font-weight:500; line-height:1; margin:0 0 6px; color:var(--anthracite);">123<span style="font-size:20px; font-weight:400; margin-left:6px; color:var(--forest);">Mrd. €</span></p>
-          <p style="font-size:12px; color:var(--forest); margin:0;">Deutschland, gesamt</p>
-          <p style="font-size:11px; color:var(--text-muted); margin:8px 0 0; line-height:1.6;">Quelle: Statistisches Bundesamt / Destatis / BAuA</p>
-        </div>
+        <style>
+          .stat-grid{
+            display:grid;
+            grid-template-columns: 1fr;
+            gap:14px;
+          }
+          @media (min-width:640px){
+            .stat-grid{ grid-template-columns: 1fr 1fr; gap:10px; }
+          }
+          @media (min-width:1024px){
+            .stat-grid{ grid-template-columns: repeat(2, 1fr); gap:12px; }
+          }
+          .stat-card{
+            background:var(--cream);
+            border:0.5px solid #e2e0d8;
+            border-radius:8px;
+            padding:16px 18px;
+            display:flex;
+            flex-direction:column;
+            height:100%;
+          }
+          .stat-card .stat-eyebrow{
+            font-size:11px;
+            font-weight:600;
+            letter-spacing:0.08em;
+            text-transform:uppercase;
+            color:var(--sage);
+            margin:0 0 8px;
+          }
+          .stat-card .stat-value{
+            font-size:clamp(22px, 2.6vw, 26px);
+            font-weight:500;
+            line-height:1.1;
+            margin:0 0 6px;
+            color:var(--anthracite);
+          }
+          .stat-card .stat-value span{
+            font-size:12px;
+            font-weight:400;
+            margin-left:4px;
+            color:var(--forest);
+          }
+          .stat-card .stat-label{
+            font-size:12px;
+            color:var(--forest);
+            margin:0 0 auto;
+            line-height:1.4;
+          }
+          .stat-card .stat-divider{
+            border:none;
+            border-top:1px solid var(--sage);
+            opacity:0.35;
+            margin:12px 0 8px;
+          }
+          .stat-card .stat-source{
+            font-size:10px;
+            color:var(--text-muted);
+            margin:0;
+            line-height:1.5;
+          }
+        </style>
+
+        <div class="stat-grid">
+
+          <div class="stat-card">
+            <p class="stat-eyebrow">Fehlzeiten</p>
+            <p class="stat-value">28,5<span>Tage</span></p>
+            <p class="stat-label">Durchschnittliche AU-Dauer bei psychischen Erkrankungen</p>
+            <hr class="stat-divider">
+            <p class="stat-source">Quelle: AOK-Fehlzeiten-Report 2025 (WIdO)</p>
+          </div>
+
+          <div class="stat-card">
+            <p class="stat-eyebrow">Trend</p>
+            <p class="stat-value">43%<span>Anstieg</span></p>
+            <p class="stat-label">Zunahme der AU-Tage wegen psychischer Erkrankungen in den letzten 10 Jahren</p>
+            <hr class="stat-divider">
+            <p class="stat-source">Quelle: AOK-Fehlzeiten-Report 2025 (WIdO)</p>
+          </div>
+
+          <div class="stat-card">
+            <p class="stat-eyebrow">Kosten</p>
+            <p class="stat-value">12.400–<br>17.700 €</p>
+            <p class="stat-label">Gesamtkosten je Burnout-Fall bei später Diagnose</p>
+            <hr class="stat-divider">
+            <p class="stat-source">Quelle: IWS-Studie / ÖGB</p>
+          </div>
+
+          <div class="stat-card">
+            <p class="stat-eyebrow">Prävention</p>
+            <p class="stat-value">2,2x<span>ROI</span></p>
+            <p class="stat-label">Return on Prevention bei betrieblichen Präventionsmaßnahmen</p>
+            <hr class="stat-divider">
+            <p class="stat-source">Quelle: DGUV / IVSS / BG ETEM</p>
+          </div>
+
         </div>
       </div>
     </div>
@@ -486,7 +576,7 @@ footer { background: var(--anthracite); padding: 32px 48px; display: flex; align
 </section>
 
 
-<!-- INTRO — MEIN ANSATZ -->
+<!-- INTRO — MEIN ANSATZ ->
 <section class="sec sec-cream">
   <div class="sec-inner">
     <div class="intro-grid">
@@ -520,14 +610,14 @@ footer { background: var(--anthracite); padding: 32px 48px; display: flex; align
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <!-- ANGEBOTE -->
-<section id="angebote" class="sec sec-white">
+<section id="angebote" class="sec sec-cream">
   <div class="sec-inner">
-    <span class="eyebrow">Angebote</span>
-    <h2>Drei Formate: vom Türöffner bis zur Reihe.</h2>
+    <span class="eyebrow">Meine Angebote</span>
+    <h2>Drei Formate: vom Kennenlernen bis zur Reihe.</h2>
     <p style="margin-top:14px; max-width:600px; color:var(--text-muted); font-size:15px; line-height:1.7;">Lernen Sie meine Arbeitsweise unverbindlich kennen. Was daraus wird, entscheiden wir nach den ersten gemeinsamen Erfahrungen. Konzeptpapier und Qualifikationsnachweise auf Anfrage.</p>
 
     <div class="angebote-grid" style="display:grid; grid-template-columns:1fr 2fr; gap:10px; margin-top:44px; align-items:start;">
@@ -690,85 +780,112 @@ footer { background: var(--anthracite); padding: 32px 48px; display: flex; align
   </div>
 </section>
 
-<!-- ABLAUF -->
-<section class="sec sec-cream">
-  <div class="sec-inner">
-    <span class="eyebrow">Zusammenarbeit</span>
-    <h2>Alles beginnt mit echtem Verstehen.</h2>
-    <p style="margin-top:14px; max-width:560px; color:var(--text-muted); font-size:15px; line-height:1.7;">Ein klarer Auftrag ist die Grundlage für eine erfolgreiche Maßnahme. Qualität sichere ich durch einen strukturierten Prozess, bis zur Abschlussevaluation.</p>
-    <div class="ablauf-grid" style="grid-template-columns: repeat(5, 1fr);">
-      <div class="ablauf-step">
-        <div class="ablauf-num">01</div>
-        <div class="ablauf-title">Erstkontakt</div>
-        <p class="ablauf-desc">20 Minuten kostenloses Kennenlernen. Wie ordnen Ihr Anliegen ein und prüfen, ob eine Zusammenarbeit grundsätzlich sinnvoll ist.</p>
+
+<!-- REFERENZEN/REVIEWS -->
+  <section class="sec sec-cream">
+    <div class="sec-inner">
+      <div class="reviews-header">
+        <span class="eyebrow">Referenzen</span>
+        <h2>Das sagen meine zufriedenen Kunden</h2>
       </div>
-      <div class="ablauf-step">
-        <div class="ablauf-num">02</div>
-        <div class="ablauf-title">Auftragsklärung</div>
-        <p class="ablauf-desc">60 Minuten. Wir erfassen Ausgangslage, Ziele, Zielgruppe und Rahmenbedingungen gründlich. Das Ergebnis ist die Grundlage für ein passgenaues Angebot.</p>
+      <div class="reviews-outer">
+        <div class="reviews-track" id="reviews-track">
+
+          <div class="review-card" style="background:var(--white);">
+            <span class="review-quote">"</span>
+            <p class="review-text">PLATZHALTER.</p>
+<!--            <a href="#" class="review-more">Ganzen Bericht lesen →</a> -->
+            <div class="review-author">
+              <div class="review-avatar">AB</div>
+              <div>
+                <p class="review-name">Anna B.</p>
+                <p class="review-role">Erzieherin · 27 Jahre</p>
+              </div>
+<!--         <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div> -->
+            </div>
+          </div>
+
+          <div class="review-card" style="background:var(--white);">
+            <span class="review-quote">"</span>
+            <p class="review-text">PLATZHALTER.</p>
+<!--            <a href="#" class="review-more">Ganzen Bericht lesen →</a> -->
+            <div class="review-author">
+              <div class="review-avatar">CD</div>
+              <div>
+                <p class="review-name">Carmen D.</p>
+                <p class="review-role">Gruppenleitung · Mitte 40</p>
+              </div>
+<!--         <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div> -->
+            </div>
+          </div>
+
+          <div class="review-card" style="background:var(--white);">
+            <span class="review-quote">"</span>
+            <p class="review-text">PLATZHALTER.</p>
+            <div class="review-author">
+              <div class="review-avatar">EF</div>
+              <div>
+                <p class="review-name">Elisabeth F.</p>
+                <p class="review-role">Geschäftsführerin · 45 Jahre</p>
+              </div>
+<!--         <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div> -->
+            </div>
+          </div>
+
+        </div>
       </div>
-      <div class="ablauf-step">
-        <div class="ablauf-num">03</div>
-        <div class="ablauf-title">Konzept und Angebot</div>
-        <p class="ablauf-desc">Sie erhalten ein schriftliches Konzeptpapier: Lernziele, Modulstruktur, Methoden, Transfersicherung. Geeignet für die interne Abstimmung und GF-Freigabe.</p>
-      </div>
-      <div class="ablauf-step">
-        <div class="ablauf-num">04</div>
-        <div class="ablauf-title">Durchführung</div>
-        <p class="ablauf-desc">Das vereinbarte Format wird umgesetzt. Inhalte und Methoden werden innerhalb des vereinbarten Rahmens auf Ihre Zielgruppe und den Unternehmenskontext angepasst.</p>
-      </div>
-      <div class="ablauf-step">
-        <div class="ablauf-num">05</div>
-        <div class="ablauf-title">Evaluation und Ausblick</div>
-        <p class="ablauf-desc">Wir besprechen dokumentiertes Feedback und gleichen gesetzte Lernziele ab. Am Ende steht die gemeinsame Einschätzung: Was hat gewirkt? Welche Folgemaßnahmen sind sinnvoll?</p>
+      <div class="carousel-nav">
+        <div class="carousel-dots" id="carousel-dots"></div>
+        <button class="carousel-btn" onclick="prevReview()" aria-label="Vorheriges">&#8249;</button>
+        <button class="carousel-btn" onclick="nextReview()" aria-label="Nächstes">&#8250;</button>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+		
 
 <!-- QUALIFIKATIONEN + ZERTIFIKATE — Iterationen 3 & 6 -->
 <section class="sec sec-white">
   <div class="sec-inner">
     <span class="eyebrow">Qualifikationen</span>
     <h2>Was meine Angebote auszeichnet.</h2>
-    <p style="margin-top:14px; max-width:600px; color:var(--text-muted); font-size:15px; line-height:1.7;">Drei Dinge machen den Unterschied zwischen einem guten Workshop und einer Maßnahme, die langfristig trägt: fachliche Expertise im Thema, didaktische Kompetenz und echte Empathie für die Arbeitswelt, über die gesprochen wird.</p>
+    <p style="margin-top:14px; max-width:600px; color:var(--text-muted); font-size:15px; line-height:1.7;">Meine Formate berücksichtigen die Faktoren, die für nachhaltige Veränderung relevant sind: individuelle und systemische Reflexion sowie Transfersicherung, die über den Workshop hinausdenkt. Outdoor-Formate wirken dabei katalysierend in allen Phasen der Arbeitsprozesse. Das macht den Unterschied zwischen einem guten Workshop und einer Maßnahme, die langfristig tragen kann.</p>
 
     <div class="qual-grid">
       <div class="qual-card">
         <div class="qual-cert">BBGM e.V. / INeKO Köln</div>
         <div class="qual-title">Fachkraft Betriebliches Gesundheitsmanagement</div>
         <p class="qual-desc">Zertifizierung des Bundesverbands BGM. Kenntnisse in Bedarfsanalyse, Maßnahmenplanung, Wirksamkeitsmessung und rechtlichen Grundlagen.</p>
-        <div class="qual-relevance">Für Konzeptpapier und interne Freigabe</div>
+      
       </div>
       <div class="qual-card">
         <div class="qual-cert">Anna Langheiter</div>
         <div class="qual-title">Trainingsdesign</div>
         <p class="qual-desc">Ausbildung in evidenzbasierter Lernarchitektur: Lernziele, Methodenauswahl, Transfersicherung. Die Grundlage dafür, dass Maßnahmen nach drei Wochen noch wirken.</p>
-        <div class="qual-relevance">Für Wirksamkeitsnachweis</div>
+      
       </div>
       <div class="qual-card">
-        <div class="qual-cert">IfAP Köln · DBVC / DCV-Kriterien</div>
-        <div class="qual-title">Systemische Coachin</div>
-        <p class="qual-desc">Jahresausbildung nach anerkannten Verbandskriterien. Systemische Reflexion, Musterarbeit und personenzentrierte Ansätze — für Wirkung auf Ebene des Individuums und des Systems.</p>
-        <div class="qual-relevance">Für Coaching-Kontingente und Einzelbegleitung</div>
+        <div class="qual-cert">IfAP Köln</div>
+        <div class="qual-title">Coach</div>
+        <p class="qual-desc">Jahresausbildung orientiert an anerkannten Verbandskriterien des DBVC / DCV. Systemische Reflexion, Musterarbeit und personenzentrierte Ansätze — für Wirkung auf Ebene des Individuums und des Systems.</p>
+      
       </div>
       <div class="qual-card">
         <div class="qual-cert">IHK · MILD München</div>
         <div class="qual-title">Natur-Resilienz-Coach</div>
         <p class="qual-desc">IHK-zertifizierte Ausbildung in naturbasierter Resilienzarbeit. Verbindet Forschungsbefunde zur Wirkung von Natur auf das Nervensystem mit systemischen Methoden.</p>
-        <div class="qual-relevance">Für naturbasierte Formate und den Outdoor-Teamtag</div>
+      
       </div>
       <div class="qual-card">
         <div class="qual-cert">oose Innovative Informatik · Hamburg</div>
         <div class="qual-title">Trainerin in der Erwachsenenbildung</div>
         <p class="qual-desc">mehrere Jahre als Trainerin und Beraterin bei einem der führenden IT-Weiterbildungsanbieter im deutschsprachigen Raum. Schwerpunkte: Agilität, Scrum, Projektmanagement.</p>
-        <div class="qual-relevance">Für Glaubwürdigkeit und Anschlussfähigkeit bei IT-Zielgruppen</div>
+      
       </div>
       <div class="qual-card">
         <div class="qual-cert">Scrum Alliance · agil.bz · IREB</div>
         <div class="qual-title">IT-Arbeitswelten und agile Frameworks</div>
         <p class="qual-desc">Zertifizierungen in agilen Rollen und Methoden: CSPO, PSM, PAL, RE@agile Practitioner, CPRE FL, DDP. Ergänzt durch Ausbildungen in Kommunikation, Moderation, Konfliktmanagement und Selbstmanagement.</p>
-        <div class="qual-relevance">Für Anschlussfähigkeit und Glaubwürdigkeit bei IT-Zielgruppen</div>
+      
       </div>
     </div>
 
@@ -832,67 +949,44 @@ footer { background: var(--anthracite); padding: 32px 48px; display: flex; align
   </div>
 </section>
 
-<!-- REFERENZEN/REVIEWS -->
-  <section class="sec sec-cream">
-    <div class="sec-inner">
-      <div class="reviews-header">
-        <span class="eyebrow">Referenzen</span>
-        <h2>Das sagen meine zufriedenen Kunden</h2>
+
+
+<!-- ABLAUF -->
+<section class="sec sec-cream">
+  <div class="sec-inner">
+    <span class="eyebrow">Zusammenarbeit</span>
+    <h2>Alles beginnt mit echtem Verstehen.</h2>
+    <p style="margin-top:14px; max-width:560px; color:var(--text-muted); font-size:15px; line-height:1.7;">Ein klarer Auftrag ist die Grundlage für eine erfolgreiche Maßnahme. Qualität sichere ich durch einen strukturierten Prozess, bis zur Abschlussevaluation.</p>
+    <div class="ablauf-grid" style="grid-template-columns: repeat(5, 1fr);">
+      <div class="ablauf-step">
+        <div class="ablauf-num">01</div>
+        <div class="ablauf-title">Erstkontakt</div>
+        <p class="ablauf-desc">20 Minuten kostenloses Kennenlernen. Wie ordnen Ihr Anliegen ein und prüfen, ob eine Zusammenarbeit grundsätzlich sinnvoll ist.</p>
       </div>
-      <div class="reviews-outer">
-        <div class="reviews-track" id="reviews-track">
-
-          <div class="review-card" style="background:var(--white);">
-            <span class="review-quote">"</span>
-            <p class="review-text">Ganz toll, wirklich klasse.</p>
-<!--            <a href="#" class="review-more">Ganzen Bericht lesen →</a> -->
-            <div class="review-author">
-              <div class="review-avatar">AB</div>
-              <div>
-                <p class="review-name">Antonietta B.</p>
-                <p class="review-role">Erzieherin · 27 Jahre</p>
-              </div>
-<!--         <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div> -->
-            </div>
-          </div>
-
-          <div class="review-card" style="background:var(--white);">
-            <span class="review-quote">"</span>
-            <p class="review-text">So was habe ich noch nicht erlebt.</p>
-<!--            <a href="#" class="review-more">Ganzen Bericht lesen →</a> -->
-            <div class="review-author">
-              <div class="review-avatar">CD</div>
-              <div>
-                <p class="review-name">Carmen D.</p>
-                <p class="review-role">Gruppenleitung · Mitte 40</p>
-              </div>
-<!--         <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div> -->
-            </div>
-          </div>
-
-          <div class="review-card" style="background:var(--white);">
-            <span class="review-quote">"</span>
-            <p class="review-text">Ich war skeptisch, ob ein Workshop in der Natur wirklich etwas verändert. Aber schon nach den ersten Minuten war ich begeistert.</p>
-            <div class="review-author">
-              <div class="review-avatar">EF</div>
-              <div>
-                <p class="review-name">Elisabeth F.</p>
-                <p class="review-role">Geschäftsführerin · 45 Jahre</p>
-              </div>
-<!--         <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div> -->
-            </div>
-          </div>
-
-        </div>
+      <div class="ablauf-step">
+        <div class="ablauf-num">02</div>
+        <div class="ablauf-title">Auftragsklärung</div>
+        <p class="ablauf-desc">60 Minuten. Wir erfassen Ausgangslage, Ziele, Zielgruppe und Rahmenbedingungen gründlich. Das Ergebnis ist die Grundlage für ein passgenaues Angebot.</p>
       </div>
-      <div class="carousel-nav">
-        <div class="carousel-dots" id="carousel-dots"></div>
-        <button class="carousel-btn" onclick="prevReview()" aria-label="Vorheriges">&#8249;</button>
-        <button class="carousel-btn" onclick="nextReview()" aria-label="Nächstes">&#8250;</button>
+      <div class="ablauf-step">
+        <div class="ablauf-num">03</div>
+        <div class="ablauf-title">Konzept und Angebot</div>
+        <p class="ablauf-desc">Sie erhalten ein schriftliches Konzeptpapier: Lernziele, Modulstruktur, Methoden, Transfersicherung. Geeignet für die interne Abstimmung und GF-Freigabe.</p>
+      </div>
+      <div class="ablauf-step">
+        <div class="ablauf-num">04</div>
+        <div class="ablauf-title">Durchführung</div>
+        <p class="ablauf-desc">Das vereinbarte Format wird umgesetzt. Inhalte und Methoden werden innerhalb des vereinbarten Rahmens auf Ihre Zielgruppe und den Unternehmenskontext angepasst.</p>
+      </div>
+      <div class="ablauf-step">
+        <div class="ablauf-num">05</div>
+        <div class="ablauf-title">Evaluation und Ausblick</div>
+        <p class="ablauf-desc">Wir besprechen dokumentiertes Feedback und gleichen gesetzte Lernziele ab. Am Ende steht die gemeinsame Einschätzung: Was hat gewirkt? Welche Folgemaßnahmen sind sinnvoll?</p>
       </div>
     </div>
-  </section>
-		
+  </div>
+</section>
+
 		
 		
 <!-- FRAGEN -->
