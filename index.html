@@ -115,6 +115,33 @@ nav { background: var(--anthracite); display: flex; align-items: center; justify
 .pfad-b2b .pfad-arrow { color: var(--sage); }
 @media (max-width: 700px) { .pfad-grid { grid-template-columns: 1fr; } }
 
+/* TERMINE (Vorschau auf Startseite) */
+.btn-outline { display: inline-flex; align-items: center; gap: 5px; color: var(--forest); font-size: 13px; font-weight: 500; border: 0.5px solid var(--sage); border-radius: 4px; padding: 8px 14px; text-decoration: none; white-space: nowrap; transition: background 0.15s; }
+.btn-outline:hover { background: rgba(124,145,115,0.08); }
+.events { display: flex; flex-direction: column; gap: 10px; margin-top: 36px; }
+.event { display: grid; grid-template-columns: 64px 1fr auto; gap: 20px; align-items: center; background: var(--cream); border: 0.5px solid var(--card-border); border-radius: 10px; padding: 20px 24px; transition: border-color 0.15s; }
+.event:hover { border-color: rgba(124,145,115,0.4); }
+.event-date { text-align: center; flex-shrink: 0; }
+.event-day { font-size: 26px; font-weight: 500; line-height: 1; color: var(--anthracite); }
+.event-month { font-size: 11px; color: var(--sage); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 3px; }
+.event-type { font-size: 11px; font-weight: 600; color: var(--forest); background: #d4e0cc; border-radius: 4px; padding: 2px 8px; display: inline-block; margin-bottom: 6px; }
+.event-title { font-size: 14px; font-weight: 500; color: var(--anthracite); margin-bottom: 5px; }
+.event-meta { font-size: 12px; color: var(--text-light); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.event-sep { color: var(--border); }
+@media (max-width: 640px) {
+  .event { grid-template-columns: 52px 1fr; grid-template-rows: auto auto; }
+  .event .btn-outline { grid-column: 2; margin-top: 8px; }
+}
+
+/* IMPRESSIONEN */
+.impressionen-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 40px; }
+.impression-item { border-radius: 10px; overflow: hidden; aspect-ratio: 3/4; position: relative; background: var(--cream); }
+.impression-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.impression-item:hover img { transform: scale(1.05); }
+.impression-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 14px 12px; background: linear-gradient(0deg, rgba(44,51,58,0.78) 0%, rgba(44,51,58,0) 100%); color: var(--white); font-size: 12px; font-weight: 500; letter-spacing: 0.02em; }
+.impressionen-note { margin-top: 18px; font-size: 12px; color: var(--text-light); line-height: 1.6; }
+@media (max-width: 820px) { .impressionen-grid { grid-template-columns: repeat(2, 1fr); } }
+
 /* AUSGANGSLAGE */
 .lage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 40px; }
 .lage-lead { font-size: 17px; line-height: 1.78; color: var(--anthracite); }
@@ -129,6 +156,18 @@ nav { background: var(--anthracite); display: flex; align-items: center; justify
 .stat-number span { font-size: 16px; font-weight: 500; color: var(--sage); margin-left: 8px; }
 .stat-label { font-size: 13px; color: var(--text-muted); line-height: 1.6; max-width: 320px; }
 
+/* KOSTEN-KUCHENDIAGRAMM */
+.pie-wrap { display: flex; align-items: center; gap: 24px; }
+.pie-svg { flex-shrink: 0; }
+.pie-total { font-size: 26px; font-weight: 500; color: var(--anthracite); line-height: 1; }
+.pie-total span { font-size: 12px; font-weight: 500; color: var(--sage); display: block; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+.pie-legend { display: flex; flex-direction: column; gap: 9px; margin-top: 22px; }
+.pie-legend-item { display: flex; align-items: baseline; gap: 9px; font-size: 12.5px; color: var(--text-muted); line-height: 1.45; }
+.pie-dot { width: 9px; height: 9px; border-radius: 2px; flex-shrink: 0; margin-top: 3px; }
+.pie-legend-item strong { color: var(--anthracite); font-weight: 500; }
+.pie-source { font-size: 11px; color: var(--text-light); margin-top: 18px; line-height: 1.6; }
+@media (max-width: 480px) { .pie-wrap { flex-direction: column; align-items: flex-start; } }
+
 /* DREI SAEULEN */
 .saeulen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 44px; }
 .saeule-card { background: var(--white); border: 0.5px solid var(--card-border); border-radius: 10px; padding: 28px 26px; }
@@ -140,7 +179,9 @@ nav { background: var(--anthracite); display: flex; align-items: center; justify
 
 /* WARUM KATHARINA */
 .warum-grid { display: grid; grid-template-columns: 340px 1fr; gap: 64px; align-items: center; margin-top: 40px; }
-.photo-placeholder { background: #E8EDE6; border-radius: 10px; aspect-ratio: 4/5; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 0.5px dashed var(--sage); color: var(--sage); font-size: 13px; }
+.photo-placeholder { background: #E8EDE6; border-radius: 10px; aspect-ratio: 4/5; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 0.5px dashed var(--sage); color: var(--sage); font-size: 13px; position: relative; overflow: hidden; }
+.photo-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-frame { position: relative; }
 .warum-text p { font-size: 15px; color: var(--text-muted); line-height: 1.78; margin-bottom: 16px; }
 .warum-creds { display: flex; flex-direction: column; gap: 0; margin-top: 24px; }
 .warum-cred { display: grid; grid-template-columns: 5px 1fr; gap: 14px; align-items: start; padding: 11px 0; border-bottom: 0.5px solid var(--border); }
@@ -184,7 +225,7 @@ footer { background: var(--anthracite); padding: 28px 48px; display: flex; justi
     <li><a href="fuer-unternehmen.html">Für Unternehmen</a></li>
     <li><a href="fuer-berufstaetige.html">Für Berufstätige</a></li>
     <li><a href="ueber-mich.html">Über mich</a></li>
-    <li><a href="termine.html">Termine</a></li>
+    <li><a href="#termine">Termine</a></li>
     <li><a href="kontakt.html#einzelpersonen" class="nav-cta">Erstgespräch →</a></li>
   </ul>
 </nav>
@@ -214,13 +255,30 @@ footer { background: var(--anthracite); padding: 28px 48px; display: flex; justi
       <h2>Stresskompetenz muss im echten Arbeitsalltag ankommen</h2>
       <div class="lage-grid">
         <div>
-          <p class="lage-lead">123 Mrd. Euro kosten stressbedingte Leistungsreduktion, Arbeitsausfälle und Behandlungen jedes Jahr.  HR- und BGM-Verantwortliche verzeichnen steigende Krankheitsquoten und längeren Ausfallzeiten. Fach- und Führungskräfte bemerken, dass es unter Dauerbelastung immer schwerer fällt, loszulassen und richtig aufzuladen.</p>
+          <p class="lage-lead">123 Mrd. Euro kosten psychische Erkrankungen die deutsche Wirtschaft jährlich — durch Behandlung, Arbeitsausfälle und verlorene Wertschöpfung. HR- und BGM-Verantwortliche verzeichnen steigende Krankheitsquoten und längeren Ausfallzeiten. Fach- und Führungskräfte bemerken, dass es unter Dauerbelastung immer schwerer fällt, loszulassen und richtig aufzuladen.</p>
           <p style="margin-top:18px; font-size:14px; color:var(--text-muted); line-height:1.75;">Abgekapselte Maßnahmen fühlen sich vielleicht kurzfristig gut an, verändern aber nichts. Statt isolierter Impulse braucht es etwas, das auch im Alltag noch trägt.</p>
         </div>
         <div class="stat-graphic">
-          <svg width="34" height="34" fill="none" stroke="#7C9173" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20"/><path d="M12 2a10 10 0 010 20 10 10 0 010-20z"/><path d="M12 7v5l3 3"/></svg>
-          <div class="stat-number">123<span>Mrd. €</span></div>
-          <div class="stat-label">jährliche Kosten durch stressbedingte Leistungsreduktion, Arbeitsausfälle und Behandlungen</div>
+          <div class="pie-wrap">
+            <svg class="pie-svg" width="140" height="140" viewBox="0 0 200 200" aria-label="Kuchendiagramm: Aufteilung der Kosten psychischer Erkrankungen in Deutschland">
+              <path d="M100,100 L100.00,10.00 A90,90 0 0 1 166.95,160.14 Z" fill="#44593F"/>
+              <path d="M100,100 L166.95,160.14 A90,90 0 0 1 11.12,114.18 Z" fill="#7C9173"/>
+              <path d="M100,100 L11.12,114.18 A90,90 0 0 1 65.07,17.06 Z" fill="#A9BCA0"/>
+              <path d="M100,100 L65.07,17.06 A90,90 0 0 1 96.36,10.07 Z" fill="#2C333A"/>
+              <path d="M100,100 L96.36,10.07 A90,90 0 0 1 100.00,10.00 Z" fill="#C7BFA0"/>
+              <circle cx="100" cy="100" r="52" fill="var(--white)"/>
+              <text x="100" y="96" text-anchor="middle" font-size="26" font-weight="500" fill="#2C333A" font-family="-apple-system, Helvetica, Arial, sans-serif">123</text>
+              <text x="100" y="114" text-anchor="middle" font-size="11" fill="#7C9173" font-family="-apple-system, Helvetica, Arial, sans-serif">Mrd. €</text>
+            </svg>
+            <div class="pie-legend">
+              <div class="pie-legend-item"><div class="pie-dot" style="background:#44593F;"></div><span><strong>45 Mrd. €</strong> verlorene Bruttowertschöpfung</span></div>
+              <div class="pie-legend-item"><div class="pie-dot" style="background:#7C9173;"></div><span><strong>44 Mrd. €</strong> Krankheitskosten (Medikamente, Therapien, stationäre Aufenthalte)</span></div>
+              <div class="pie-legend-item"><div class="pie-dot" style="background:#A9BCA0;"></div><span><strong>26 Mrd. €</strong> Produktionsausfallkosten</span></div>
+              <div class="pie-legend-item"><div class="pie-dot" style="background:#2C333A;"></div><span><strong>7 Mrd. €</strong> arbeitsbedingte psychische Störungen</span></div>
+              <div class="pie-legend-item"><div class="pie-dot" style="background:#C7BFA0;"></div><span><strong>0,79 Mrd. €</strong> Lohnfortzahlung &amp; Frühberentung</span></div>
+            </div>
+          </div>
+          <div class="pie-source">Gesamtkosten psychischer Erkrankungen in Deutschland, jährlich. Quelle: Statistisches Bundesamt 2008, Destatis 2017, BAuA 2017.</div>
 <!--          </div>
           <div class="lage-point">
             <div class="lage-dot"></div>
@@ -243,13 +301,13 @@ footer { background: var(--anthracite); padding: 28px 48px; display: flex; justi
       <p style="margin-top:14px; max-width:560px; color:var(--text-muted); font-size:15px; line-height:1.7;">Ob als Unternehmen mit Verantwortung für eine ganze Belegschaft oder als Einzelperson unter Dauerbelastung : Wählen Sie den Weg, der zu Ihnen passt.</p>
 
       <div class="pfad-grid">
-        <a href="fuer-unternehmen.html" class="pfad-card pfad-b2c">
+        <a href="fuer-unternehmen.html" class="pfad-card pfad-b2b">
           <div class="pfad-label">Für Unternehmen</div>
           <div class="pfad-title">Ihre Organisation ist so resilient wie Ihre Mitarbeitenden - und Ihre Strukturen.</div>
           <div class="pfad-desc">Stress- und Resilienzformate für moderne Unternehmen, die den Transfer in den Alltag mitdenken: wirksam für das Individuum, verankert im System.</div>
           <div class="pfad-arrow">Mehr erfahren →</div>
         </a>
-        <a href="fuer-berufstaetige.html" class="pfad-card pfad-b2b">
+        <a href="fuer-berufstaetige.html" class="pfad-card pfad-b2c">
           <div class="pfad-label">Für Berufstätige</div>
           <div class="pfad-title">Wenn alles zu viel wird.</div>
           <div class="pfad-desc">Einzelcoaching für Menschen, die nach außen funktionieren und merken, dass Erholung immer schwieriger wird. Stress regulieren, Erholung finden, Resilienz aufbauen — fundiert, konkret, alltagstauglich.</div>
@@ -259,21 +317,21 @@ footer { background: var(--anthracite); padding: 28px 48px; display: flex; justi
     </div>
   </section>
 
-
-
   <!-- WARUM Coaching mit K -->
   <section class="sec sec-white">
     <div class="sec-inner">
       <span class="eyebrow">Warum Coaching mit K?</span>
       <h2>Ich verbinde drei Dinge, die zählen</h2>
       <div class="warum-grid">
-        <div class="photo-placeholder" role="img" aria-label="Foto von Katharina Kopmann folgt">
-          <svg width="40" height="40" fill="none" stroke="#7C9173" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          <span>Foto Katharina</span>
+        <!-- Echtes Foto von Katharina Kopmann im Naturkontext -->
+        <div class="photo-frame">
+          <div class="photo-placeholder" role="img" aria-label="Katharina Kopmann, Gründerin von Coaching mit K, im Wald">
+            <img src="img/naturcoach.png" alt="Katharina Kopmann, Gründerin von Coaching mit K, im Wald" loading="lazy">
+          </div>
         </div>
         <div class="warum-text">
           <p>Effektive Stressbewältigung und stärkende Resilienzroutinen können dann entstehen, wenn eigene Lernerfahrungen das relevante Fachwissen erlebbar machen und neue Handlungen systemisch verankert werden. </p>
-		  <p>Dabei geht es nicht nur um die äußeren Job-Anforderungen in modernen Arbeitswelten sonder auch um die inneren Herausforderungen im Umgang damit.
+		  <p>Dabei geht es nicht nur um die äußeren Job-Anforderungen in modernen Arbeitswelten, sondern auch um die inneren Herausforderungen im Umgang damit.
 		  <p>Als Trainerin und systemischer Coach im Präventionsbereich Stress bringe ich das in meinen Angeboten zusammen: fundiertes Fachwissen zu Stress und Resilienz, transferwirksames Trainingsdesign und eigene Berufserfahrung in modernen Arbeitswelten.  </p>
           <div class="warum-creds">
             <div class="warum-cred"><div class="warum-cred-dot"></div><span>Systemische Coachin (IfAP Köln, orientiert an DBVC/DCV-Kriterien)</span></div>
@@ -288,8 +346,134 @@ footer { background: var(--anthracite); padding: 28px 48px; display: flex; justi
   </section>
 
 
-  <!-- STIMMEN -->
+  <!-- WERTE -->
   <section class="sec sec-cream">
+    <div class="sec-inner">
+      <span class="eyebrow">Mein Versprechen</span>
+      <h2>Das können Sie erwarten </h2>
+      <div class="saeulen-grid">
+        <div class="saeule-card">
+          <div class="saeule-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <div class="saeule-title">Wissenschaft & Alltagstauglichkeit</div>
+          <div class="saeule-desc">Ich arbeite mit evidenzbasierten Methoden und mache Theorie für den echten Arbeitsalltag nützlich.</div>
+        </div>
+        <div class="saeule-card">
+          <div class="saeule-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="saeule-title">Mensch & System</div>
+          <div class="saeule-desc">Stress entsteht im Zusammenspiel von Individuum und Arbeitsumfeld. Meine Arbeit berücksichtig beide Ebenen.</div>
+        </div>
+        <div class="saeule-card">
+          <div class="saeule-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="saeule-title">Methode & Individualität</div>
+          <div class="saeule-desc">Methoden werden individuell ausgewählt, Konzepte bedarfsgerecht angepasst. So, dass immer ein Mehrwert entsteht.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- TERMINE -->
+  <section id="termine" class="sec sec-white">
+    <div class="sec-inner">
+      <span class="eyebrow">Termine</span>
+      <h2>Hier können Sie mich kennen lernen</h2>
+      <p style="margin-top:14px; max-width:560px; color:var(--text-muted); font-size:15px; line-height:1.7;">Kommen Sie gern für ein unverbindliches Kennenlernen vorbei, bevor die Entscheidung zur Zusammenarbeit überhaupt ansteht. Ich freue mich auf Sie.</p>
+
+      <div class="events">
+        <div class="event">
+          <div class="event-date">
+            <div class="event-day">7</div>
+            <div class="event-month">Jul</div>
+          </div>
+          <div>
+            <span class="event-type">Reset-Walk</span>
+            <p class="event-title">Abschalten am Feierabend</p>
+            <div class="event-meta">
+              <span>60 Min</span>
+              <span class="event-sep">·</span>
+              <span>Köln-Lindenthal</span>
+              <span class="event-sep">·</span>
+              <span>max. 8 Personen · 15 €</span>
+            </div>
+          </div>
+          <a href="kontakt.html#einzelpersonen" class="btn-outline">Anmelden →</a>
+        </div>
+
+        <div class="event">
+          <div class="event-date">
+            <div class="event-day">14</div>
+            <div class="event-month">Jul</div>
+          </div>
+          <div>
+            <span class="event-type">Online-Meetup</span>
+            <p class="event-title">Stress im Arbeitsalltag: Mikro-Praktiken, die wirklich helfen</p>
+            <div class="event-meta">
+              <span>60 Min</span>
+              <span class="event-sep">·</span>
+              <span>Online</span>
+              <span class="event-sep">·</span>
+              <span>kostenlos</span>
+            </div>
+          </div>
+          <a href="kontakt.html#einzelpersonen" class="btn-outline">Anmelden →</a>
+        </div>
+
+        <div class="event">
+          <div class="event-date">
+            <div class="event-day">03</div>
+            <div class="event-month">Aug</div>
+          </div>
+          <div>
+            <span class="event-type">Vortrag</span>
+            <p class="event-title">Was resiliente Unternehmen anders machen</p>
+            <div class="event-meta">
+              <span>60 Min</span>
+              <span class="event-sep">·</span>
+              <span>IHK-Köln</span>
+              <span class="event-sep">·</span>
+              <span>kostenlos</span>
+            </div>
+          </div>
+          <a href="kontakt.html#einzelpersonen" class="btn-outline">Anmelden →</a>
+        </div>
+      </div>
+
+      <p style="margin-top:24px; font-size:14px; color:var(--text-light);"><a href="termine.html" class="btn-text">Alle Termine ansehen →</a></p>
+    </div>
+  </section>
+
+  <!-- IMPRESSIONEN -->
+  <!-- Platzhalter: freie Unsplash-Bilder, thematisch passend zu Reset-Walk / Impulsvortrag / Outdoor-Teamtag / Naturcoaching.
+       Vor Launch durch echte Fotos aus Katharinas eigenen Formaten ersetzen. -->
+  <section class="sec sec-cream">
+    <div class="sec-inner">
+      <span class="eyebrow">Impressionen</span>
+      <h2>So vielfältig ist meine Arbeit</h2>
+      <p style="margin-top:14px; max-width:560px; color:var(--text-muted); font-size:15px; line-height:1.7;">Ob draußen im Wald, im Impulsvortrag oder im Teamworkshop — Stressregulation und Resilienz brauchen unterschiedliche Räume.</p>
+
+      <div class="impressionen-grid">
+        <div class="impression-item">
+          <img src="https://images.unsplash.com/photo-1633917866137-349c9faead2c?q=80&w=800&auto=format&fit=crop" alt="Zwei Personen gehen gemeinsam einen Waldweg entlang, sinnbildlich für einen Reset-Walk">
+          <div class="impression-caption">Reset-Walk</div>
+        </div>
+        <div class="impression-item">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop" alt="Trainer spricht vor einer kleinen Gruppe, sinnbildlich für einen Impulsvortrag">
+          <div class="impression-caption">Impulsvortrag</div>
+        </div>
+        <div class="impression-item">
+          <img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?q=80&w=800&auto=format&fit=crop" alt="Gruppe von Menschen steht gemeinsam in der Natur, sinnbildlich für einen Outdoor-Teamtag">
+          <div class="impression-caption">Outdoor-Teamtag</div>
+        </div>
+        <div class="impression-item">
+          <img src="https://images.unsplash.com/photo-1691617051177-bcc71d95ec76?q=80&w=800&auto=format&fit=crop" alt="Person sitzt still am Waldrand, sinnbildlich für Naturcoaching und Reflexion">
+          <div class="impression-caption">Naturcoaching</div>
+        </div>
+      </div>
+      <p class="impressionen-note">Symbolbilder (Unsplash) — werden vor Website-Launch durch eigene Fotos aus meinen Formaten ersetzt.</p>
+    </div>
+  </section>
+
+
+  <!-- STIMMEN -->
+  <section class="sec sec-white">
     <div class="sec-inner">
       <span class="eyebrow">Erfahrungsberichte</span>
       <h2>Das sagen meine Klientinnen und Klienten.</h2>
@@ -322,30 +506,6 @@ footer { background: var(--anthracite); padding: 28px 48px; display: flex; justi
     </div>
   </section>
 
-  <!-- WERTE -->
-  <section class="sec sec-white">
-    <div class="sec-inner">
-      <span class="eyebrow">Mein Versprechen</span>
-      <h2>Das können Sie erwarten </h2>
-      <div class="saeulen-grid">
-        <div class="saeule-card">
-          <div class="saeule-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-          <div class="saeule-title">Wissenschaft & Alltagstauglichkeit</div>
-          <div class="saeule-desc">Ich arbeite mit evidenzbasierten Methoden und mache Theorie für den echten Arbeitsalltag nützlich.</div>
-        </div>
-        <div class="saeule-card">
-          <div class="saeule-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <div class="saeule-title">Mensch & System</div>
-          <div class="saeule-desc">Stress entsteht im Zusammenspiel von Individuum und Arbeitsumfeld. Meine Arbeit berücksichtig beide Ebenen.</div>
-        </div>
-        <div class="saeule-card">
-          <div class="saeule-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div class="saeule-title">Methode & Individualität</div>
-          <div class="saeule-desc">Methoden werden individuell ausgewählt, Konzepte bedarfsgerecht angepasst. So, dass immer ein Mehrwert entsteht.</div>
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- CTA -->
   <section class="sec sec-cream">
     <div class="sec-inner">
