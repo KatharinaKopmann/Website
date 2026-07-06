@@ -206,7 +206,10 @@ nav {
   font-size: 13px;
   position: sticky;
   top: 100px;
+  overflow: hidden;
 }
+.photo-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-frame { position: relative; }
 .photo-icon { font-size: 32px; opacity: 0.4; }
 
 /* ── FLIESSTEXT ── */
@@ -449,10 +452,10 @@ footer {
       <div class="intro-grid">
 
         <!-- Foto -->
-        <div>
-          <div class="photo-placeholder">
-            <span class="photo-icon">☺</span>
-            <span>Foto folgt</span>
+        <!-- Echtes Foto von Katharina Kopmann im Naturkontext -->
+        <div class="photo-frame">
+          <div class="photo-placeholder" role="img" aria-label="Katharina Kopmann, Gründerin von Coaching mit K, im Wald">
+            <img src="img/naturcoach.png" alt="Katharina Kopmann, Gründerin von Coaching mit K, im Wald" loading="lazy">
           </div>
         </div>
 
